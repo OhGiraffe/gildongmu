@@ -1,0 +1,13 @@
+@CHARSET "UTF-8";
+html, body, div,table,tr, th, td, select, textarea,form, label {font-size: 12px;margin:0px;border:0px;font-color:#666666}
+h1{font-size:15px;color:#808F9B;padding:10px 0px 10px 0px}
+input{border:1px solid #CACACA; padding:2px 2px 3px 2px; background:#FFFFFF;height:18px; margin:0 px 0px 0px  0px;}
+input.radio {border:0px; width:12px; height:15px; vertical-align:middle; }
+a { text-decoration:none; color:#666666; }
+a:hover { text-decoration:underline; }
+
+.d8 {font-size: 11px ; color:#FF7772}
+.img_focus{cursor:hand;margin: 0px 0px -4px 0px;}
+.join_table{background-color:#FFE2E1;}
+.join_table th{height:22px; text-align:center; vertical-align:middle;  color:#ffffff; font-weight:bold;background-color:#FFBAB7;}
+.join_table td{height:20px;padding-left:15px; text-align:left; vertical-align:middle;background-color:#ffffff; color:#666666}

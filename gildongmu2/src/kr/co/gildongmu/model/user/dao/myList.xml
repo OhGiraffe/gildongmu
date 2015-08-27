@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><!--Converted at: Mon Aug 24 16:37:09 KST 2015-->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="myList">
+	<select id="select" parameterType="String" resultType="kr.co.gildongmu.model.board.bean.BoardBean">
+		select * 
+		from board
+		where u_id = #{id}
+	</select>
+</mapper>

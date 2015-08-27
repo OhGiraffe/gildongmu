@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><!--Converted at: Mon Aug 24 12:29:01 KST 2015-->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="login">
+	<select id="idpass" parameterType="java.util.Map" resultType="kr.co.gildongmu.model.login.bean.UserBean">
+		select *
+		from userinfo
+		where u_id = #{id} and u_pass = #{pass}
+	</select>
+</mapper>

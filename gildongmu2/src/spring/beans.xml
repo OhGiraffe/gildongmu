@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+  <!-- beans.xml -->
+  <bean class="org.apache.tomcat.dbcp.dbcp.BasicDataSource"
+        id="driverManagerDataSource">
+     <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+     <property name="url" value="jdbc:oracle:thin:@localhost:1521:orcl"/>
+     <property name="username" value="scott"/>
+     <property name="password" value="tiger"/>
+  </bean>
+  
+<!--   <bean class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+      <property name="dataSource" ref="driverManagerDataSource"></property>
+  </bean> -->
+  <!-- MyBatis설정 -->
+  <bean class="org.mybatis.spring.SqlSessionFactoryBean"
+        id="sqlSessionFactoryBean">
+     <property name="dataSource" ref="driverManagerDataSource"/>
+     <property name="mapperLocations">
+     	<list>
+     		<value>classpath:kr/co/gildongmu/model/main/dao/searchRank.xml</value>
+     		<value>classpath:kr/co/gildongmu/model/main/dao/reviewBest.xml</value>
+ 
+     		<value>classpath:kr/co/gildongmu/model/admin/dao/adminNotice.xml</value>
+     		
+     		<value>classpath:kr/co/gildongmu/model/user/dao/searchUserInfo.xml</value>
+     		<value>classpath:kr/co/gildongmu/model/user/dao/searchMyInfo.xml</value>
+     		<value>classpath:kr/co/gildongmu/model/user/dao/myInfo.xml</value>
+     		<value>classpath:kr/co/gildongmu/model/user/dao/myList.xml</value>
+     		<value>classpath:kr/co/gildongmu/model/user/dao/myApply.xml</value>
+     		
+     		<value>classpath:kr/co/gildongmu/model/application/dao/status.xml</value>
+     		<value>classpath:kr/co/gildongmu/model/application/dao/ratingGive.xml</value>
+     		
+     		<value>classpath:kr/co/gildongmu/model/board/dao/board.xml</value>
+     		<value>classpath:kr/co/gildongmu/model/board/dao/local.xml</value>
+     		<value>classpath:kr/co/gildongmu/model/board/dao/tour.xml</value>
+     		<value>classpath:kr/co/gildongmu/model/board/dao/schedule.xml</value>
+     		<value>classpath:kr/co/gildongmu/model/board/dao/thema.xml</value>
+     		<value>classpath:kr/co/gildongmu/model/board/dao/review.xml</value>
+     		<value>classpath:kr/co/gildongmu/model/board/dao/reviewReply.xml</value>
+     		
+     		<value>classpath:kr/co/gildongmu/model/login/dao/login.xml</value>
+     		
+     		<value>classpath:kr/co/gildongmu/model/join/dao/join.xml</value>
+     		<value>classpath:kr/co/gildongmu/model/join/dao/searchPost.xml</value>
+     	</list>
+     </property>
+  </bean>
+  
+  <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" >
+	<property name="maxUploadSize" value="30720000" />
+  </bean>
+
+  <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+     <constructor-arg index="0" ref="sqlSessionFactoryBean"/>
+  </bean>
+  
+  <bean class="kr.co.gildongmu.model.main.dao.SearchRankDAO"/>
+  <bean class="kr.co.gildongmu.model.main.dao.ReviewBestDAO"/>
+
+  <bean class="kr.co.gildongmu.model.admin.dao.AdminDAO"/>
+  
+  <bean class="kr.co.gildongmu.model.user.dao.SearchUserInfoDAO"/>
+  <bean class="kr.co.gildongmu.model.user.dao.SearchMyInfoDAO"/>
+  <bean class="kr.co.gildongmu.model.user.dao.MyInfoDAO"/>
+  <bean class="kr.co.gildongmu.model.user.dao.MyListDAO"/>
+  <bean class="kr.co.gildongmu.model.user.dao.MyApplyDAO"/>
+  
+  <bean class="kr.co.gildongmu.model.application.dao.StatusDAO"/>
+  <bean class="kr.co.gildongmu.model.application.dao.RatingGiveDAO"/>
+
+  <bean class="kr.co.gildongmu.model.board.dao.BoardDAO"/>
+  <bean class="kr.co.gildongmu.model.board.dao.LocalDAO"/>
+  <bean class="kr.co.gildongmu.model.board.dao.TourDAO"/>
+  <bean class="kr.co.gildongmu.model.board.dao.ScheduleDAO"/>
+  <bean class="kr.co.gildongmu.model.board.dao.ThemaDAO"/>
+  <bean class="kr.co.gildongmu.model.board.dao.ReviewDAO"/>
+  <bean class="kr.co.gildongmu.model.board.dao.ReviewReplyDAO"/>
+  
+  <bean class="kr.co.gildongmu.model.login.dao.LoginDAO"/>
+  
+  <bean class="kr.co.gildongmu.model.join.dao.JoinDAO"/>
+  <bean class="kr.co.gildongmu.model.join.dao.SearchPostDAO"/>
+  
+  <!-- beans.xml -->
+</beans>
+
+
+
+
+

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><!--Converted at: Tue Aug 25 17:15:28 KST 2015-->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="reviewReply">
+	<select id="selectAll" parameterType="int" resultType="kr.co.gildongmu.model.board.bean.ReviewReplyBean">
+		select *
+		from reviewreply
+		where r_num = #{r_num}
+	</select>
+	<insert id="insert" parameterType="kr.co.gildongmu.model.board.bean.ReviewReplyBean">
+		insert into reviewreply
+		values(reviewreply_seq.nextval, #{r_num}, #{u_id}, sysdate, #{rr_content})
+	</insert>
+	<delete id="delete" parameterType="int">
+		delete
+		from reviewreply
+		where rr_num = #{rr_num}
+	</delete>
+	
+	<delete id="deleteAll" parameterType="int">
+		delete
+		from reviewreply
+		where r_num = #{num}
+	</delete>
+</mapper>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?><!--Converted at: Tue Aug 25 11:36:59 
+	KST 2015 -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="status">
+	<insert id="insert" parameterType="java.util.Map">
+		insert into status(b_num, u_id)
+		values (#{num}, #{id})
+	</insert>
+
+	<select id="select" parameterType="Integer" resultType="kr.co.gildongmu.model.application.bean.StatusBean">
+		select * from status where b_num = #{num}
+	</select>
+
+	<insert id="update" parameterType="java.util.Map">
+		update board
+		set b_status = #{status}
+		where b_num = #{num}
+	</insert>
+
+	<insert id="applyTUpdate" parameterType="java.util.Map">
+		update status
+		set s_apply = #{t}
+		where b_num = #{num}
+		<foreach collection="idlist" item="item" open="and (u_id like" separator="or u_id like" close=")">
+			'%'||#{item}||'%'
+		</foreach>
+
+	</insert>
+
+	<insert id="applyFUpdate" parameterType="java.util.Map">
+		update status
+		set s_apply = #{f}
+		where b_num = #{num} and s_apply = 'N'
+	</insert>
+
+	<insert id="attendTUpdate" parameterType="java.util.Map">
+		update status
+		set s_attend = #{t}, s_give=#{f}
+		where b_num = #{num} and
+		s_apply = #{t}
+
+		<foreach collection="idlist" item="item" open="and (u_id like" separator="or u_id like"
+			close=")" >
+			'%'||#{item}||'%'
+		</foreach>
+
+	</insert>
+
+	<insert id="attendFUpdate" parameterType="java.util.Map">
+		update status
+		set
+		s_attend = #{f}
+		where b_num = #{num} and s_apply = #{t} and s_attend = #{n}
+	</insert>
+
+	<insert id="attendFUpdateNull" parameterType="java.util.Map">
+		update status
+		set s_attend = #{f}
+		where b_num = #{num} and s_apply = #{t} and s_attend = #{n}
+	</insert>
+
+	<insert id="userApply" parameterType="java.util.Map">
+		update userinfo
+		set u_apply = u_apply + 1
+		where u_id in (select u_id from status where b_num = #{num} and s_apply = #{t} and (s_attend = #{t} or s_attend = #{f}))
+	</insert>
+
+	<insert id="userAttend" parameterType="java.util.Map">
+		update userinfo
+		set u_attend = u_attend + 1
+		where u_id in (select u_id from status where
+		b_num = #{num} and s_apply = #{t} and s_attend = #{f})
+	</insert>
+
+	<delete id="delete" parameterType="integer">
+		delete
+		from status
+		where b_num = #{num}
+	</delete>
+</mapper>

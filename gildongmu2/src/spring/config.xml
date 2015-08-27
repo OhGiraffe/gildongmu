@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+  <!-- config.xml -->
+  <mvc:annotation-driven/>
+  <mvc:default-servlet-handler/>
+  
+  <mvc:view-resolvers>
+     <mvc:jsp prefix="/"/>
+  </mvc:view-resolvers>
+  
+  <!-- 컨트롤러 스캔 -->
+  <context:component-scan base-package="kr.co.gildongmu.controller.main"/>
+  <context:component-scan base-package="kr.co.gildongmu.controller.admin"/>
+  <context:component-scan base-package="kr.co.gildongmu.controller.application"/>
+  <context:component-scan base-package="kr.co.gildongmu.controller.user"/>
+  <context:component-scan base-package="kr.co.gildongmu.controller.user.search"/>
+  <context:component-scan base-package="kr.co.gildongmu.controller.user.write"/>
+  <context:component-scan base-package="kr.co.gildongmu.controller.login"/>
+  <context:component-scan base-package="kr.co.gildongmu.controller.join"/>
+  
+</beans>
+
+
+
+

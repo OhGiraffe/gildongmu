@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><!--Converted at: Mon Aug 24 20:06:59 KST 2015-->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="local">
+	<select id="select" parameterType="java.lang.String" resultType="String">
+		select l_image from local where l_name = #{l_name}
+	</select>
+
+	<select id="count" parameterType="java.lang.String" resultType="Integer">
+		select count(*) 
+		from board 
+		where l_name like '%'||#{l_item}||'%'
+	</select>
+
+	<select id="selectBoard" parameterType="java.lang.String" resultType="kr.co.gildongmu.model.board.bean.BoardBean">
+		select *
+		from board
+		where l_name like '%'||#{l_item}||'%'
+		order by b_num desc
+	</select>
+
+	<select id="selectAdminList" resultType="kr.co.gildongmu.model.board.bean.BoardBean">
+		select *
+		from board
+		where u_id = 'admin'
+		order by b_num desc
+	</select>
+</mapper>

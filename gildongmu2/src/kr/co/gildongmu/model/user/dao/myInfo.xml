@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><!--Converted at: Mon Aug 24 15:49:20 
+	KST 2015 -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="myInfo">
+
+	<select id="select" parameterType="String" resultType="kr.co.gildongmu.model.login.bean.UserBean">
+		select *
+		from userinfo
+		where u_id = #{id}
+	</select>
+
+	<update id="update" parameterType="kr.co.gildongmu.model.login.bean.UserBean">
+		update userinfo
+		set u_pass=#{u_pass}, u_age=#{u_age}, u_email=#{u_email}, u_tel=#{u_tel}
+		where u_id=#{u_id}
+	</update>
+
+</mapper>

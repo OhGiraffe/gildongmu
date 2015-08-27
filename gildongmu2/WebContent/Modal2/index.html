@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery modalBox Plugin with Animate.CSS</title>
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css">
+<link href="jquery.modalBox.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<a href="#modal-content" class="modal-box btn btn-danger">Bouncee Effects</a>
+<div class="modal-box" id="modal-content">
+    <div class="inner">
+        <button class="close">&times;</button>
+        Content
+    </div>
+</div>
+</div>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="jquery.modalBox.js"></script>
+<script>
+$('a.modal-box').click(function(e){
+    e.preventDefault();
+    $('#modal-content').modalBox("open",{openAnimationEffect:'bounceIn',closeAnimationEffect:'bounceOut'});
+});
+</script>
+
+</body>
+</html>

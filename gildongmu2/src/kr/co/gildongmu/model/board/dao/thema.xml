@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><!--Converted at: Tue Aug 25 10:36:22 
+	KST 2015 -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="thema">
+	<select id="count" parameterType="java.util.Map" resultType="Integer">
+		select count(*)
+		from board
+		<where>
+			<foreach collection="themaArr" item="item" open="and (b_thema like" separator="or b_thema like" close=")" >
+				'%'||#{item}||'%'
+			</foreach>
+		</where>
+	</select>
+
+	<select id="selectList" parameterType="java.util.Map" resultType="kr.co.gildongmu.model.board.bean.BoardBean">
+		select *
+		from board
+		where u_id != 'admin'
+		<foreach collection="themaArr" item="item" open="and (b_thema like" separator="or b_thema like" close=")" >
+			'%'||#{item}||'%'
+		</foreach>
+		order by b_num desc
+	</select>
+
+	<select id="selectAdminList" resultType="kr.co.gildongmu.model.board.bean.BoardBean">
+		select *
+		from board
+		where
+		u_id = 'admin'
+		order by b_num desc
+	</select>
+</mapper>

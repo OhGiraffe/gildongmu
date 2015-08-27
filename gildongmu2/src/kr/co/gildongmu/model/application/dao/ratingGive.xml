@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><!--Converted at: Tue Aug 25 14:14:15 KST 2015-->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ratingGive">
+	<insert id="insert" parameterType="java.util.Map">
+		update userinfo
+		set u_grade = u_grade + #{num}, u_npeople = u_npeople+1
+		where u_id = #{id}
+	</insert>
+	<insert id="update" parameterType="java.util.Map">
+		update status
+		set s_give = 'T'
+		where b_num = #{num} and u_id = #{id} and s_give ='F'
+	</insert>
+</mapper>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><!--Converted at: Mon Aug 24 11:31:33 KST 2015-->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="reviewBest">
+	<select id="select" resultType="kr.co.gildongmu.model.board.bean.ReviewBean">
+		select *
+		from (select * from review order by  r_date desc)
+		where rownum in (1,2,3,4,5,6,7,8,9,10)
+	</select>
+</mapper>

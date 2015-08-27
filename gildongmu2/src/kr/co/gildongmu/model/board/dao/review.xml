@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><!--Converted at: Tue Aug 25 11:02:47 
+	KST 2015 -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="review">
+	<select id="selectAll" resultType="kr.co.gildongmu.model.board.bean.ReviewBean">
+		select *
+		from review
+		order by r_num desc
+	</select>
+	
+	<select id="select" parameterType="integer" resultType="kr.co.gildongmu.model.board.bean.ReviewBean">
+		select *
+		from review
+		where r_num = #{r_num}
+	</select>
+	
+	<insert id="insert" parameterType="kr.co.gildongmu.model.board.bean.ReviewBean">
+		insert into review
+		values(review_seq.nextval, #{u_id}, #{r_title}, #{r_content}, sysdate, #{r_count}, #{r_image})
+		<selectKey keyProperty="r_num" resultType="integer" order="AFTER">
+       		SELECT review_seq.currval from dual
+    	</selectKey>
+	</insert>
+	
+	<delete id="delete" parameterType="int">
+		delete
+		from review
+		where r_num = #{num}
+	</delete>
+	
+	<update id="modify" parameterType="kr.co.gildongmu.model.board.bean.ReviewBean">
+		update review
+		set r_title = #{r_title}, r_content = #{r_content}
+		where r_num = #{r_num}
+	</update>
+	
+	<update id="count" parameterType="int">
+		update review
+		set r_count = r_count+1
+		where r_num = #{r_num}
+	</update>
+	
+	<select id="search" parameterType="java.lang.String" resultType="kr.co.gildongmu.model.board.bean.ReviewBean">
+		select *
+		from review
+		where r_title like #{keyword}
+	</select>
+	
+	<select id="selectBest" resultType="kr.co.gildongmu.model.board.bean.ReviewBean">
+		select *
+		from (select * from
+		review order by r_date desc)
+		where rownum in (1,2,3,4,5,6,7,8,9,10)
+	</select>
+	
+	<select id="selectCnt" resultType="int">
+		select count(*)
+		from review
+	</select>
+	
+	<select id="selectPage" resultType="kr.co.gildongmu.model.board.bean.ReviewBean">
+		select *
+		from review 
+		order by r_num desc
+	</select>
+</mapper>
