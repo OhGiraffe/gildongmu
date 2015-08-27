@@ -108,7 +108,13 @@ td .adminnotice{
 	color: #e72744;
 }
 
+.t3 td.adminnotice{
+	text-align: left;
+}
 
+tbody td.adminnotice{
+	text-align: left;
+}
 
 
 .t4 {

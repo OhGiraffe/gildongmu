@@ -6,8 +6,8 @@
 
 <c:forEach var="list" items="${adminlist}">
 	<tr>
-		<td colspan="9"><a href='javascript:move(${list.b_num})'
-			style='color: black; text-decoration: none; font-weight: bold;'>${list.b_title}</a>
+		<td class="adminnotice" colspan="9"><a href='javascript:move(${list.b_num})'
+			style='color: #22BECC; text-decoration: none; font-weight: bold;'>${list.b_title}</a>
 		</td>
 	</tr>
 </c:forEach>
