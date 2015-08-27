@@ -23,7 +23,7 @@
      		<value>classpath:kr/co/gildongmu/model/main/dao/searchRank.xml</value>
      		<value>classpath:kr/co/gildongmu/model/main/dao/reviewBest.xml</value>
  
-     		<value>classpath:kr/co/gildongmu/model/admin/dao/adminNotice.xml</value>
+     		<value>classpath:kr/co/gildongmu/model/admin/dao/admin.xml</value>
      		
      		<value>classpath:kr/co/gildongmu/model/user/dao/searchUserInfo.xml</value>
      		<value>classpath:kr/co/gildongmu/model/user/dao/searchMyInfo.xml</value>
