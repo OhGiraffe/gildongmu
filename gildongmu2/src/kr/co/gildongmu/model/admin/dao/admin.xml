@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><!--Converted at: Mon Aug 24 17:18:46 
+	KST 2015 -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="admin">
+	<select id="userCount" parameterType="java.lang.String" resultType="Integer">
+		select count(*) 
+		from userinfo 
+	</select>
+	
+	<select id="boardCount" parameterType="java.lang.String" resultType="Integer">
+		select count(*) 
+		from board 
+	</select>
+	
+	<select id="reviewCount" parameterType="java.lang.String" resultType="Integer">
+		select count(*) 
+		from review
+	</select>
+	
+	<select id="noticeSelectAll" parameterType="java.lang.String" resultType="kr.co.gildongmu.model.board.bean.BoardBean">
+		select *
+		from board
+		where u_id = #{id}
+	</select>
+
+	<select id="userSelectAll" resultType="kr.co.gildongmu.model.login.bean.UserBean">
+		select * from userinfo
+	</select>
+	
+	<select id="userSelect" resultType="kr.co.gildongmu.model.login.bean.UserBean">
+		select * from userinfo
+		order by u_id asc
+	</select>
+	
+	<select id="boardSelectAll" resultType="kr.co.gildongmu.model.board.bean.BoardBean">
+		select * from board 
+		order by b_num desc
+	</select>
+	
+	<select id="boardSelect" resultType="kr.co.gildongmu.model.board.bean.BoardBean">
+		select * from board 
+		order by b_num desc
+	</select>
+	
+	<select id="reviewSelectAll" resultType="kr.co.gildongmu.model.board.bean.ReviewBean">
+		select * from review
+		order by r_num desc
+	</select>
+	
+	<select id="reviewSelect" resultType="kr.co.gildongmu.model.board.bean.ReviewBean">
+		select * from review 
+		order by r_num desc
+	</select>
+</mapper>
