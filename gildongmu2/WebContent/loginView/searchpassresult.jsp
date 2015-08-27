@@ -20,7 +20,7 @@ String u_pass = (String)request.getAttribute("u_pass");
 <ul class="side" style="margin-top: 24px;">
 <ul>
 			<li type="none" style="font-weight: bold; font-size: 16px; color: #ffffff;
-			width: 160px; height: 26px; background-color: #004080;">
+			width: 160px; height: 26px; background-color: #22becc;">
 			ID/PASS찾기
 			</li>
 			<a href="searchmyid.do" style="text-decoration: none; margin: -10px 0 0 300px" >ID 찾기</a>
@@ -31,7 +31,7 @@ String u_pass = (String)request.getAttribute("u_pass");
 </div>
 <div id="myMain">
 	<div id="myMenu">	
-		<font style="border-style: solid;background-color: #f5f5f5;font-size: large; color: #3a5795;">Join</font>
+		<font style="border-style: solid;background-color: #f5f5f5;font-size: large; color: #22becc;">Join</font>
 		<font style="font-size: small;">비밀번호찾기</font>
 	</div>
 	

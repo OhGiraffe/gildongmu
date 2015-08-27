@@ -91,7 +91,7 @@
 <div id="first"><%@include file="/mainView/tobmenu.jsp"%></div>
 <div id="main">
 	<div id="menu" style="border-bottom: 2px solid #dedede";>	
-	<font style="border-style: solid; font-size:24pt; color: #3a5795; font-weight: bolder; ">Join</font>
+	<font style="border-style: solid; font-size:24pt; color: #22becc; font-weight: bolder; ">Join</font>
 	<font style="font-size:14pt; font-weight: bolder; color: #999; ">회원가입</font>
 	</div>
 	<center>
