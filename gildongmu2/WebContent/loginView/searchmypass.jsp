@@ -19,7 +19,7 @@
 <ul class="side" style="margin-top: 24px;">
 <ul>
 			<li type="none" style="font-weight: bold; font-size: 16px; color: #ffffff;
-			width: 160px; height: 26px; background-color: #004080;">
+			width: 160px; height: 26px; background-color: #22becc;">
 			ID/PASS찾기
 			</li>
 			<a href="searchmyid.do" style="text-decoration: none; margin: -10px 0 0 300px" >ID 찾기</a>
@@ -30,7 +30,7 @@
 </div>
 <div id="myMain">
 <div id="myMenu" style="border-bottom: 2px solid #dedede";>
-	<font style="border-style: solid; font-size:24pt; color: #3a5795; font-weight: bolder; ">Search Pass</font>
+	<font style="border-style: solid; font-size:24pt; color: #22becc; font-weight: bolder; ">Search Pass</font>
 	<font style="font-size:14pt; font-weight: bolder; color: #999; ">비밀번호 찾기</font>
 </div>
 	

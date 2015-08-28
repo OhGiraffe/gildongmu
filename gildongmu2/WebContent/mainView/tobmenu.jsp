@@ -205,7 +205,7 @@ function logincheck(check, id){
 		<table width="206px" align="center">
 		<tr>
 			<td>
-			<font color="#3a5795" size="14" style="font-family: inherit; font-size: 14px; color: #004080; width: 169px; height: 12px; font-weight: bold;">
+			<font color="#3a5795" size="14" style="font-family: inherit; font-size: 14px; color: #22becc; width: 169px; height: 12px; font-weight: bold;">
 			<%=session.getAttribute("result_name") %></font>
 			<font color="#3a5795" size="14" style="font-family: inherit; font-size: 11px; color: #f5f5f5; width: 169px; height: 12px;">님 <br>환영합니다.
 			</font>
@@ -222,7 +222,7 @@ function logincheck(check, id){
 	<table width="206px" align="center">
 		<tr>
 			<td>
-			<font color="#3a5795" size="14" style="font-family: inherit; font-size: 14px; color: #004080; width: 169px; height: 12px; font-weight: bold;">		
+			<font color="#3a5795" size="14" style="font-family: inherit; font-size: 14px; color: #22becc; width: 169px; height: 12px; font-weight: bold;">		
 				<%=session.getAttribute("result_name")%>
 			</font>
 			<font color="#3a5795" size="14" style="font-family: inherit; font-size: 11px; color: #f5f5f5; width: 140px; height: 12px;">
