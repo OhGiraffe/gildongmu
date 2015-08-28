@@ -68,7 +68,7 @@ border-spacing: 0;
 	<center>
 		<h3>글쓰기</h3>
 
-		<form action="writing" method="post" name="frm">
+		<form action="write_b" method="post" name="frm">
 		<input type="hidden" name="url" value="<%=url%>">
 			<table class="boardtbl">
 				<tr>
