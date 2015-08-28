@@ -153,6 +153,44 @@ $(document).ready(function(){
     width: 550px;
     height: 35px;
 }
+
+div#sermain{
+	position: absolute;
+	margin-left: 300px;
+	margin-top: 300px;
+}
+
+div#sertitle{
+	position: absolute;
+	width: 500px;
+	margin-left: 500px;
+	margin-top: 350px;
+}
+
+div#tel{
+	position: absolute;
+	margin-top: 520px;
+	margin-left: 300px;
+	width: 200px;
+	color: #8C8C8C;
+}
+
+div#email{
+	position: absolute;
+	margin-top: 520px;
+	margin-left: 550px;
+	width: 300px;
+	color: #8C8C8C;
+}
+
+div#addr{
+	position: absolute;
+	margin-top: 520px;
+	margin-left: 900px;
+	width: 300px;
+	color: #8C8C8C;
+}
+
 </style>
 </head>
 <div id="outer">
@@ -180,15 +218,39 @@ $(document).ready(function(){
 	</div>
 	
 	<div id="sermain">
-		<div id="serhead">
-			<div id="sergrip">
-				<div id="serimg">
-					<img src="./image/hello.png">
-				</div>
-			</div>
-		</div>
+		<img src="./image/hello.png">
 	</div>
-
+	
+	<div id="sertitle">
+		<h1>Trips feel free to Contact Us on</h1>
+	</div>
+	
+	<div id="info">
+		<ul>
+			<li type="none">
+				<div id="tel">
+				<h3 style="font-style: inherit;">고객센터 전화번호</h3>
+				<br> ☎ : 031-2210-1234
+				</div>
+			</li>
+		
+			<li type="none">
+				<div id="email">
+				<h3 style="font-style: inherit;">입사 지원</h3>
+				<br> e-mail : gildongmu@gildongmu.com
+				</div>
+			</li>
+			
+			<li type="none">
+				<div id="addr">
+				<h3 style="font-style: inherit;">회사 위치</h3>
+				<br>경기도 성남시 분당구 삼평동 
+				<br>유스페이스몰2 B동 8층 KOSTA
+				</div>
+			</li>
+			
+		</ul>
+	</div>
 
 </body>
 </div>	
