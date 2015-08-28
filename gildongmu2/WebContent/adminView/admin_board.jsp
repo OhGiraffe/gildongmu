@@ -68,12 +68,9 @@
 	<font style="border-style: solid; font-size:24pt; color: #22becc; font-weight: bolder; ">AdminBoard</font>
 	<font style="font-size:14pt; font-weight: bolder; color: #999; ">게시판 관리</font>
 </div>
-	<center>
-	<div class="t3" style="margin-right: 150px; margin-top: -30px;">
-			<div class="tblWrap topmargin">
 			<div id="board" class="board">
-				<div class="t3">
-					<div class="tblWrap topmargin" style="margin-left: 50px;">
+				<div class="t3" style="margin-top: -30px;">
+					<div class="tblWrap topmargin" style="margin-left: 20px;">
 						<table>
 							<colgroup>
 								<col width="50px">
