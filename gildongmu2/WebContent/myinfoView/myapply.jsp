@@ -13,7 +13,7 @@ function userInfo(u_id) {
 }
 
 function move(num){
-	location.href = "bview?b_num="+num+"&view=view";
+	location.href = "view_board?b_num="+num+"&view=view";
 }
 
 </script>

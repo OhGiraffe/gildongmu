@@ -53,7 +53,7 @@ $(document).ready(function() {
 		function load(sdate, edate,start, end, block) {//페이지요청
 			xhr = getXMLHttpRequest();
 			xhr.onreadystatechange = loaded;//콜백함수(open,send후 실행할 함수)정의
-			xhr.open('POST', 'schedule/search.do', true);//HTTP요청방식, 요청URL, 비동기
+			xhr.open('POST', 'schedulesearch', true);//HTTP요청방식, 요청URL, 비동기
 	        xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
 			xhr.send('sdate='+ sdate +"&edate="+edate+'&start='+start+'&end='+end+'&block='+block);//전달파라미터
 		}
@@ -65,16 +65,18 @@ $(document).ready(function() {
 				}
 			}
 		}
+		
+		function userInfo(u_id) {
+			window.open("loginView/userinfo?u_id="+u_id, "get", "height=450, width=420");
+		}
+		
 		function move(num){
-			location.href = "bview.do?b_num="+num+"&view=view";
+			location.href = "view_board?b_num="+num;
 		}
 		
 		function write_movepage(){
-	    	location.href = "write_board.do";
+	    	location.href = "write_board";
 	    }
-		function userInfo(u_id) {
-			window.open("loginView/user_userinfo.jsp?u_id="+u_id, "get", "height=450, width=420");
-		}
 </script>
 </head>
 <div id="myBar">
