@@ -214,7 +214,7 @@ function logincheck(check, id){
 				<a href="logout"><input type="button" value="로그아웃" class="mybutton4"></a> 
 			</td>
 			<td>
-			<a href="adminuser"><input type="button" value="관리자" class="mybutton4"></a>
+			<a href="admin_user"><input type="button" value="관리자" class="mybutton4"></a>
 			</td>
 			</tr>
 	</table>
