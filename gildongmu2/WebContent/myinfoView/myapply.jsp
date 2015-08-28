@@ -1,11 +1,11 @@
 <%@page import="kr.co.gildongmu.model.board.bean.BoardBean"%>
 <%@page import="java.util.ArrayList"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript">
 function userInfo(u_id) {
@@ -32,19 +32,19 @@ function move(num){
 <ul>
 		<li type="none" style="font-weight: bold; font-size: 16px; color: #ffffff;
 		width: 160px; height: 26px; background-color: #22becc;">
-		³»Á¤º¸
+		ë‚´ì •ë³´
 		</li>
-		<a href="myinfo.do" style="text-decoration: none; margin: -10px 0 0 250px" >³»Á¤º¸</a>
-		<a href="mylist.do" style="text-decoration: none; margin: -30px 0 0 410px">³»°¡ ¾´ ±Û</a>
-		<a href="myapply.do" style="text-decoration: none; margin: -30px 0 0 570px">½ÅÃ»ÇöÈ²</a>
-		<a href="receiveMessage.do" style="text-decoration: none; margin: -30px 0 0 730px">ÂÊÁöÇÔ</a>
+		<a href="myinfo.do" style="text-decoration: none; margin: -10px 0 0 250px" >ë‚´ì •ë³´</a>
+		<a href="mylist.do" style="text-decoration: none; margin: -30px 0 0 410px">ë‚´ê°€ ì“´ ê¸€</a>
+		<a href="myapply.do" style="text-decoration: none; margin: -30px 0 0 570px">ì‹ ì²­í˜„í™©</a>
+		<a href="receiveMessage.do" style="text-decoration: none; margin: -30px 0 0 730px">ìª½ì§€í•¨</a>
 </ul>		 
 </ul>
 </div>
 <div id="myMain">
 <div id="myMenu" style="border-bottom: 2px solid #dedede";>
 	<font style="border-style: solid; font-size:24pt; color: #22becc; font-weight: bolder; ">MyApply</font>
-	<font style="font-size:14pt; font-weight: bolder; color: #999; ">³»°¡ ½ÅÃ»ÇÑ ¸ñ·Ï</font>
+	<font style="font-size:14pt; font-weight: bolder; color: #999; ">ë‚´ê°€ ì‹ ì²­í•œ ëª©ë¡</font>
 </div>
 	<center>
 	<div class="t3" style="margin-right: 150px; margin-top: -30px;">
@@ -62,14 +62,14 @@ function move(num){
 					</colgroup>
 					<thead>
 						<tr>
-							<th scope="col">±Û¹øÈ£</th>
-							<th scope="col">Áö¿ª</th>
-							<th scope="col">ÀÏÁ¤</th>
-							<th scope="col">Å×¸¶</th>		
-							<th scope="col">Á¦¸ñ</th>
-							<th scope="col">ÀÛ¼ºÀÚ</th>
-							<th scope="col">¸ðÁýÀÎ¿ø</th>
-							<th scope="col">Á¶È¸</th>
+							<th scope="col">ê¸€ë²ˆí˜¸</th>
+							<th scope="col">ì§€ì—­</th>
+							<th scope="col">ì¼ì •</th>
+							<th scope="col">í…Œë§ˆ</th>		
+							<th scope="col">ì œëª©</th>
+							<th scope="col">ìž‘ì„±ìž</th>
+							<th scope="col">ëª¨ì§‘ì¸ì›</th>
+							<th scope="col">ì¡°íšŒ</th>
 						</tr>
 					</thead>
 					<tbody>

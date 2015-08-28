@@ -1,11 +1,11 @@
 <%@page import="kr.co.gildongmu.model.board.bean.BoardBean"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>±Û¾²±â</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ê¸€ì“°ê¸°</title>
 <script type="text/javascript" src="./se2/js/HuskyEZCreator.js" charset="utf-8"></script>
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
@@ -14,26 +14,26 @@
 $(document).ready(function() {
  
   //******************************************************************************
-  // »ó¼¼°Ë»ö ´Ş·Â ½ºÅ©¸³Æ®
+  // ìƒì„¸ê²€ìƒ‰ ë‹¬ë ¥ ìŠ¤í¬ë¦½íŠ¸
   //******************************************************************************
   var clareCalendar = {
-   monthNamesShort: ['1¿ù','2¿ù','3¿ù','4¿ù','5¿ù','6¿ù','7¿ù','8¿ù','9¿ù','10¿ù','11¿ù','12¿ù'],
-   dayNamesMin: ['ÀÏ','¿ù','È­','¼ö','¸ñ','±İ','Åä'],
+   monthNamesShort: ['1ì›”','2ì›”','3ì›”','4ì›”','5ì›”','6ì›”','7ì›”','8ì›”','9ì›”','10ì›”','11ì›”','12ì›”'],
+   dayNamesMin: ['ì¼','ì›”','í™”','ìˆ˜','ëª©','ê¸ˆ','í† '],
    weekHeader: 'Wk',
-   dateFormat: 'yy-mm-dd', //Çü½Ä(20120303)
-   autoSize: false, //¿ÀÅä¸®»çÀÌÁî(bodyµî »óÀ§ÅÂ±×ÀÇ ¼³Á¤¿¡ µû¸¥´Ù)
-   changeMonth: true, //¿ùº¯°æ°¡´É
-   changeYear: true, //³âº¯°æ°¡´É
-   showMonthAfterYear: true, //³â µÚ¿¡ ¿ù Ç¥½Ã
-   buttonImageOnly: false, //ÀÌ¹ÌÁöÇ¥½Ã
-   buttonText: '´Ş·Â¼±ÅÃ', //¹öÆ° ÅØ½ºÆ® Ç¥½Ã
-   //showOn: "both", //¿¤¸®¸ÕÆ®¿Í ÀÌ¹ÌÁö µ¿½Ã »ç¿ë(both,button)
-   yearRange: '1990:2020' //1990³âºÎÅÍ 2020³â±îÁö
+   dateFormat: 'yy-mm-dd', //í˜•ì‹(20120303)
+   autoSize: false, //ì˜¤í† ë¦¬ì‚¬ì´ì¦ˆ(bodyë“± ìƒìœ„íƒœê·¸ì˜ ì„¤ì •ì— ë”°ë¥¸ë‹¤)
+   changeMonth: true, //ì›”ë³€ê²½ê°€ëŠ¥
+   changeYear: true, //ë…„ë³€ê²½ê°€ëŠ¥
+   showMonthAfterYear: true, //ë…„ ë’¤ì— ì›” í‘œì‹œ
+   buttonImageOnly: false, //ì´ë¯¸ì§€í‘œì‹œ
+   buttonText: 'ë‹¬ë ¥ì„ íƒ', //ë²„íŠ¼ í…ìŠ¤íŠ¸ í‘œì‹œ
+   //showOn: "both", //ì—˜ë¦¬ë¨¼íŠ¸ì™€ ì´ë¯¸ì§€ ë™ì‹œ ì‚¬ìš©(both,button)
+   yearRange: '1990:2020' //1990ë…„ë¶€í„° 2020ë…„ê¹Œì§€
   };
   $("#b_sdate").datepicker(clareCalendar);
   $("#b_edate").datepicker(clareCalendar);
-  $("img.ui-datepicker-trigger").attr("style","margin-left:5px; vertical-align:middle; cursor:pointer;"); //ÀÌ¹ÌÁö¹öÆ° styleÀû¿ë
-  $("#ui-datepicker-div").hide(); //ÀÚµ¿À¸·Î »ı¼ºµÇ´Â div°´Ã¼ ¼û±è  
+  $("img.ui-datepicker-trigger").attr("style","margin-left:5px; vertical-align:middle; cursor:pointer;"); //ì´ë¯¸ì§€ë²„íŠ¼ styleì ìš©
+  $("#ui-datepicker-div").hide(); //ìë™ìœ¼ë¡œ ìƒì„±ë˜ëŠ” divê°ì²´ ìˆ¨ê¹€  
  });
 </script>
 <style>
@@ -92,7 +92,7 @@ border-spacing: 0;
 	}
 %>
 	<center>
-		<h3>±Û¼öÁ¤</h3>
+		<h3>ê¸€ìˆ˜ì •</h3>
 		<form action="modify_b" method="post" name="frm">
 		<input type="hidden" name="url" value="<%=url%>">
 		<input type="hidden" name="b_num" value="<%=bbean.getB_num()%>">
@@ -100,11 +100,11 @@ border-spacing: 0;
 		<input type="hidden" name="b_date" value="<%=bbean.getB_date()%>">
 			<table class="boardtbl" >
 				<tr>
-					<td class="title">Áö¿ª</td>
+					<td class="title">ì§€ì—­</td>
 					<td class="content">
 						<div class="l_name_checkbox">
 						<% 
-							String lcheck[]={"¾È¼º","¿©ÁÖ","È­¼º","ÆòÅÃ","°¡Æò","¾çÆò","¼º³²","°úÃµ","ÆÄÁÖ","¿¬Ãµ"};
+							String lcheck[]={"ì•ˆì„±","ì—¬ì£¼","í™”ì„±","í‰íƒ","ê°€í‰","ì–‘í‰","ì„±ë‚¨","ê³¼ì²œ","íŒŒì£¼","ì—°ì²œ"};
 							for(int i=0; i<lcheck.length; i++){ 
 								for(int j=0; j<lname.length; j++){
 									if(lcheck[i].equals(lname[j])){%>
@@ -121,7 +121,7 @@ border-spacing: 0;
 					</td>
 				</tr>
 				<tr>
-					<td class="title">ÀÏÁ¤</td>
+					<td class="title">ì¼ì •</td>
 					<td class="content">
 						<input name="b_sdate" type="text" id="b_sdate" size="8" maxlength="8"  value = "${bean.b_sdate}"
 						style="text-align: center;">
@@ -131,11 +131,11 @@ border-spacing: 0;
 					</td>
 				</tr>
 				<tr>
-					<td class="title">Å×¸¶</td>
+					<td class="title">í…Œë§ˆ</td>
 					<td class="content">
 						<div class="b_thema_checkbox">
 						<% 
-							String tcheck[]={"·¹Àú","¸Ô¹æ","Èú¸µ","¹«Àü","°ü±¤"};
+							String tcheck[]={"ë ˆì €","ë¨¹ë°©","íë§","ë¬´ì „","ê´€ê´‘"};
 							for(int i=0; i<tcheck.length; i++){
 								for(int j=0; j<tname.length; j++){
 									if(tcheck[i].equals(tname[j])){%>
@@ -151,16 +151,16 @@ border-spacing: 0;
 					</td>
 				</tr>
 				<tr>
-					<td class="title">¸ğÁıÀÎ¿ø</td>
-					<td class="content"><input type="text" name="b_recruit" value="${bean.b_recruit}"><label>¸í</label>
+					<td class="title">ëª¨ì§‘ì¸ì›</td>
+					<td class="content"><input type="text" name="b_recruit" value="${bean.b_recruit}"><label>ëª…</label>
 					</td>
 				</tr>
 				<tr>
-					<td class="title">»óÅÂ</td>
-					<td class="content"><input type="text" name="b_status" value="¸ğÁıÁß" readonly="readonly" value="${bean.b_status}">
+					<td class="title">ìƒíƒœ</td>
+					<td class="content"><input type="text" name="b_status" value="ëª¨ì§‘ì¤‘" readonly="readonly" value="${bean.b_status}">
 				</tr>				
 				<tr>
-					<td class="title">Á¦¸ñ</td>
+					<td class="title">ì œëª©</td>
 					<td class="content"><input type="text" id="b_title" name="b_title" value="${bean.b_title}">
 				</tr>
 				<tr>
@@ -170,8 +170,8 @@ border-spacing: 0;
 				</tr>
 				<tr align="center">
 					<td colspan="2">
-					<input type="button" value="¼öÁ¤¿Ï·á" class="myButton" onclick="modifyContents()">
-					<input type="reset" value="Ãë¼Ò" class="myButton">
+					<input type="button" value="ìˆ˜ì •ì™„ë£Œ" class="myButton" onclick="modifyContents()">
+					<input type="reset" value="ì·¨ì†Œ" class="myButton">
 					</td>
 				</tr>
 			</table>	
@@ -188,17 +188,17 @@ nhn.husky.EZCreator.createInIFrame({
 	elPlaceHolder: "ir1",
 	sSkinURI: "./se2/SmartEditor2Skin.html",	
 	htParams : {
-		bUseToolbar : true,				// Åø¹Ù »ç¿ë ¿©ºÎ (true:»ç¿ë/ false:»ç¿ëÇÏÁö ¾ÊÀ½)
-		bUseVerticalResizer : true,		// ÀÔ·ÂÃ¢ Å©±â Á¶Àı¹Ù »ç¿ë ¿©ºÎ (true:»ç¿ë/ false:»ç¿ëÇÏÁö ¾ÊÀ½)
-		bUseModeChanger : true,			// ¸ğµå ÅÇ(Editor | HTML | TEXT) »ç¿ë ¿©ºÎ (true:»ç¿ë/ false:»ç¿ëÇÏÁö ¾ÊÀ½)
-		//aAdditionalFontList : aAdditionalFontSet,		// Ãß°¡ ±Û²Ã ¸ñ·Ï
+		bUseToolbar : true,				// íˆ´ë°” ì‚¬ìš© ì—¬ë¶€ (true:ì‚¬ìš©/ false:ì‚¬ìš©í•˜ì§€ ì•ŠìŒ)
+		bUseVerticalResizer : true,		// ì…ë ¥ì°½ í¬ê¸° ì¡°ì ˆë°” ì‚¬ìš© ì—¬ë¶€ (true:ì‚¬ìš©/ false:ì‚¬ìš©í•˜ì§€ ì•ŠìŒ)
+		bUseModeChanger : true,			// ëª¨ë“œ íƒ­(Editor | HTML | TEXT) ì‚¬ìš© ì—¬ë¶€ (true:ì‚¬ìš©/ false:ì‚¬ìš©í•˜ì§€ ì•ŠìŒ)
+		//aAdditionalFontList : aAdditionalFontSet,		// ì¶”ê°€ ê¸€ê¼´ ëª©ë¡
 		fOnBeforeUnload : function(){
-			//alert("¿Ï·á!");
+			//alert("ì™„ë£Œ!");
 		}
 	}, //boolean
 	fOnAppLoad : function(){
-		//¿¹Á¦ ÄÚµå
-		//oEditors.getById["ir1"].exec("PASTE_HTML", ["·ÎµùÀÌ ¿Ï·áµÈ ÈÄ¿¡ º»¹®¿¡ »ğÀÔµÇ´Â textÀÔ´Ï´Ù."]);
+		//ì˜ˆì œ ì½”ë“œ
+		//oEditors.getById["ir1"].exec("PASTE_HTML", ["ë¡œë”©ì´ ì™„ë£Œëœ í›„ì— ë³¸ë¬¸ì— ì‚½ì…ë˜ëŠ” textì…ë‹ˆë‹¤."]);
 	},
 	fCreator: "createSEditor2"
 });
@@ -222,42 +222,42 @@ function modifyContents() {
 	var b_title = document.frm.b_title.value;
 	
 	if(l_cnt == 0) {
-		alert("Áö¿ªÀ» ¼±ÅÃÇØÁÖ¼¼¿ä.");
+		alert("ì§€ì—­ì„ ì„ íƒí•´ì£¼ì„¸ìš”.");
 		return;
 	}
 	
-	if(b_sdate == "Ãâ¹ß") {
-		alert("Ãâ¹ßÀÏÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+	if(b_sdate == "ì¶œë°œ") {
+		alert("ì¶œë°œì¼ì„ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 		document.frm.b_sdate.focus();
 		return;
 	}
 	
-	if(b_edate == "Á¾·á") {
-		alert("µµÂøÀÏÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+	if(b_edate == "ì¢…ë£Œ") {
+		alert("ë„ì°©ì¼ì„ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 		document.frm.b_edate.focus();
 		return;
 	}
 	
 	if(t_cnt == 0) {
-		alert("Å×¸¶¸¦ ¼±ÅÃÇØÁÖ¼¼¿ä.");
+		alert("í…Œë§ˆë¥¼ ì„ íƒí•´ì£¼ì„¸ìš”.");
 		return;
 	}
 	
 	if(b_recruit.trim() == "") {
-		alert("¸ğÁıÀÎ¿øÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+		alert("ëª¨ì§‘ì¸ì›ì„ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 		document.frm.b_recruit.focus();
 		return;
 	}
 	
 	if(b_title.trim() == "") {
-		alert("Á¦¸ñÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+		alert("ì œëª©ì„ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 		document.frm.b_title.focus();
 		return;
 	}
 	
-	oEditors.getById["ir1"].exec("UPDATE_CONTENTS_FIELD", []);	// ¿¡µğÅÍÀÇ ³»¿ëÀÌ textarea¿¡ Àû¿ëµË´Ï´Ù.
+	oEditors.getById["ir1"].exec("UPDATE_CONTENTS_FIELD", []);	// ì—ë””í„°ì˜ ë‚´ìš©ì´ textareaì— ì ìš©ë©ë‹ˆë‹¤.
 	
-	// ¿¡µğÅÍÀÇ ³»¿ë¿¡ ´ëÇÑ °ª °ËÁõÀº ÀÌ°÷¿¡¼­ document.getElementById("ir1").value¸¦ ÀÌ¿ëÇØ¼­ Ã³¸®ÇÏ¸é µË´Ï´Ù.
+	// ì—ë””í„°ì˜ ë‚´ìš©ì— ëŒ€í•œ ê°’ ê²€ì¦ì€ ì´ê³³ì—ì„œ document.getElementById("ir1").valueë¥¼ ì´ìš©í•´ì„œ ì²˜ë¦¬í•˜ë©´ ë©ë‹ˆë‹¤.
 	
 	try {
 		frm.submit();

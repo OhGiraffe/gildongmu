@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>¼º¹Î ¼÷Á¦</title>
+<title>ì„±ë¯¼ ìˆ™ì œ</title>
 <script type="text/javascript" src="./se2/js/HuskyEZCreator.js" charset="utf-8"></script>
 </head>
 <body>
@@ -13,7 +13,7 @@
 <div id="main">
 <div id="menu" style="border-bottom: 2px solid #dedede";>
 	<font style="border-style: solid; font-size:24pt; color: #22becc; font-weight: bolder; ">Review</font>
-	<font style="font-size:14pt; font-weight: bolder; color: #999; ">ÈÄ±â°Ô½ÃÆÇ</font>
+	<font style="font-size:14pt; font-weight: bolder; color: #999; ">í›„ê¸°ê²Œì‹œíŒ</font>
 </div>
 <center>
 	<div class="t4">
@@ -22,14 +22,14 @@
 			<hr>
 				<table border="1">
 					<tr>
-						<td class="ty2" style="text-align: left;">Á¦¸ñ 
+						<td class="ty2" style="text-align: left;">ì œëª© 
 						<input type="text" id="r_title" size="70" name="title"
 						style="width: 630px; height:25px; background-color: #EAEAEA; 
 						margin: 3px; border-style: solid #000000; "
 						></td>
 					</tr>
 					<tr>
-						<td class="ty2" style="text-align: left;">»çÁø  
+						<td class="ty2" style="text-align: left;">ì‚¬ì§„  
 						<input type="file" name="r_image" id="r_image"
 							style="BACKGROUND-COLOR: white"
 							onMouseOver="this.style.backgroundColor = '#e6eff7'"
@@ -45,8 +45,8 @@
 				
 					<tr align="center">
 						<td class="ty2" colspan="2">
-						<input class="myButton" type="submit" value="µî·Ï" onclick="submitContents(this)"> 
-						<input class="myButton" type="reset" value="Ãë¼Ò"></td>
+						<input class="myButton" type="submit" value="ë“±ë¡" onclick="submitContents(this)"> 
+						<input class="myButton" type="reset" value="ì·¨ì†Œ"></td>
 					</tr>
 			</table>
 			</form>
@@ -62,7 +62,7 @@ nhn.husky.EZCreator.createInIFrame({
     fCreator: "createSEditor2"
 });
 
-//¡®ÀúÀå¡¯ ¹öÆ°À» ´©¸£´Â µî ÀúÀåÀ» À§ÇÑ ¾×¼ÇÀ» ÇßÀ» ¶§ submitContents°¡ È£ÃâµÈ´Ù°í °¡Á¤ÇÑ´Ù.
+//â€˜ì €ì¥â€™ ë²„íŠ¼ì„ ëˆ„ë¥´ëŠ” ë“± ì €ì¥ì„ ìœ„í•œ ì•¡ì…˜ì„ í–ˆì„ ë•Œ submitContentsê°€ í˜¸ì¶œëœë‹¤ê³  ê°€ì •í•œë‹¤.
 function submitContents(elClickedObj) {
 	var title = document.submitForm.title.value;
 	var r_image = document.submitForm.r_image.value;
@@ -70,21 +70,21 @@ function submitContents(elClickedObj) {
 	
 	
 	if(title.trim() == "") {
-		alert("Á¦¸ñÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+		alert("ì œëª©ì„ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 		document.submitForm.title.focus();
 		return;
 	}
 	
 	if(r_image.trim() == "") {
-		alert("»çÁøÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+		alert("ì‚¬ì§„ì„ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 		document.submitForm.r_image.focus();
 		return;
 	}
-    // ¿¡µğÅÍÀÇ ³»¿ëÀÌ textarea¿¡ Àû¿ëµÈ´Ù.
+    // ì—ë””í„°ì˜ ë‚´ìš©ì´ textareaì— ì ìš©ëœë‹¤.
     oEditors.getById["content"].exec("UPDATE_CONTENTS_FIELD", []);
  
-    // ¿¡µğÅÍÀÇ ³»¿ë¿¡ ´ëÇÑ °ª °ËÁõÀº ÀÌ°÷¿¡¼­
-    // document.getElementById("ir1").value¸¦ ÀÌ¿ëÇØ¼­ Ã³¸®ÇÑ´Ù.
+    // ì—ë””í„°ì˜ ë‚´ìš©ì— ëŒ€í•œ ê°’ ê²€ì¦ì€ ì´ê³³ì—ì„œ
+    // document.getElementById("ir1").valueë¥¼ ì´ìš©í•´ì„œ ì²˜ë¦¬í•œë‹¤.
  
     try {
         elClickedObj.submitForm.submit();

@@ -25,7 +25,7 @@ public class RatingGiveController{
 	public String ratingGive(HttpServletRequest request) {
 		
 		try {
-			request.setCharacterEncoding("euc-kr");
+			request.setCharacterEncoding("UTF-8");
 		} catch (UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

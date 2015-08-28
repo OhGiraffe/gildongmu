@@ -28,7 +28,7 @@ public class ReviewModifyController{
 	public String modify_r(HttpServletRequest request) {
 		
 		try {
-			request.setCharacterEncoding("EUC-KR");
+			request.setCharacterEncoding("UTF-8");
 		} catch (UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

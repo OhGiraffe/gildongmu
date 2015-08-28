@@ -1,15 +1,15 @@
 <%@page import="java.util.List"%>
 <%@page import="kr.co.gildongmu.model.board.bean.ReviewReplyBean"%>
 <%@page import="kr.co.gildongmu.model.board.bean.ReviewBean"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <script type="text/javascript" src="./se2/js/HuskyEZCreator.js"
-	charset="EUC-KR"></script>
+	charset="UTF-8"></script>
 <%
-	request.setCharacterEncoding("EUC-KR");
+	request.setCharacterEncoding("UTF-8");
 	ReviewBean reviewBean = (ReviewBean) request.getAttribute("reviewBean");
 
 	List<ReviewReplyBean> replyList = (List<ReviewReplyBean>) request.getAttribute("replyList");
@@ -42,7 +42,7 @@
 <div id="main">
 <div id="menu" style="border-bottom: 2px solid #dedede";>
 	<font style="border-style: solid; font-size:24pt; color: #22becc; font-weight: bolder; ">Review</font>
-	<font style="font-size:14pt; font-weight: bolder; color: #999; ">ÈÄ±â°Ô½ÃÆÇ</font>
+	<font style="font-size:14pt; font-weight: bolder; color: #999; ">í›„ê¸°ê²Œì‹œíŒ</font>
 </div>
 	<center>
 		<div class="t4">
@@ -51,7 +51,7 @@
 					<hr>
 					<table>
 						<tr>
-							<td class="reviewtitle" style="text-align: left;">Á¦¸ñ
+							<td class="reviewtitle" style="text-align: left;">ì œëª©
 							<input type="text" id="r_title" size="50" disabled="disabled" value="<%=reviewBean.getR_title()%>"
 							style="margin-left: 3px; background-color: #ffffff">
 							</td>
@@ -62,33 +62,33 @@
 							%>
 								<td>
 								<a href="modify_review?num=<%=reviewBean.getR_num()%>">
-									<input class="myButton" type="button" value="¼öÁ¤"
+									<input class="myButton" type="button" value="ìˆ˜ì •"
 									style="font-size: 12px; font-family: inherit; background-color: #ffffff; width: 50px">
 								</a>
-								<input class="myButton" type="submit" value="»èÁ¦" style="font-size: 12px; font-family: inherit;  background-color: #ffffff ;width: 50px" 
+								<input class="myButton" type="submit" value="ì‚­ì œ" style="font-size: 12px; font-family: inherit;  background-color: #ffffff ;width: 50px" 
 								onclick="submitContents(this)"> 
-								<input class="myButton" type="reset" value="¸ñ·Ï" style="font-size: 12px; font-family: inherit;  background-color: #ffffff ;width: 50px" 
+								<input class="myButton" type="reset" value="ëª©ë¡" style="font-size: 12px; font-family: inherit;  background-color: #ffffff ;width: 50px" 
 								onclick="back()">
 								</td>
 								<% }
 								else if(result_id.equals("admin")){%>
 								<td>
-								<input class="myButton" type="submit" value="»èÁ¦" style="font-size: 12px; font-family: inherit;  background-color: #ffffff ;width: 50px" 
+								<input class="myButton" type="submit" value="ì‚­ì œ" style="font-size: 12px; font-family: inherit;  background-color: #ffffff ;width: 50px" 
 								onclick="submitContents(this)"> 
-								<input class="myButton" type="reset" value="¸ñ·Ï" style="font-size: 12px; font-family: inherit;  background-color: #ffffff ;width: 50px" 
+								<input class="myButton" type="reset" value="ëª©ë¡" style="font-size: 12px; font-family: inherit;  background-color: #ffffff ;width: 50px" 
 								onclick="back()">
 								</td>
 								<% }
 								else{%>
 								<td>
-								<input class="myButton" type="reset" value="¸ñ·Ï" style="font-size: 12px; font-family: inherit;  background-color: #ffffff ;width: 50px" 
+								<input class="myButton" type="reset" value="ëª©ë¡" style="font-size: 12px; font-family: inherit;  background-color: #ffffff ;width: 50px" 
 								onclick="back()">
 								</td>
 								<% }
 								
 							}else if(result_id == null) { %>
 							<td>
-							<input class="myButton" type="reset" value="¸ñ·Ï" style="font-size: 12px; font-family: inherit;  background-color: #ffffff ;width: 50px" 
+							<input class="myButton" type="reset" value="ëª©ë¡" style="font-size: 12px; font-family: inherit;  background-color: #ffffff ;width: 50px" 
 							onclick="back()">
 							</td>
 							<% }%>
@@ -97,13 +97,13 @@
 							<td class="ty2" colspan="2" style="text-align: left;"><%=reviewBean.getR_content()%></td>
 						</tr>
 						
-						<!-- ==================ÄÚ¸àÆ®==================== -->
+						<!-- ==================ì½”ë©˜íŠ¸==================== -->
 						<tr class="comment">
 							<table>
 								<tr>
-									<td width="10%">ÀÛ¼ºÀÚ</td>
-									<td width="10%">ÀÛ¼ºÀÏ</td>
-									<td width="80%">³»¿ë</td>
+									<td width="10%">ì‘ì„±ì</td>
+									<td width="10%">ì‘ì„±ì¼</td>
+									<td width="80%">ë‚´ìš©</td>
 								</tr>
 									<%
 										for(int i=0; i<replyList.size() ; i++) {
@@ -128,12 +128,12 @@
 			
 									<table>
 										<tr style="background-color: #F6F6F6;">
-											<td>³»¿ë</td>
+											<td>ë‚´ìš©</td>
 											<td><textarea name="replycontent" id="replycontent" style="width:560px; height:30px;">
 											</textarea>
 											</td>
 											<td>
-											<input class="myButton" type="button" value="ÀÔ·Â" onclick="writeReply(<%=reviewBean.getR_num()%>)">
+											<input class="myButton" type="button" value="ì…ë ¥" onclick="writeReply(<%=reviewBean.getR_num()%>)">
 											</td>
 										</tr>
 									</table>
@@ -155,13 +155,13 @@
 			fCreator : "createSEditor2"
 		});
 
-		//¡®ÀúÀå¡¯ ¹öÆ°À» ´©¸£´Â µî ÀúÀåÀ» À§ÇÑ ¾×¼ÇÀ» ÇßÀ» ¶§ submitContents°¡ È£ÃâµÈ´Ù°í °¡Á¤ÇÑ´Ù.
+		//â€˜ì €ì¥â€™ ë²„íŠ¼ì„ ëˆ„ë¥´ëŠ” ë“± ì €ì¥ì„ ìœ„í•œ ì•¡ì…˜ì„ í–ˆì„ ë•Œ submitContentsê°€ í˜¸ì¶œëœë‹¤ê³  ê°€ì •í•œë‹¤.
 		function submitContents(elClickedObj) {
-			// ¿¡µğÅÍÀÇ ³»¿ëÀÌ textarea¿¡ Àû¿ëµÈ´Ù.
+			// ì—ë””í„°ì˜ ë‚´ìš©ì´ textareaì— ì ìš©ëœë‹¤.
 			oEditors.getById["content"].exec("UPDATE_CONTENTS_FIELD", []);
 
-			// ¿¡µğÅÍÀÇ ³»¿ë¿¡ ´ëÇÑ °ª °ËÁõÀº ÀÌ°÷¿¡¼­
-			// document.getElementById("ir1").value¸¦ ÀÌ¿ëÇØ¼­ Ã³¸®ÇÑ´Ù.
+			// ì—ë””í„°ì˜ ë‚´ìš©ì— ëŒ€í•œ ê°’ ê²€ì¦ì€ ì´ê³³ì—ì„œ
+			// document.getElementById("ir1").valueë¥¼ ì´ìš©í•´ì„œ ì²˜ë¦¬í•œë‹¤.
 
 			try {
 				elClickedObj.editForm.submit();

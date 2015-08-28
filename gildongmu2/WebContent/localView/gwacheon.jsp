@@ -1,34 +1,34 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript">
-	function getXMLHttpRequest() {//XMLHttpRequest°´Ã¼»ı¼º
-		if (window.ActiveXObject) {//IE°æ¿ì
+	function getXMLHttpRequest() {//XMLHttpRequestê°ì²´ìƒì„±
+		if (window.ActiveXObject) {//IEê²½ìš°
 			try {
 				return new ActiveXObject('Msxml2.XMLHTTP');
 			} catch (e) {
 				return new ActiveXObject('Microsoft.XMLHTTP');
 			}
-		} else if (window.XMLHttpRequest) {//ºñIE°æ¿ì
+		} else if (window.XMLHttpRequest) {//ë¹„IEê²½ìš°
 			return new XMLHttpRequest();
 		} else
 			return null;
 	}//getXMLHttpRequest()
 
 	var xhr;
-	function tour_load(l_name, t_name) {//ÆäÀÌÁö¿äÃ»
+	function tour_load(l_name, t_name) {//í˜ì´ì§€ìš”ì²­
 		xhr = getXMLHttpRequest();
-		xhr.onreadystatechange = tour_loaded;//Äİ¹éÇÔ¼ö(open,sendÈÄ ½ÇÇàÇÒ ÇÔ¼ö)Á¤ÀÇ
-		xhr.open('POST', 'toursearch', true);//HTTP¿äÃ»¹æ½Ä, ¿äÃ»URL, ºñµ¿±â
+		xhr.onreadystatechange = tour_loaded;//ì½œë°±í•¨ìˆ˜(open,sendí›„ ì‹¤í–‰í•  í•¨ìˆ˜)ì •ì˜
+		xhr.open('POST', 'toursearch', true);//HTTPìš”ì²­ë°©ì‹, ìš”ì²­URL, ë¹„ë™ê¸°
         xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
-		xhr.send('l_name='+ l_name +'&t_name='+ t_name);//Àü´ŞÆÄ¶ó¹ÌÅÍ
+		xhr.send('l_name='+ l_name +'&t_name='+ t_name);//ì „ë‹¬íŒŒë¼ë¯¸í„°
 	}
 	
-	function tour_loaded() {//ÀÀ´äµ¥ÀÌÅÍ Ã³¸®
+	function tour_loaded() {//ì‘ë‹µë°ì´í„° ì²˜ë¦¬
 		if (xhr.readyState == 4) {
 			if (xhr.status == 200) {
 				var t_image = xhr.responseText;
@@ -37,18 +37,18 @@
 			}
 		}
 	}
-	function local_load(l_name) {//ÆäÀÌÁö¿äÃ»
+	function local_load(l_name) {//í˜ì´ì§€ìš”ì²­
 		xhr = getXMLHttpRequest();
-		xhr.onreadystatechange = local_loaded;//Äİ¹éÇÔ¼ö(open,sendÈÄ ½ÇÇàÇÒ ÇÔ¼ö)Á¤ÀÇ
-		xhr.open('POST', 'localsearch', true);//HTTP¿äÃ»¹æ½Ä, ¿äÃ»URL, ºñµ¿±â
+		xhr.onreadystatechange = local_loaded;//ì½œë°±í•¨ìˆ˜(open,sendí›„ ì‹¤í–‰í•  í•¨ìˆ˜)ì •ì˜
+		xhr.open('POST', 'localsearch', true);//HTTPìš”ì²­ë°©ì‹, ìš”ì²­URL, ë¹„ë™ê¸°
         xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
-		xhr.send('l_name='+ l_name);//Àü´ŞÆÄ¶ó¹ÌÅÍ
+		xhr.send('l_name='+ l_name);//ì „ë‹¬íŒŒë¼ë¯¸í„°
 	}
 	
-	function local_loaded() {//ÀÀ´äµ¥ÀÌÅÍ Ã³¸®
+	function local_loaded() {//ì‘ë‹µë°ì´í„° ì²˜ë¦¬
 		if (xhr.readyState == 4) {
 			if (xhr.status == 200) {
-				var l_image = xhr.responseText;//ÇÙ½ÉÄÚµå
+				var l_image = xhr.responseText;//í•µì‹¬ì½”ë“œ
 
 				document.getElementById('sideimg').src = "./ltimage/"+ l_image;
 				
@@ -57,30 +57,30 @@
 	}
 </script>
 </head>
-<body onload="local_load('°úÃµ')">
+<body onload="local_load('ê³¼ì²œ')">
 <div id="outer">
 <div id="first"><%@include file="/mainView/tobmenu.jsp"%></div>
 <div id="main">
 	<div id="menu">
-		<font style="border-style: solid; background-color: #f5f5f5 ;font-size: large; color: #3a5795;">°úÃµ</font>
+		<font style="border-style: solid; background-color: #f5f5f5 ;font-size: large; color: #3a5795;">ê³¼ì²œ</font>
 		<font style="font-size: small;"></font>
 	</div>
 	<center>
 			<div class="t4">
 		<div class="topmargin">
 		<form action="localboard" >
-		<input type="hidden" name="l_name" value="°úÃµ">
+		<input type="hidden" name="l_name" value="ê³¼ì²œ">
 		<input type="hidden" name="start" value="0">
 		<input type="hidden" name="end" value="10">
 		<input type="hidden" name="block" value="undefined">
 			<table width="864" border="0">
 				<tr>
 					<td width="500" height="407" align="center" valign="middle">
-					<img src="./ltimage/°úÃµ.png" width="500" height="400"usemap="#map" border="0" align="middle">
+					<img src="./ltimage/ê³¼ì²œ.png" width="500" height="400"usemap="#map" border="0" align="middle">
 						<map name="map">
-						<area shape="rect"  coords="284,242,372,262" onmouseOver="tour_load('°úÃµ','Ã»°èÀú¼öÁö')" onmouseOut="local_load('°úÃµ')">
-						<area shape="rect" coords="283,220,367,242" onmouseOver="tour_load('°úÃµ','¼­¿ï´ë°ø¿ø')" onmouseOut="local_load('°úÃµ')">
-							<area shape="rect" coords="296,197,407,220" onmouseOver="tour_load('°úÃµ','±¹¸³Çö´ë¹Ì¼ú°ü')" onmouseOut="local_load('°úÃµ')">
+						<area shape="rect"  coords="284,242,372,262" onmouseOver="tour_load('ê³¼ì²œ','ì²­ê³„ì €ìˆ˜ì§€')" onmouseOut="local_load('ê³¼ì²œ')">
+						<area shape="rect" coords="283,220,367,242" onmouseOver="tour_load('ê³¼ì²œ','ì„œìš¸ëŒ€ê³µì›')" onmouseOut="local_load('ê³¼ì²œ')">
+							<area shape="rect" coords="296,197,407,220" onmouseOver="tour_load('ê³¼ì²œ','êµ­ë¦½í˜„ëŒ€ë¯¸ìˆ ê´€')" onmouseOut="local_load('ê³¼ì²œ')">
 						</map>
 					</td>
 					<td width="475" height="407"  align="center">
@@ -89,7 +89,7 @@
 				</tr>
 				<tr>
 					<td height="42" align="center" valign="middle">&nbsp;</td>
-					<td align="center"><input class="myButton" style="width: 100px; margin-left: 230px" type="submit" value="°Ô½ÃÆÇÀ¸·Î"></td>
+					<td align="center"><input class="myButton" style="width: 100px; margin-left: 230px" type="submit" value="ê²Œì‹œíŒìœ¼ë¡œ"></td>
 				</tr>
 			</table>
 		</form>

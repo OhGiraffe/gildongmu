@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@include file="/mainView/tobmenu.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>±Û¾²±â</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ê¸€ì“°ê¸°</title>
 <script type="text/javascript" src="./se2/js/HuskyEZCreator.js" charset="utf-8"></script>
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
@@ -13,14 +13,14 @@
 <script language = "javascript" type = "text/javascript">
 $(document).ready(function() {
 	var clareCalendar = {
-							monthNamesShort : [ '1¿ù', '2¿ù', '3¿ù', '4¿ù', '5¿ù',
-												'6¿ù', '7¿ù', '8¿ù', '9¿ù', '10¿ù', '11¿ù', '12¿ù' ],
-							dayNamesMin : [ 'ÀÏ', '¿ù', 'È­', '¼ö', '¸ñ', '±İ', 'Åä' ],
-							dateFormat : 'yy-mm-dd', //Çü½Ä(20120303)
-							changeMonth : true, //¿ùº¯°æ°¡´É
-							changeYear : true, //³âº¯°æ°¡´É
-							showMonthAfterYear : true, //³â µÚ¿¡ ¿ù Ç¥½Ã
-							yearRange : '1990:2020', //1990³âºÎÅÍ 2020³â±îÁö
+							monthNamesShort : [ '1ì›”', '2ì›”', '3ì›”', '4ì›”', '5ì›”',
+												'6ì›”', '7ì›”', '8ì›”', '9ì›”', '10ì›”', '11ì›”', '12ì›”' ],
+							dayNamesMin : [ 'ì¼', 'ì›”', 'í™”', 'ìˆ˜', 'ëª©', 'ê¸ˆ', 'í† ' ],
+							dateFormat : 'yy-mm-dd', //í˜•ì‹(20120303)
+							changeMonth : true, //ì›”ë³€ê²½ê°€ëŠ¥
+							changeYear : true, //ë…„ë³€ê²½ê°€ëŠ¥
+							showMonthAfterYear : true, //ë…„ ë’¤ì— ì›” í‘œì‹œ
+							yearRange : '1990:2020', //1990ë…„ë¶€í„° 2020ë…„ê¹Œì§€
 							minDate: '+2'
 						};
 						$("#b_sdate").datepicker(clareCalendar);
@@ -66,63 +66,63 @@ border-spacing: 0;
 	String url =  request.getHeader("referer");
 %>
 	<center>
-		<h3>±Û¾²±â</h3>
+		<h3>ê¸€ì“°ê¸°</h3>
 
 		<form action="writing" method="post" name="frm">
 		<input type="hidden" name="url" value="<%=url%>">
 			<table class="boardtbl">
 				<tr>
-					<td class="title">Áö¿ª</td>
+					<td class="title">ì§€ì—­</td>
 					<td class="content">
 						<div class="l_name_checkbox">
-							<input type="checkbox" name="l_checkbox" value="¾È¼º"> <label for="anseong">¾È¼º</label>
-							<input type="checkbox" name="l_checkbox" value="¿©ÁÖ"> <label for="yeoju">¿©ÁÖ</label>
-							<input type="checkbox" name="l_checkbox" value="È­¼º"> <label for="hwaseong">È­¼º</label>
-							<input type="checkbox" name="l_checkbox" value="ÆòÅÃ"> <label for="pyeongtaek">ÆòÅÃ</label>
-							<input type="checkbox" name="l_checkbox" value="°¡Æò"> <label for="gapyeong">°¡Æò</label>
-							<input type="checkbox" name="l_checkbox" value="¾çÆò"> <label for="yangpyeong">¾çÆò</label>
-							<input type="checkbox" name="l_checkbox" value="¼º³²"> <label for="seongnam">¼º³²</label>
-							<input type="checkbox" name="l_checkbox" value="°úÃµ"> <label for="gwacheon">°úÃµ</label>
-							<input type="checkbox" name="l_checkbox" value="ÆÄÁÖ"> <label for="paju">ÆÄÁÖ</label>
-							<input type="checkbox" name="l_checkbox" value="¿¬Ãµ"> <label for="yeoncheon">¿¬Ãµ</label>
+							<input type="checkbox" name="l_checkbox" value="ì•ˆì„±"> <label for="anseong">ì•ˆì„±</label>
+							<input type="checkbox" name="l_checkbox" value="ì—¬ì£¼"> <label for="yeoju">ì—¬ì£¼</label>
+							<input type="checkbox" name="l_checkbox" value="í™”ì„±"> <label for="hwaseong">í™”ì„±</label>
+							<input type="checkbox" name="l_checkbox" value="í‰íƒ"> <label for="pyeongtaek">í‰íƒ</label>
+							<input type="checkbox" name="l_checkbox" value="ê°€í‰"> <label for="gapyeong">ê°€í‰</label>
+							<input type="checkbox" name="l_checkbox" value="ì–‘í‰"> <label for="yangpyeong">ì–‘í‰</label>
+							<input type="checkbox" name="l_checkbox" value="ì„±ë‚¨"> <label for="seongnam">ì„±ë‚¨</label>
+							<input type="checkbox" name="l_checkbox" value="ê³¼ì²œ"> <label for="gwacheon">ê³¼ì²œ</label>
+							<input type="checkbox" name="l_checkbox" value="íŒŒì£¼"> <label for="paju">íŒŒì£¼</label>
+							<input type="checkbox" name="l_checkbox" value="ì—°ì²œ"> <label for="yeoncheon">ì—°ì²œ</label>
 						</div>
 					</td>
 				</tr>
 				<tr>
-					<td class="title">ÀÏÁ¤</td>
+					<td class="title">ì¼ì •</td>
 					<td class="content">
 						<input name="b_sdate" type="text" id="b_sdate" size="8" maxlength="8"
 						style="text-align: center;"  
-						value = "Ãâ¹ß">
+						value = "ì¶œë°œ">
 						~
 						<input name="b_edate" type="text" id="b_edate" size="8" maxlength="8"
 						style="text-align: center;"
-						value="Á¾·á">
+						value="ì¢…ë£Œ">
 					</td>
 				</tr>
 				<tr>
-					<td class="title">Å×¸¶</td>
+					<td class="title">í…Œë§ˆ</td>
 					<td class="content">
 						<div class="b_thema_checkbox">
-							<input type="checkbox" name="t_checkbox" value="·¹Àú" style=" margin: 3px;"> <label for="leisure">·¹Àú</label>
-							<input type="checkbox" name="t_checkbox" value="¸Ô¹æ"> <label for="eat">¸Ô¹æ</label>
-							<input type="checkbox" name="t_checkbox" value="Èú¸µ"> <label for="healing">Èú¸µ</label>
-							<input type="checkbox" name="t_checkbox" value="¹«Àü"> <label for="moneyless">¹«Àü</label>
-							<input type="checkbox" name="t_checkbox" value="°ü±¤"> <label for="tourist">°ü±¤</label>
+							<input type="checkbox" name="t_checkbox" value="ë ˆì €" style=" margin: 3px;"> <label for="leisure">ë ˆì €</label>
+							<input type="checkbox" name="t_checkbox" value="ë¨¹ë°©"> <label for="eat">ë¨¹ë°©</label>
+							<input type="checkbox" name="t_checkbox" value="íë§"> <label for="healing">íë§</label>
+							<input type="checkbox" name="t_checkbox" value="ë¬´ì „"> <label for="moneyless">ë¬´ì „</label>
+							<input type="checkbox" name="t_checkbox" value="ê´€ê´‘"> <label for="tourist">ê´€ê´‘</label>
 						</div>
 					</td>
 				</tr>
 				<tr>
-					<td class="title">¸ğÁıÀÎ¿ø</td>
-					<td class="content"><input type="text" name="b_recruit" style="width: 50px; background-color: #EAEAEA; margin: 3px; "><label>¸í</label>
+					<td class="title">ëª¨ì§‘ì¸ì›</td>
+					<td class="content"><input type="text" name="b_recruit" style="width: 50px; background-color: #EAEAEA; margin: 3px; "><label>ëª…</label>
 					</td>
 				</tr>
 				<tr>
-					<td class="title">»óÅÂ</td>
-					<td class="content"><input type="text" name="b_status" value="¸ğÁıÁß" readonly="readonly" >
+					<td class="title">ìƒíƒœ</td>
+					<td class="content"><input type="text" name="b_status" value="ëª¨ì§‘ì¤‘" readonly="readonly" >
 				</tr>				
 				<tr>
-					<td class="title">Á¦¸ñ</td>
+					<td class="title">ì œëª©</td>
 					<td class="content"><input type="text" id="b_title" name="b_title" style="width: 400px; background-color: #EAEAEA
 					; margin: 3px; border-style: solid #000000; ">
 				</tr>
@@ -133,8 +133,8 @@ border-spacing: 0;
 				</tr>
 				<tr align="center">
 					<td colspan="2">
-					<input type="button" value="µî·Ï"  class="myButton"	onclick="submitContents()">
-					<input type="reset" value="Ãë¼Ò" class="myButton">
+					<input type="button" value="ë“±ë¡"  class="myButton"	onclick="submitContents()">
+					<input type="reset" value="ì·¨ì†Œ" class="myButton">
 					</td>
 				</tr>
 			</table>	
@@ -147,17 +147,17 @@ nhn.husky.EZCreator.createInIFrame({
 	elPlaceHolder: "ir1",
 	sSkinURI: "./se2/SmartEditor2Skin.html",	
 	htParams : {
-		bUseToolbar : true,				// Åø¹Ù »ç¿ë ¿©ºÎ (true:»ç¿ë/ false:»ç¿ëÇÏÁö ¾ÊÀ½)
-		bUseVerticalResizer : true,		// ÀÔ·ÂÃ¢ Å©±â Á¶Àı¹Ù »ç¿ë ¿©ºÎ (true:»ç¿ë/ false:»ç¿ëÇÏÁö ¾ÊÀ½)
-		bUseModeChanger : true,			// ¸ğµå ÅÇ(Editor | HTML | TEXT) »ç¿ë ¿©ºÎ (true:»ç¿ë/ false:»ç¿ëÇÏÁö ¾ÊÀ½)
-		//aAdditionalFontList : aAdditionalFontSet,		// Ãß°¡ ±Û²Ã ¸ñ·Ï
+		bUseToolbar : true,				// íˆ´ë°” ì‚¬ìš© ì—¬ë¶€ (true:ì‚¬ìš©/ false:ì‚¬ìš©í•˜ì§€ ì•ŠìŒ)
+		bUseVerticalResizer : true,		// ì…ë ¥ì°½ í¬ê¸° ì¡°ì ˆë°” ì‚¬ìš© ì—¬ë¶€ (true:ì‚¬ìš©/ false:ì‚¬ìš©í•˜ì§€ ì•ŠìŒ)
+		bUseModeChanger : true,			// ëª¨ë“œ íƒ­(Editor | HTML | TEXT) ì‚¬ìš© ì—¬ë¶€ (true:ì‚¬ìš©/ false:ì‚¬ìš©í•˜ì§€ ì•ŠìŒ)
+		//aAdditionalFontList : aAdditionalFontSet,		// ì¶”ê°€ ê¸€ê¼´ ëª©ë¡
 		fOnBeforeUnload : function(){
-			//alert("¿Ï·á!");
+			//alert("ì™„ë£Œ!");
 		}
 	}, //boolean
 	fOnAppLoad : function(){
-		//¿¹Á¦ ÄÚµå
-		//oEditors.getById["ir1"].exec("PASTE_HTML", ["·ÎµùÀÌ ¿Ï·áµÈ ÈÄ¿¡ º»¹®¿¡ »ğÀÔµÇ´Â textÀÔ´Ï´Ù."]);
+		//ì˜ˆì œ ì½”ë“œ
+		//oEditors.getById["ir1"].exec("PASTE_HTML", ["ë¡œë”©ì´ ì™„ë£Œëœ í›„ì— ë³¸ë¬¸ì— ì‚½ì…ë˜ëŠ” textì…ë‹ˆë‹¤."]);
 	},
 	fCreator: "createSEditor2"
 });
@@ -181,42 +181,42 @@ function submitContents() {
 	var b_title = document.frm.b_title.value;
 	
 	if(l_cnt == 0) {
-		alert("Áö¿ªÀ» ¼±ÅÃÇØÁÖ¼¼¿ä.");
+		alert("ì§€ì—­ì„ ì„ íƒí•´ì£¼ì„¸ìš”.");
 		return;
 	}
 	
-	if(b_sdate == "Ãâ¹ß") {
-		alert("Ãâ¹ßÀÏÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+	if(b_sdate == "ì¶œë°œ") {
+		alert("ì¶œë°œì¼ì„ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 		document.frm.b_sdate.focus();
 		return;
 	}
 	
-	if(b_edate == "Á¾·á") {
-		alert("µµÂøÀÏÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+	if(b_edate == "ì¢…ë£Œ") {
+		alert("ë„ì°©ì¼ì„ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 		document.frm.b_edate.focus();
 		return;
 	}
 	
 	if(t_cnt == 0) {
-		alert("Å×¸¶¸¦ ¼±ÅÃÇØÁÖ¼¼¿ä.");
+		alert("í…Œë§ˆë¥¼ ì„ íƒí•´ì£¼ì„¸ìš”.");
 		return;
 	}
 	
 	if(b_recruit.trim() == "") {
-		alert("¸ğÁıÀÎ¿øÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+		alert("ëª¨ì§‘ì¸ì›ì„ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 		document.frm.b_recruit.focus();
 		return;
 	}
 	
 	if(b_title.trim() == "") {
-		alert("Á¦¸ñÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+		alert("ì œëª©ì„ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 		document.frm.b_title.focus();
 		return;
 	}
 	
-	oEditors.getById["ir1"].exec("UPDATE_CONTENTS_FIELD", []);	// ¿¡µğÅÍÀÇ ³»¿ëÀÌ textarea¿¡ Àû¿ëµË´Ï´Ù.
+	oEditors.getById["ir1"].exec("UPDATE_CONTENTS_FIELD", []);	// ì—ë””í„°ì˜ ë‚´ìš©ì´ textareaì— ì ìš©ë©ë‹ˆë‹¤.
 	
-	// ¿¡µğÅÍÀÇ ³»¿ë¿¡ ´ëÇÑ °ª °ËÁõÀº ÀÌ°÷¿¡¼­ document.getElementById("ir1").value¸¦ ÀÌ¿ëÇØ¼­ Ã³¸®ÇÏ¸é µË´Ï´Ù.
+	// ì—ë””í„°ì˜ ë‚´ìš©ì— ëŒ€í•œ ê°’ ê²€ì¦ì€ ì´ê³³ì—ì„œ document.getElementById("ir1").valueë¥¼ ì´ìš©í•´ì„œ ì²˜ë¦¬í•˜ë©´ ë©ë‹ˆë‹¤.
 	
 	try {
 		frm.submit();

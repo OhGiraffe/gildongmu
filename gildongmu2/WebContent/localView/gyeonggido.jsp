@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
@@ -13,29 +13,29 @@
 <div id="main">
 	<div id="menu" style="border-bottom: 2px solid #dedede;">	
 		<font style="border-style: solid; font-size:24pt; color: #22becc; font-weight: bolder; ">Local</font>
-	<font style="font-size:14pt; font-weight: bolder; color: #999; ">¡ˆø™º±≈√</font>
+	<font style="font-size:14pt; font-weight: bolder; color: #999; ">ÏßÄÏó≠ÏÑ†ÌÉù</font>
 	</div>
 	<center>
 	<table>
 		<tr>
 		<td>
-		<img src="./ltimage/gyeongido.jpg" width="400" height="460" border="0" alt="∞Ê±‚µµ ¡ˆø™ ¡ˆµµ" usemap="#ggt_area_map">
+		<img src="./ltimage/gyeongido.jpg" width="400" height="460" border="0" alt="Í≤ΩÍ∏∞ÎèÑ ÏßÄÏó≠ ÏßÄÎèÑ" usemap="#ggt_area_map">
 			<map name="ggt_area_map">
-					<area shape="rect" alt="æ»º∫" coords="207,392,250,421" href="anseong">
-                    <area shape="rect" alt="∞°∆Ú" coords="240,146,283,175" href="gapyeong">
-                    <area shape="rect" alt="»≠º∫" coords="109,348,152,377" href="hwaseong">
-                    <area shape="rect" alt="∆Ú≈√" coords="131,397,174,426" href="pyeongtaek">
-                    <area shape="rect" alt="ø¨√µ" coords="147,66,184,91" href="yeoncheon">
-                    <area shape="rect" alt="ø©¡÷" coords="295,305,333,332" href="yeoju">
-                    <area shape="rect" alt="æÁ∆Ú" coords="273,244,316,273" href="yangpyeong">
-                    <area shape="rect" alt="º∫≥≤" coords="174,279,198,297" href="seongnam">
-                    <area shape="rect" alt="∞˙√µ" coords="147,271,169,287" href="gwacheon">
-                    <area shape="rect" alt="∆ƒ¡÷" coords="89,143,129,168" href="paju">
+					<area shape="rect" alt="ÏïàÏÑ±" coords="207,392,250,421" href="anseong">
+                    <area shape="rect" alt="Í∞ÄÌèâ" coords="240,146,283,175" href="gapyeong">
+                    <area shape="rect" alt="ÌôîÏÑ±" coords="109,348,152,377" href="hwaseong">
+                    <area shape="rect" alt="ÌèâÌÉù" coords="131,397,174,426" href="pyeongtaek">
+                    <area shape="rect" alt="Ïó∞Ï≤ú" coords="147,66,184,91" href="yeoncheon">
+                    <area shape="rect" alt="Ïó¨Ï£º" coords="295,305,333,332" href="yeoju">
+                    <area shape="rect" alt="ÏñëÌèâ" coords="273,244,316,273" href="yangpyeong">
+                    <area shape="rect" alt="ÏÑ±ÎÇ®" coords="174,279,198,297" href="seongnam">
+                    <area shape="rect" alt="Í≥ºÏ≤ú" coords="147,271,169,287" href="gwacheon">
+                    <area shape="rect" alt="ÌååÏ£º" coords="89,143,129,168" href="paju">
 			</map>
 			</td>
 			
 			<td width="475" height="522"  align="center">
-				<img src="./ltimage/∞Ê±‚µµ.png" width="350" height="450" border="0">
+				<img src="./ltimage/Í≤ΩÍ∏∞ÎèÑ.png" width="350" height="450" border="0">
 			</td>
 			</tr>
 	</table>

@@ -1,8 +1,8 @@
 <%@page import="java.util.List"%>
 <%@page import="kr.co.gildongmu.model.board.bean.ReviewBean"%>
 <%@page import="kr.co.gildongmu.model.login.bean.UserBean"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -181,7 +181,7 @@ function userInfo(u_id) {
 				<div class="t3">
 					<h3>
 					<font style="border-style: solid;background-color: #f5f5f5;font-size: large; color: #3a5795;">Best Member</font>
-					<font style="font-size: small; border-style: solid;background-color: #f5f5f5;">ÃÖ°íÀÇ ±æµ¿¹«</font>
+					<font style="font-size: small; border-style: solid;background-color: #f5f5f5;">ìµœê³ ì˜ ê¸¸ë™ë¬´</font>
 					</h3>
 					<div class="tblWrap">
 						<table>
@@ -193,10 +193,10 @@ function userInfo(u_id) {
 							</colgroup>
 							<thead>
 								<tr>
-									<th scope="col">¼øÀ§</th>
-									<th scope="col">¾ÆÀÌµğ</th>
-									<th scope="col">ÆòÁ¡</th>
-									<th scope="col">Âü¼®·ü</th>
+									<th scope="col">ìˆœìœ„</th>
+									<th scope="col">ì•„ì´ë””</th>
+									<th scope="col">í‰ì </th>
+									<th scope="col">ì°¸ì„ë¥ </th>
 								</tr>
 							</thead>
 							<tbody>
@@ -238,7 +238,7 @@ function userInfo(u_id) {
 				<%if(i==0) { %>
 					<h3>
 					<font style="border-style: solid;background-color: #f5f5f5;font-size: large; color: #3a5795;">My Trip</font>
-					<font style="font-size: small; border-style: solid;background-color: #f5f5f5;">³ª¸¸ÀÇ ¿©Çà</font>
+					<font style="font-size: small; border-style: solid;background-color: #f5f5f5;">ë‚˜ë§Œì˜ ì—¬í–‰</font>
 					</h3>
 				<% } %>
 			<div class="tblWrap2">

@@ -1,7 +1,7 @@
 <%@page import="kr.co.gildongmu.model.board.bean.BoardBean"%>
 <%@page import="java.util.ArrayList"%>
-<%@ page language="java" contentType="text/plain; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/plain; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <c:forEach var="list" items="${adminlist}">
@@ -47,7 +47,7 @@
 				<c:if test="${b!=1 }">
 					<a
 						onclick="load('${sdate}','${edate}','${b*50-100}','10','${b-1}')"
-						style="cursor: pointer;">[¿Ã¿¸]</a>
+						style="cursor: pointer;">[Ïù¥Ï†Ñ]</a>
 				</c:if>
 				<c:if test="${totalIdx>5 }">
 					<c:if test="${b*five-totalIdx>=0 }">
@@ -67,7 +67,7 @@
 				</c:if>
 				<c:if test="${b!=totalB}">
 					<a onclick="load('${sdate}','${edate}','${b*50}','10','${b+1}')"
-						style="cursor: pointer;">[¥Ÿ¿Ω]</a>
+						style="cursor: pointer;">[Îã§Ïùå]</a>
 				</c:if>
 			</center>
 		</td>

@@ -1,7 +1,7 @@
 <%@page import="kr.co.gildongmu.model.join.dao.JoinDAO"%>
 <%@page import="kr.co.gildongmu.model.login.bean.UserBean"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <div id="outer">
 <div id="first"></div>
 <div id="second"></div>
@@ -11,7 +11,7 @@
 %>
 <!DOCTYPE html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>menu</title>
 <script type="text/javascript">
 	function confirm_id(ud) {
@@ -34,15 +34,15 @@
 			<%
 				if (result != 0) {
 			%>
-			<h3>�̹� <font color="red">�������</font> ���̵��Դϴ�.</h3>
+			<h3>이미 <font color="red">사용중인</font> 아이디입니다.</h3>
 			<br>
-			<input type="button" value="Ȯ��" onclick="confirm_id('u')">
+			<input type="button" value="확인" onclick="confirm_id('u')">
 			<%
 				} else {
 			%>
-			<h3>��� <font color="red">������</font> ���̵��Դϴ�.</h3>
+			<h3>사용 <font color="red">가능한</font> 아이디입니다.</h3>
 			<br>
-			<input type="button" value="Ȯ��" onclick="confirm_id('d')">
+			<input type="button" value="확인" onclick="confirm_id('d')">
 			<%
 				}
 			%>

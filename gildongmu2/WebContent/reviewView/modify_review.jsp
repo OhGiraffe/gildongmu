@@ -1,10 +1,10 @@
 <%@page import="kr.co.gildongmu.model.board.bean.ReviewBean"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<script type="text/javascript" src="./se2/js/HuskyEZCreator.js" charset="EUC-KR"></script>
+<script type="text/javascript" src="./se2/js/HuskyEZCreator.js" charset="UTF-8"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title></title>
 
@@ -15,7 +15,7 @@
 <div id="main">
 <div id="menu" style="border-bottom: 2px solid #dedede";>
 	<font style="border-style: solid; font-size:24pt; color: #22becc; font-weight: bolder; ">Review</font>
-	<font style="font-size:14pt; font-weight: bolder; color: #999; ">ÈÄ±â°Ô½ÃÆÇ</font>
+	<font style="font-size:14pt; font-weight: bolder; color: #999; ">í›„ê¸°ê²Œì‹œíŒ</font>
 </div>
 <%
 	ReviewBean reviewbean = (ReviewBean)request.getAttribute("bean");
@@ -28,7 +28,7 @@
 			<hr>
 				<table border="1">
 					<tr>
-						<td style="text-align: left;">Á¦¸ñ
+						<td style="text-align: left;">ì œëª©
 						<input type="text" id="r_title" size="75" name="title" value="<%= reviewbean.getR_title() %>" >
 						</td>
 					</tr>
@@ -42,8 +42,8 @@
 					
 					<tr align="center">
 						<td class="ty2" colspan="2">
-							<input class="myButton" type="submit" value="¼öÁ¤¿Ï·á" onclick="submitContents(this)"> 
-							<input class="myButton" type="reset" value="Ãë¼Ò">
+							<input class="myButton" type="submit" value="ìˆ˜ì •ì™„ë£Œ" onclick="submitContents(this)"> 
+							<input class="myButton" type="reset" value="ì·¨ì†Œ">
 						</td>
 					</tr>
 				</table>
@@ -60,19 +60,19 @@ nhn.husky.EZCreator.createInIFrame({
     fCreator: "createSEditor2"
 });
 
-//¡®ÀúÀå¡¯ ¹öÆ°À» ´©¸£´Â µî ÀúÀåÀ» À§ÇÑ ¾×¼ÇÀ» ÇßÀ» ¶§ submitContents°¡ È£ÃâµÈ´Ù°í °¡Á¤ÇÑ´Ù.
+//â€˜ì €ì¥â€™ ë²„íŠ¼ì„ ëˆ„ë¥´ëŠ” ë“± ì €ì¥ì„ ìœ„í•œ ì•¡ì…˜ì„ í–ˆì„ ë•Œ submitContentsê°€ í˜¸ì¶œëœë‹¤ê³  ê°€ì •í•œë‹¤.
 function submitContents(elClickedObj) {
 	var title = document.updateForm.title.value;	
 	
 	if(title.trim() == "") {
-		alert("Á¦¸ñÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+		alert("ì œëª©ì„ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 		document.updateForm.title.focus();
 	}
-    // ¿¡µğÅÍÀÇ ³»¿ëÀÌ textarea¿¡ Àû¿ëµÈ´Ù.
+    // ì—ë””í„°ì˜ ë‚´ìš©ì´ textareaì— ì ìš©ëœë‹¤.
     oEditors.getById["content"].exec("UPDATE_CONTENTS_FIELD", []);
  
-    // ¿¡µğÅÍÀÇ ³»¿ë¿¡ ´ëÇÑ °ª °ËÁõÀº ÀÌ°÷¿¡¼­
-    // document.getElementById("ir1").value¸¦ ÀÌ¿ëÇØ¼­ Ã³¸®ÇÑ´Ù.
+    // ì—ë””í„°ì˜ ë‚´ìš©ì— ëŒ€í•œ ê°’ ê²€ì¦ì€ ì´ê³³ì—ì„œ
+    // document.getElementById("ir1").valueë¥¼ ì´ìš©í•´ì„œ ì²˜ë¦¬í•œë‹¤.
  
     try {
         elClickedObj.updateForm.submit();

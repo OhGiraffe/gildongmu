@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="//code.jquery.com/jquery-2.1.4.min.js"></script> 
@@ -153,6 +153,44 @@ $(document).ready(function(){
     width: 550px;
     height: 35px;
 }
+
+div#sermain{
+	position: absolute;
+	margin-left: 300px;
+	margin-top: 300px;
+}
+
+div#sertitle{
+	position: absolute;
+	width: 500px;
+	margin-left: 500px;
+	margin-top: 350px;
+}
+
+div#tel{
+	position: absolute;
+	margin-top: 520px;
+	margin-left: 300px;
+	width: 200px;
+	color: #8C8C8C;
+}
+
+div#email{
+	position: absolute;
+	margin-top: 520px;
+	margin-left: 550px;
+	width: 300px;
+	color: #8C8C8C;
+}
+
+div#addr{
+	position: absolute;
+	margin-top: 520px;
+	margin-left: 900px;
+	width: 300px;
+	color: #8C8C8C;
+}
+
 </style>
 </head>
 <div id="outer">
@@ -163,10 +201,10 @@ $(document).ready(function(){
 			<ul>
 			<li type="none" style="font-weight: bold; font-size: 16px; color: #ffffff;
 			width: 160px; height: 26px; background-color: #22becc;">
-			°í°´¼¾ÅÍ
+			ê³ ê°ì„¼í„°
 			</li>
 			<a href="faq.do" style="text-decoration: none; margin: -10px 0 0 300px" >FAQ</a>
-			<a href="notice.do" style="text-decoration: none; margin: -30px 0 0 460px">°øÁö»çÇ×</a>
+			<a href="notice.do" style="text-decoration: none; margin: -30px 0 0 460px">ê³µì§€ì‚¬í•­</a>
 			<a href="contact.do" style="text-decoration: none; margin: -30px 0 0 620px">CONTACT</a>
 			</ul>		 
 		</ul>
@@ -180,15 +218,39 @@ $(document).ready(function(){
 	</div>
 	
 	<div id="sermain">
-		<div id="serhead">
-			<div id="sergrip">
-				<div id="serimg">
-					<img src="./image/hello.png">
-				</div>
-			</div>
-		</div>
+		<img src="./image/hello.png">
 	</div>
-
+	
+	<div id="sertitle">
+		<h1>Trips feel free to Contact Us on</h1>
+	</div>
+	
+	<div id="info">
+		<ul>
+			<li type="none">
+				<div id="tel">
+				<h3 style="font-style: inherit;">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È­ï¿½ï¿½È£</h3>
+				<br> ï¿½ï¿½ : 031-2210-1234
+				</div>
+			</li>
+		
+			<li type="none">
+				<div id="email">
+				<h3 style="font-style: inherit;">ï¿½Ô»ï¿½ ï¿½ï¿½ï¿½ï¿½</h3>
+				<br> e-mail : gildongmu@gildongmu.com
+				</div>
+			</li>
+			
+			<li type="none">
+				<div id="addr">
+				<h3 style="font-style: inherit;">È¸ï¿½ï¿½ ï¿½ï¿½Ä¡</h3>
+				<br>ï¿½ï¿½âµµ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ğ´ç±¸ ï¿½ï¿½ï¿½ï¿½ 
+				<br>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì½ï¿½ï¿½ï¿½2 Bï¿½ï¿½ 8ï¿½ï¿½ KOSTA
+				</div>
+			</li>
+			
+		</ul>
+	</div>
 
 </body>
 </div>	

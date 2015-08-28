@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <div id="outer">
 <div id="first"><%@include file="/mainView/tobmenu.jsp"%></div>
 <title>Insert title here</title>
@@ -14,14 +14,14 @@
 <script language="javascript" type="text/javascript">
 $(document).ready(function() {
 	var clareCalendar = {
-							monthNamesShort : [ '1¿ù', '2¿ù', '3¿ù', '4¿ù', '5¿ù',
-												'6¿ù', '7¿ù', '8¿ù', '9¿ù', '10¿ù', '11¿ù', '12¿ù' ],
-							dayNamesMin : [ 'ÀÏ', '¿ù', 'È­', '¼ö', '¸ñ', '±İ', 'Åä' ],
-							dateFormat : 'yy-mm-dd', //Çü½Ä(20120303)
-							changeMonth : true, //¿ùº¯°æ°¡´É
-							changeYear : true, //³âº¯°æ°¡´É
-							showMonthAfterYear : true, //³â µÚ¿¡ ¿ù Ç¥½Ã
-							yearRange : '1990:2020', //1990³âºÎÅÍ 2020³â±îÁö
+							monthNamesShort : [ '1ì›”', '2ì›”', '3ì›”', '4ì›”', '5ì›”',
+												'6ì›”', '7ì›”', '8ì›”', '9ì›”', '10ì›”', '11ì›”', '12ì›”' ],
+							dayNamesMin : [ 'ì¼', 'ì›”', 'í™”', 'ìˆ˜', 'ëª©', 'ê¸ˆ', 'í† ' ],
+							dateFormat : 'yy-mm-dd', //í˜•ì‹(20120303)
+							changeMonth : true, //ì›”ë³€ê²½ê°€ëŠ¥
+							changeYear : true, //ë…„ë³€ê²½ê°€ëŠ¥
+							showMonthAfterYear : true, //ë…„ ë’¤ì— ì›” í‘œì‹œ
+							yearRange : '1990:2020', //1990ë…„ë¶€í„° 2020ë…„ê¹Œì§€
 							minDate: '+0'
 						};
 						$("#b_sdate").datepicker(clareCalendar);
@@ -37,27 +37,27 @@ $(document).ready(function() {
 		load(sdate, edate, 0, 10);
 	}
 
-	function getXMLHttpRequest() {//XMLHttpRequest°´Ã¼»ı¼º
-		if (window.ActiveXObject) {//IE°æ¿ì
+	function getXMLHttpRequest() {//XMLHttpRequestê°ì²´ìƒì„±
+		if (window.ActiveXObject) {//IEê²½ìš°
 			try {
 				return new ActiveXObject('Msxml2.XMLHTTP');
 			} catch (e) {
 				return new ActiveXObject('Microsoft.XMLHTTP');
 			}
-		} else if (window.XMLHttpRequest) {//ºñIE°æ¿ì
+		} else if (window.XMLHttpRequest) {//ë¹„IEê²½ìš°
 			return new XMLHttpRequest();
 		} else
 			return null;
 	}//getXMLHttpRequest()
 		var xhr;
-		function load(sdate, edate,start, end, block) {//ÆäÀÌÁö¿äÃ»
+		function load(sdate, edate,start, end, block) {//í˜ì´ì§€ìš”ì²­
 			xhr = getXMLHttpRequest();
-			xhr.onreadystatechange = loaded;//Äİ¹éÇÔ¼ö(open,sendÈÄ ½ÇÇàÇÒ ÇÔ¼ö)Á¤ÀÇ
-			xhr.open('POST', 'schedule/search.do', true);//HTTP¿äÃ»¹æ½Ä, ¿äÃ»URL, ºñµ¿±â
+			xhr.onreadystatechange = loaded;//ì½œë°±í•¨ìˆ˜(open,sendí›„ ì‹¤í–‰í•  í•¨ìˆ˜)ì •ì˜
+			xhr.open('POST', 'schedule/search.do', true);//HTTPìš”ì²­ë°©ì‹, ìš”ì²­URL, ë¹„ë™ê¸°
 	        xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
-			xhr.send('sdate='+ sdate +"&edate="+edate+'&start='+start+'&end='+end+'&block='+block);//Àü´ŞÆÄ¶ó¹ÌÅÍ
+			xhr.send('sdate='+ sdate +"&edate="+edate+'&start='+start+'&end='+end+'&block='+block);//ì „ë‹¬íŒŒë¼ë¯¸í„°
 		}
-		function loaded() {//ÀÀ´äµ¥ÀÌÅÍ Ã³¸®
+		function loaded() {//ì‘ë‹µë°ì´í„° ì²˜ë¦¬
 			if (xhr.readyState == 4) {
 				if (xhr.status == 200) {
 					var data = xhr.responseText;
@@ -82,18 +82,18 @@ $(document).ready(function() {
 			<ul>
 				<li type="none" style="font-weight: bold; font-size: 16px; color: #ffffff;
 				width: 160px; height: 26px; background-color: #22becc;">
-				ÀÏÁ¤
+				ì¼ì •
 				</li>
 				<form id="check">
 				<li type="none" style="margin-top: -16px; font-size: large;"><img src="./image/cal.jpg" style="width: 25px ; height: 25px">
 				<input type="text" name="sdate" id="b_sdate" 
-				size="8" maxlength="8" value="Ãâ¹ßÀÏ" onchange="print()"
+				size="8" maxlength="8" value="ì¶œë°œì¼" onchange="print()"
 				style="background-color: #EAEAEA; text-align: center;
 				width: 90px ; height: 30px;">
 				  ~
 				<img src="./image/cal.jpg" style="width: 25px ; height: 25px">
 				<input type="text" name="edate" id="b_edate" 
-				size="8" maxlength="8" value="µµÂøÀÏ" onchange="print()"
+				size="8" maxlength="8" value="ë„ì°©ì¼" onchange="print()"
 				style="background-color: #EAEAEA; text-align: center;
 				width: 90px ; height: 30px"
 				></li><br>
@@ -105,7 +105,7 @@ $(document).ready(function() {
 <div id="myMain">
 <div id="myMenu" style="border-bottom: 2px solid #dedede";>
 	<font style="border-style: solid; font-size:24pt; color: #22becc; font-weight: bolder; ">Schedule</font>
-	<font style="font-size:14pt; font-weight: bolder; color: #999; ">ÀÏÁ¤</font>
+	<font style="font-size:14pt; font-weight: bolder; color: #999; ">ì¼ì •</font>
 </div>
 <body onload="javascript:print()">
 	<center>
@@ -125,15 +125,15 @@ $(document).ready(function() {
 					</colgroup>
 					<thead>
 						<tr>
-							<th scope="col">±Û¹øÈ£</th>
-							<th scope="col">Áö¿ª</th>
-							<th scope="col">ÀÏÁ¤</th>
-							<th scope="col">Å×¸¶</th>		
-							<th scope="col">Á¦¸ñ</th>
-							<th scope="col">ÀÛ¼ºÀÚ</th>
-							<th scope="col">¸ğÁıÀÎ¿ø</th>
-							<th scope="col">Á¶È¸</th>
-							<th scope="col">»óÅÂ</th>
+							<th scope="col">ê¸€ë²ˆí˜¸</th>
+							<th scope="col">ì§€ì—­</th>
+							<th scope="col">ì¼ì •</th>
+							<th scope="col">í…Œë§ˆ</th>		
+							<th scope="col">ì œëª©</th>
+							<th scope="col">ì‘ì„±ì</th>
+							<th scope="col">ëª¨ì§‘ì¸ì›</th>
+							<th scope="col">ì¡°íšŒ</th>
+							<th scope="col">ìƒíƒœ</th>
 						</tr>
 					</thead>
 					<tbody id="tablearea">
@@ -146,7 +146,7 @@ $(document).ready(function() {
 			</div>
 			<br>
 		</div>
-		<input type="button" value="±Û¾²±â" name="write" class="myButton" 
+		<input type="button" value="ê¸€ì“°ê¸°" name="write" class="myButton" 
 		style="position: relative; left: 365px"
 		onclick="write_movepage()">
 	</center>

@@ -1,10 +1,10 @@
 <%@page import="kr.co.gildongmu.model.login.bean.UserBean"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <%
 UserBean user = (UserBean)request.getAttribute("user");
@@ -22,7 +22,7 @@ else{
 	
 	window.onload = function () {
 		var gen = '<%=user.getU_gen()%>';
-		if(gen=='³²'){
+		if(gen=='ë‚¨'){
 			document.getElementsByName('u_gen')[0].checked=true;
 		}else{
 			document.getElementsByName('u_gen')[1].checked=true;
@@ -105,19 +105,19 @@ else{
 <ul>
 		<li type="none" style="font-weight: bold; font-size: 16px; color: #ffffff;
 		width: 160px; height: 26px; background-color: #22becc;">
-		³»Á¤º¸
+		ë‚´ì •ë³´
 		</li>
-		<a href="myinfo.do" style="text-decoration: none; margin: -10px 0 0 250px" >³»Á¤º¸</a>
-		<a href="mylist.do" style="text-decoration: none; margin: -30px 0 0 410px">³»°¡ ¾´ ±Û</a>
-		<a href="myapply.do" style="text-decoration: none; margin: -30px 0 0 570px">½ÅÃ»ÇöÈ²</a>
-		<a href="receiveMessage.do" style="text-decoration: none; margin: -30px 0 0 730px">ÂÊÁöÇÔ</a>
+		<a href="myinfo.do" style="text-decoration: none; margin: -10px 0 0 250px" >ë‚´ì •ë³´</a>
+		<a href="mylist.do" style="text-decoration: none; margin: -30px 0 0 410px">ë‚´ê°€ ì“´ ê¸€</a>
+		<a href="myapply.do" style="text-decoration: none; margin: -30px 0 0 570px">ì‹ ì²­í˜„í™©</a>
+		<a href="receiveMessage.do" style="text-decoration: none; margin: -30px 0 0 730px">ìª½ì§€í•¨</a>
 </ul>		 
 </ul>
 </div>
 <div id="myMain">
 <div id="myMenu" style="border-bottom: 2px solid #dedede";>
 	<font style="border-style: solid; font-size:24pt; color: #22becc; font-weight: bolder; ">MyInfo</font>
-	<font style="font-size:14pt; font-weight: bolder; color: #999; ">³»Á¤º¸</font>
+	<font style="font-size:14pt; font-weight: bolder; color: #999; ">ë‚´ì •ë³´</font>
 </div>
 <center>
 	<form method="POST" action="myupdate.do" name="myinfo">
@@ -125,33 +125,33 @@ else{
 		<table class="table_data1">
 		<tbody>
 			<tr>
-			<th class="ty2">»çÁø</th>
+			<th class="ty2">ì‚¬ì§„</th>
 			<td class="ty2"><img src="<%=user.getU_image()%>" width="30" height="30"></td>
 			</tr>
 			<tr>
-				<th class="ty2">¾ÆÀÌµğ</th>
+				<th class="ty2">ì•„ì´ë””</th>
 				<td class="ty2"><input type="text" size="20" name="u_id"  disabled="disabled" value="<%=user.getU_id()%>"></td>
 			</tr>
 			<tr>
-				<th>ÀÌ¸§</th>
+				<th>ì´ë¦„</th>
 				<td class="ty2"><input type="text" size="20" name="u_name" disabled="disabled" value="<%=user.getU_name()%>"></td>
 			</tr>
 			<tr>
-				<th>ºñ¹Ğ¹øÈ£</th>
+				<th>ë¹„ë°€ë²ˆí˜¸</th>
 				<td><input type="password" size="20" name="u_pass" value="<%=user.getU_pass()%>"
 									style="BACKGROUND-COLOR: white"
 							onMouseOver="this.style.backgroundColor = '#e6eff7'"
 							onMouseOut="this.style.backgroundColor = 'white'"></td>
 			</tr>
 			<tr>
-				<th>ºñ¹Ğ¹øÈ£È®ÀÎ</th>
+				<th>ë¹„ë°€ë²ˆí˜¸í™•ì¸</th>
 				<td><input type="password" size="20" name="u_pass1" value="<%=user.getU_pass()%>"
 									style="BACKGROUND-COLOR: white"
 							onMouseOver="this.style.backgroundColor = '#e6eff7'"
 							onMouseOut="this.style.backgroundColor = 'white'"></td>
 			</tr>
 			<tr>
-				<th>³ªÀÌ</th>
+				<th>ë‚˜ì´</th>
 				<td><input type="text" size="20" name="u_age" value="<%=user.getU_age() %>"
 									style="BACKGROUND-COLOR: white"
 							onMouseOver="this.style.backgroundColor = '#e6eff7'"
@@ -159,12 +159,12 @@ else{
 			</tr>
 			
 			<tr>
-			<th>¼ºº°</th>
-			<td><input type="radio" id="gen1" name="u_gen" value="³²ÀÚ" disabled="disabled">³²ÀÚ
-				<input type="radio" id="gen2" name="u_gen" value="¿©ÀÚ" disabled="disabled">¿©ÀÚ </td>
+			<th>ì„±ë³„</th>
+			<td><input type="radio" id="gen1" name="u_gen" value="ë‚¨ì" disabled="disabled">ë‚¨ì
+				<input type="radio" id="gen2" name="u_gen" value="ì—¬ì" disabled="disabled">ì—¬ì </td>
 			</tr>
 			<tr>
-				<th>ÀÌ¸ŞÀÏ</th>
+				<th>ì´ë©”ì¼</th>
 				<td><input type="text" size="20" name="u_email" value="<%=user.getU_email()%>"
 									style="BACKGROUND-COLOR: white"
 							onMouseOver="this.style.backgroundColor = '#e6eff7'"
@@ -172,27 +172,27 @@ else{
 			</tr>
 			
 			<tr>
-				<th>ÀüÈ­¹øÈ£</th>
+				<th>ì „í™”ë²ˆí˜¸</th>
 				<td><input type="text" size="20" name="u_tel" value="<%=user.getU_tel()%>"
 									style="BACKGROUND-COLOR: white"
 							onMouseOver="this.style.backgroundColor = '#e6eff7'"
 							onMouseOut="this.style.backgroundColor = 'white'"></td>
 			</tr>
 			<tr>
-				<th>ÆòÁ¡</th>
+				<th>í‰ì </th>
 				<td><input type="text" size="20"value="<%=rating%>"
 									style="BACKGROUND-COLOR: white" readonly="readonly">
-							<br><%=user.getU_npeople() %>¸íÀÌ Æò°¡¸¦ Çß½À´Ï´Ù.
+							<br><%=user.getU_npeople() %>ëª…ì´ í‰ê°€ë¥¼ í–ˆìŠµë‹ˆë‹¤.
 							
 							</td>
 			</tr>
 			<tr>
-				<th>½ÅÃ»¼ö</th>
+				<th>ì‹ ì²­ìˆ˜</th>
 				<td><input type="text" size="20" value="<%=user.getU_apply()%>"
 									style="BACKGROUND-COLOR: white" readonly="readonly"></td>
 			</tr>
 			<tr>
-				<th>Âü¼®¼ö</th>
+				<th>ì°¸ì„ìˆ˜</th>
 				<td><input type="text" size="20" value="<%=user.getU_attend()%>"
 									style="BACKGROUND-COLOR: white" readonly="readonly"></td>
 			</tr>
@@ -201,8 +201,8 @@ else{
 			<tfoot>
 			<tr>
 				<td  class="ty2" colspan="5" align="right">
-				<input type="button" value="¼öÁ¤" onclick="confirm_pass()" class="myButton">
-				<input type="button" value="»èÁ¦" onclick="myInfoDelete()" class="myButton">
+				<input type="button" value="ìˆ˜ì •" onclick="confirm_pass()" class="myButton">
+				<input type="button" value="ì‚­ì œ" onclick="myInfoDelete()" class="myButton">
 				</td>
 			</tr>
 			</tfoot>
