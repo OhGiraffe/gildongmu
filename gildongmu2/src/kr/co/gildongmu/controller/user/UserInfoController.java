@@ -31,7 +31,7 @@ public class UserInfoController{
 	public String userinfodetail(HttpServletRequest request, @RequestParam(value="u_id") String u_id) {
 		
 		try {
-			request.setCharacterEncoding("euc-kr");
+			request.setCharacterEncoding("UTF-8");
 		} catch (UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

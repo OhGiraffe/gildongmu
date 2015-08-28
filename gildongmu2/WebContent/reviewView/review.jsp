@@ -1,14 +1,14 @@
 <%@page import="java.util.List"%>
 <%@page import="kr.co.gildongmu.model.board.bean.ReviewBean"%>
 <%@page import="java.util.ArrayList"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript">
 	function write_movepage() {
@@ -30,7 +30,7 @@
 <body>
 <div id="menu" style="border-bottom: 2px solid #dedede";>
 	<font style="border-style: solid; font-size:24pt; color: #22becc; font-weight: bolder; ">Review</font>
-	<font style="font-size:14pt; font-weight: bolder; color: #999; ">ÈÄ±â°Ô½ÃÆÇ</font>
+	<font style="font-size:14pt; font-weight: bolder; color: #999; ">í›„ê¸°ê²Œì‹œíŒ</font>
 </div>
 	<center>
 	<form action="resultreview.do" method="post" name="reviewForm">
@@ -46,11 +46,11 @@
 					</colgroup>
 					<thead>
 						<tr>
-							<th scope="col">±Û¹øÈ£</th>		
-							<th scope="col">Á¦¸ñ</th>
-							<th scope="col">ÀÛ¼ºÀÏ</th>
-							<th scope="col">ÀÛ¼ºÀÚ</th>	
-							<th scope="col">Á¶È¸</th>
+							<th scope="col">ê¸€ë²ˆí˜¸</th>		
+							<th scope="col">ì œëª©</th>
+							<th scope="col">ì‘ì„±ì¼</th>
+							<th scope="col">ì‘ì„±ì</th>	
+							<th scope="col">ì¡°íšŒ</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -74,7 +74,7 @@
 		if(result_id != null) {
 	%>	
 	</center>
-		<input type="button" value="±Û¾²±â" name="write" class="myButton" onclick="write_movepage()" style="margin-left: 1025px">	
+		<input type="button" value="ê¸€ì“°ê¸°" name="write" class="myButton" onclick="write_movepage()" style="margin-left: 1025px">	
 		<br>
 	<center>
 	<% } %>
@@ -84,23 +84,23 @@
 			int p =(Integer)request.getAttribute("page"); 		
 		%>		
 		<% if (p==1) { %>
-			¢¸¢¸
+			â—€â—€
 		<% }else { %>
-			<a style="font-style: inherit; font-family: monospace; color:black; text-decoration: none" href="review.do?page=<%= p-1 %>">¢¸¢¸</a>&nbsp;&nbsp;
+			<a style="font-style: inherit; font-family: monospace; color:black; text-decoration: none" href="review.do?page=<%= p-1 %>">â—€â—€</a>&nbsp;&nbsp;
 		<% } %>
 		<% for (int i=1; i <=totalPage; i++) { %>
 			<a style="font-style: inherit; font-family: monospace; color:black; text-decoration: none" href="review.do?page=<%=i%>">[<%=i%>]</a>
 		<% } %>
 		
 		<% if (p == totalPage) {%>
-			¢º¢º
+			â–¶â–¶
 		<% }else { %>
-			<a style="font-style: inherit; font-family: monospace; color:black; text-decoration: none" href="review.do?page=<%= p+1 %>">¢º¢º</a>
+			<a style="font-style: inherit; font-family: monospace; color:black; text-decoration: none" href="review.do?page=<%= p+1 %>">â–¶â–¶</a>
 		<% } %>
 			
 		<br>
 		<input type="text" size="65" name="keyword" style="background-color: #dedede; margin-left: 100px;">
-		<input type="submit" value="°Ë»ö" class="myButton" style="margin-left: 10px;">
+		<input type="submit" value="ê²€ìƒ‰" class="myButton" style="margin-left: 10px;">
 	</center>
 	</form>
 	 	<br>

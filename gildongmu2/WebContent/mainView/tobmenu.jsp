@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>menu</title>
 <link href="http://ts.daumcdn.net/custom/blog/0/606/skin/images/nanumgothic.css"
 	rel="stylesheet" type="text/css">
@@ -46,28 +46,28 @@ function login() {
 	load(id, pass); 
 }
 
-function getXMLHttpRequest() {//XMLHttpRequest°´Ã¼»ı¼º
-	if (window.ActiveXObject) {//IE°æ¿ì
+function getXMLHttpRequest() {//XMLHttpRequestê°ì²´ìƒì„±
+	if (window.ActiveXObject) {//IEê²½ìš°
 		try {
 			return new ActiveXObject('Msxml2.XMLHTTP');
 		} catch (e) {
 			return new ActiveXObject('Microsoft.XMLHTTP');
 		}
-	} else if (window.XMLHttpRequest) {//ºñIE°æ¿ì
+	} else if (window.XMLHttpRequest) {//ë¹„IEê²½ìš°
 		return new XMLHttpRequest();
 	} else
 		return null;
 }//getXMLHttpRequest()
 var xhr;
-function load(id, pass) {//ÆäÀÌÁö¿äÃ»
+function load(id, pass) {//í˜ì´ì§€ìš”ì²­
 	xhr = getXMLHttpRequest();
-	xhr.onreadystatechange = loaded;//Äİ¹éÇÔ¼ö(open,sendÈÄ ½ÇÇàÇÒ ÇÔ¼ö)Á¤ÀÇ
-	xhr.open('POST', 'login', true);//HTTP¿äÃ»¹æ½Ä, ¿äÃ»URL, ºñµ¿±â
+	xhr.onreadystatechange = loaded;//ì½œë°±í•¨ìˆ˜(open,sendí›„ ì‹¤í–‰í•  í•¨ìˆ˜)ì •ì˜
+	xhr.open('POST', 'login', true);//HTTPìš”ì²­ë°©ì‹, ìš”ì²­URL, ë¹„ë™ê¸°
     xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
-	xhr.send('id='+ id +'&pass='+ pass);//Àü´ŞÆÄ¶ó¹ÌÅÍ
+	xhr.send('id='+ id +'&pass='+ pass);//ì „ë‹¬íŒŒë¼ë¯¸í„°
 }
 
-function loaded() {//ÀÀ´äµ¥ÀÌÅÍ Ã³¸®
+function loaded() {//ì‘ë‹µë°ì´í„° ì²˜ë¦¬
 	if (xhr.readyState == 4) {
 		if (xhr.status == 200) {
 			var data = xhr.responseText.split(',');
@@ -77,10 +77,10 @@ function loaded() {//ÀÀ´äµ¥ÀÌÅÍ Ã³¸®
 			var r_check = data[2];
 			
 			if(r_check.indexOf('i') == 1){
-				alert('·Î±×ÀÎµÇ¾î ÀÖ½À´Ï´Ù.');
+				alert('ë¡œê·¸ì¸ë˜ì–´ ìˆìŠµë‹ˆë‹¤.');
 			}
 			else if(r_check.indexOf('f') == 1){
-				alert('ID/PW¸¦ È®ÀÎÇÏ¼¼¿ä.');
+				alert('ID/PWë¥¼ í™•ì¸í•˜ì„¸ìš”.');
 			}
 			else if(r_check.indexOf('t') == 1){
 				location.href = "main";
@@ -94,22 +94,22 @@ function textclear(msg) {
 	if(msg == 'id'){
 		var id = document.loginForm.id.value;
 		var pass = document.loginForm.pass.value;
-		if(id == '¾ÆÀÌµğ'){
+		if(id == 'ì•„ì´ë””'){
 			document.loginForm.id.value = '';
 		}
 		if(pass == ''){
-			document.loginForm.pass.value = 'ºñ¹Ğ¹øÈ£';
+			document.loginForm.pass.value = 'ë¹„ë°€ë²ˆí˜¸';
 		}
 		
 	}
 	if(msg == 'pass'){
 		var id = document.loginForm.id.value;
 		var pass = document.loginForm.pass.value;
-		if(pass == 'ºñ¹Ğ¹øÈ£'){
+		if(pass == 'ë¹„ë°€ë²ˆí˜¸'){
 			document.loginForm.pass.value = '';
 		}
 		if(id == ''){
-			document.loginForm.id.value = '¾ÆÀÌµğ';
+			document.loginForm.id.value = 'ì•„ì´ë””';
 		}
 	}
 }
@@ -120,7 +120,7 @@ function logout() {
 
 function logincheck(check, id){
 	if(id=='null'){
-		alert('·Î±×ÀÎÀ» ÇÏ¼¼¿ä.');
+		alert('ë¡œê·¸ì¸ì„ í•˜ì„¸ìš”.');
 	}
 	else{
 		if(check == 'location'){
@@ -152,27 +152,27 @@ function logincheck(check, id){
 			</td>				 
 			<td width="40px" height="45px" align="center" valign="middle">
 				<article class="at1">
-				<a href="javascript:logincheck('location','<%=id %>')" class="text" >Áö¿ª</a>
+				<a href="javascript:logincheck('location','<%=id %>')" class="text" >ì§€ì—­</a>
 				</article>
 			</td>
 			<td width="40px" height="45px" align="center" valign="middle">
 			<article class="at2">
-				<a href="javascript:logincheck('schedule','<%=id %>')" class="text">ÀÏÁ¤</a>
+				<a href="javascript:logincheck('schedule','<%=id %>')" class="text">ì¼ì •</a>
 				</article>
 			</td>
 			<td width="40px" height="45px" align="center" valign="middle" class="text">
 			<article class="at3">
-				<a href="javascript:logincheck('thema','<%=id %>')" class="text">Å×¸¶</a>
+				<a href="javascript:logincheck('thema','<%=id %>')" class="text">í…Œë§ˆ</a>
 				</article>
 			</td>
 			<td width="40px" height="45px" align="center" valign="middle" class="text">
 			<article class="at4">
-				<a href="review" class="text">ÈÄ±â</a>
+				<a href="review" class="text">í›„ê¸°</a>
 				</article>
 			</td>
 			<td width="40px" height="45px" align="center" valign="middle" class="text">
 			<article class="at5">
-				<a href="faq" class="text">°í°´¼¾ÅÍ</a>
+				<a href="faq" class="text">ê³ ê°ì„¼í„°</a>
 			</article>
 			</td>
 			<td width="300px" height="45px" align="center">
@@ -188,13 +188,13 @@ function logincheck(check, id){
 						<td rowspan="2" style="text-align: center; vertical-align: top;">
 						</td>
 						<td>
-						<a href="#modal-content" class="modal-box"><input type="button" value="·Î±×ÀÎ" class="mybutton4"></a>
+						<a href="#modal-content" class="modal-box"><input type="button" value="ë¡œê·¸ì¸" class="mybutton4"></a>
 						</td>
 						<td>
-						<a href="join"><input type="button" value="È¸¿ø°¡ÀÔ" class="mybutton4" id="mybutton4"></a>
+						<a href="join"><input type="button" value="íšŒì›ê°€ì…" class="mybutton4" id="mybutton4"></a>
 						</td>		
 						<td>
-						<a href="searchmyid"><input type="button" value="ID/ºñ¹øÃ£±â" class="mybutton4" id="mybutton4" ></a>
+						<a href="searchmyid"><input type="button" value="ID/ë¹„ë²ˆì°¾ê¸°" class="mybutton4" id="mybutton4" ></a>
 						</td>
 					</tr>
 						
@@ -207,14 +207,14 @@ function logincheck(check, id){
 			<td>
 			<font color="#3a5795" size="14" style="font-family: inherit; font-size: 14px; color: #22becc; width: 169px; height: 12px; font-weight: bold;">
 			<%=session.getAttribute("result_name") %></font>
-			<font color="#3a5795" size="14" style="font-family: inherit; font-size: 11px; color: #f5f5f5; width: 169px; height: 12px;">´Ô <br>È¯¿µÇÕ´Ï´Ù.
+			<font color="#3a5795" size="14" style="font-family: inherit; font-size: 11px; color: #f5f5f5; width: 169px; height: 12px;">ë‹˜ <br>í™˜ì˜í•©ë‹ˆë‹¤.
 			</font>
 			</td>
 			<td>
-				<a href="logout"><input type="button" value="·Î±×¾Æ¿ô" class="mybutton4"></a> 
+				<a href="logout"><input type="button" value="ë¡œê·¸ì•„ì›ƒ" class="mybutton4"></a> 
 			</td>
 			<td>
-			<a href="admin_user"><input type="button" value="°ü¸®ÀÚ" class="mybutton4"></a>
+			<a href="admin_user"><input type="button" value="ê´€ë¦¬ì" class="mybutton4"></a>
 			</td>
 			</tr>
 	</table>
@@ -226,14 +226,14 @@ function logincheck(check, id){
 				<%=session.getAttribute("result_name")%>
 			</font>
 			<font color="#3a5795" size="14" style="font-family: inherit; font-size: 11px; color: #f5f5f5; width: 140px; height: 12px;">
-			´Ô <br>È¯¿µÇÕ´Ï´Ù
+			ë‹˜ <br>í™˜ì˜í•©ë‹ˆë‹¤
 			</font>
 			</td>
 			<td>
-			<a href="logout"><input type="button" value="·Î±×¾Æ¿ô" class="mybutton4"></a> 
+			<a href="logout"><input type="button" value="ë¡œê·¸ì•„ì›ƒ" class="mybutton4"></a> 
 			</td>
 			<td>
-			<a href="myinfo"><input type="button" value="³»Á¤º¸" class="mybutton4"></a>
+			<a href="myinfo"><input type="button" value="ë‚´ì •ë³´" class="mybutton4"></a>
 			</td>
 		</tr>
 	</table>
@@ -252,7 +252,7 @@ function logincheck(check, id){
 		<form name="loginForm" method="post">
 		<div style="background-color: #f5f5f5; height: 35px; width: 100%;">
 			<font style="border-style: solid;background-color: #f5f5f5;font-size: large; color: #3a5795;">Login</font>
-			<font style="font-size: small;">·Î±×ÀÎ</font>
+			<font style="font-size: small;">ë¡œê·¸ì¸</font>
 		</div>
 		<center>
 		<table>
@@ -262,16 +262,16 @@ function logincheck(check, id){
 		</tr>
 		<tr>
 			<td>
-				<input type="text" name="id" id="id" size="12" border="1" value="¾ÆÀÌµğ" onfocus="textclear('id')" onblur="textclear('id')" 
+				<input type="text" name="id" id="id" size="12" border="1" value="ì•„ì´ë””" onfocus="textclear('id')" onblur="textclear('id')" 
 						style="font-size: 5px; color: #353535; width: 160px; height: 19px; background-color: #f1f1f1;">
 			</td>
 			<td rowspan="2" style="text-align: center; vertical-align: top;">
-			<input type="button" value="·Î±×ÀÎ" class="mybutton5" style="width: 45px; height: 12mm;" onclick="login()">
+			<input type="button" value="ë¡œê·¸ì¸" class="mybutton5" style="width: 45px; height: 12mm;" onclick="login()">
 			</td>
 		</tr>
 		<tr>
 			<td>
-				<input type="password" name="pass" id="pass" size="12" value="ºñ¹Ğ¹øÈ£" onfocus="textclear('pass')" onblur="textclear('pass')"
+				<input type="password" name="pass" id="pass" size="12" value="ë¹„ë°€ë²ˆí˜¸" onfocus="textclear('pass')" onblur="textclear('pass')"
 						style="font-size: 5px; color: #353535; width: 160px; height: 19px; background-color: #f1f1f1;">
 			</td>	
 			</tr>
@@ -279,14 +279,14 @@ function logincheck(check, id){
 			</tr>
 			<tr>
 			<td align="left" colspan="2">
-				<a href="join"><input type="button" value="È¸¿ø°¡ÀÔ" class="mybutton6" id="mybutton4"></a>
-				<font style="border-style: solid;background-color: #f5f5f5;font-size: small; color: #3a5795;">&nbsp;&nbsp;&nbsp;&nbsp;¾ÆÀÌµğ°¡ ¾ø´Ù¸é</font>
+				<a href="join"><input type="button" value="íšŒì›ê°€ì…" class="mybutton6" id="mybutton4"></a>
+				<font style="border-style: solid;background-color: #f5f5f5;font-size: small; color: #3a5795;">&nbsp;&nbsp;&nbsp;&nbsp;ì•„ì´ë””ê°€ ì—†ë‹¤ë©´</font>
 			</td>
 			</tr>
 			<tr>	
 				<td align="center" colspan="2">
-				<a href="searchmyid"><input type="button" value="ID/ºñ¹øÃ£±â" class="mybutton6" id="mybutton4" ></a>
-					<font style="border-style: solid;background-color: #f5f5f5;font-size: small; color: #3a5795;">¾ÆÀÌµğ³ª ºñ¹øÀ» ÀØ¾î¹ö·È´Ù¸é</font>
+				<a href="searchmyid"><input type="button" value="ID/ë¹„ë²ˆì°¾ê¸°" class="mybutton6" id="mybutton4" ></a>
+					<font style="border-style: solid;background-color: #f5f5f5;font-size: small; color: #3a5795;">ì•„ì´ë””ë‚˜ ë¹„ë²ˆì„ ìŠì–´ë²„ë ¸ë‹¤ë©´</font>
 				</td>
 			</tr>
 		</table>

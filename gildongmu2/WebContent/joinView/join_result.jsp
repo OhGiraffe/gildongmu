@@ -1,10 +1,10 @@
 <%@page import="java.util.Date"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
 p.joinresult{
@@ -33,7 +33,7 @@ text-align: center;
 <div id="main">
 	<div id="menu" style="border-bottom: 2px solid #dedede;">	
 		<font style="border-style: solid; font-size:24pt; color: #22becc; font-weight: bolder; ">Join</font>
-	<font style="font-size:14pt; font-weight: bolder; color: #999; ">È¸¿ø°¡ÀÔ</font>
+	<font style="font-size:14pt; font-weight: bolder; color: #999; ">íšŒì›ê°€ìž…</font>
 	</div>
 			<div class="t4">
 		<div class="topmargin">
@@ -41,16 +41,16 @@ text-align: center;
 <%
 	String name = (String)request.getAttribute("u_name");
 %>
-	<font color="#BDBDBD"; style="font-size: 30px; font-weight: bold;">°¨»çÇÕ´Ï´Ù.</font><br>
+	<font color="#BDBDBD"; style="font-size: 30px; font-weight: bold;">ê°ì‚¬í•©ë‹ˆë‹¤.</font><br>
 	<font color="black" ; style="font-size: 30px"><%=name%></font>
-	<font color="#BDBDBD">´Ô</font>
-	<font color="3b5998">±æµ¿¹«</font>
-	<font color="#BDBDBD">È¸¿ø°¡ÀÔÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù.</font><br>
+	<font color="#BDBDBD">ë‹˜</font>
+	<font color="3b5998">ê¸¸ë™ë¬´</font>
+	<font color="#BDBDBD">íšŒì›ê°€ìž…ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.</font><br>
 </p>	
 <p class="gomain">
-	<font color="#BDBDBD">¸ÞÀÎÆäÀÌÁö »ó´Ü¿¡¼­</font>
-	<a href="main" style="text-decoration: none; color:#3b5998; font-weight: bold;">·Î±×ÀÎ</a>
-	<font color="#BDBDBD">ÇØÁÖ½Ã±æ ¹Ù¶ø´Ï´Ù.</font>
+	<font color="#BDBDBD">ë©”ì¸íŽ˜ì´ì§€ ìƒë‹¨ì—ì„œ</font>
+	<a href="main" style="text-decoration: none; color:#3b5998; font-weight: bold;">ë¡œê·¸ì¸</a>
+	<font color="#BDBDBD">í•´ì£¼ì‹œê¸¸ ë°”ëžë‹ˆë‹¤.</font>
 </p>
 
 </div>

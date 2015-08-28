@@ -21,7 +21,7 @@ public class StatusInputController{
 	@RequestMapping("/instatus")
 	public String instatus(HttpServletRequest request) {
 		try {
-			request.setCharacterEncoding("euc-kr");
+			request.setCharacterEncoding("UTF-8");
 		} catch (UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

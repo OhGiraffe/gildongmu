@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="//code.jquery.com/jquery-2.1.4.min.js"></script> 
@@ -26,7 +26,6 @@ $(document).ready(function(){
     width: 550px;
     height: 20px;
 }
-
 #panel1 {
     padding: 5px;
     display: none;
@@ -34,7 +33,6 @@ $(document).ready(function(){
     width: 550px;
     height: 35px;
 }
-
 #panel2, #flip2 {
     padding: 5px;
     text-align: left;
@@ -43,7 +41,6 @@ $(document).ready(function(){
     width: 550px;
     height: 20px;
 }
-
 #panel2 {
     padding: 5px;
     display: none;
@@ -51,7 +48,6 @@ $(document).ready(function(){
     width: 550px;
     height: 35px;
 }
-
 #panel3, #flip3 {
     padding: 5px;
     text-align: left;
@@ -60,7 +56,6 @@ $(document).ready(function(){
     width: 550px;
     height: 20px;
 }
-
 #panel3 {
     padding: 5px;
     display: none;
@@ -68,7 +63,6 @@ $(document).ready(function(){
     width: 550px;
     height: 35px;
 }
-
 #panel4, #flip4 {
     padding: 5px;
     text-align: left;
@@ -77,7 +71,6 @@ $(document).ready(function(){
     width: 550px;
     height: 20px;
 }
-
 #panel4 {
     padding: 5px;
     display: none;
@@ -85,7 +78,6 @@ $(document).ready(function(){
     width: 550px;
     height: 35px;
 }
-
 #panel5, #flip5 {
     padding: 5px;
     text-align: left;
@@ -94,7 +86,6 @@ $(document).ready(function(){
     width: 550px;
     height: 20px;
 }
-
 #panel5 {
     padding: 5px;
     display: none;
@@ -102,7 +93,6 @@ $(document).ready(function(){
     width: 550px;
     height: 35px;
 }
-
 #panel6, #flip6 {
     padding: 5px;
     text-align: left;
@@ -111,7 +101,6 @@ $(document).ready(function(){
     width: 550px;
     height: 20px;
 }
-
 #panel6 {
     padding: 5px;
     display: none;
@@ -119,7 +108,6 @@ $(document).ready(function(){
     width: 550px;
     height: 35px;
 }
-
 #panel7, #flip7 {
     padding: 5px;
     text-align: left;
@@ -128,7 +116,6 @@ $(document).ready(function(){
     width: 550px;
     height: 20px;
 }
-
 #panel7 {
     padding: 5px;
     display: none;
@@ -136,7 +123,6 @@ $(document).ready(function(){
     width: 550px;
     height: 35px;
 }
-
 #panel8, #flip8 {
     padding: 5px;
     text-align: left;
@@ -145,7 +131,6 @@ $(document).ready(function(){
     width: 550px;
     height: 20px;
 }
-
 #panel8 {
     padding: 5px;
     display: none;
@@ -153,20 +138,17 @@ $(document).ready(function(){
     width: 550px;
     height: 35px;
 }
-
 div#sermain{
 	position: absolute;
 	margin-left: 300px;
 	margin-top: 300px;
 }
-
 div#sertitle{
 	position: absolute;
 	width: 500px;
 	margin-left: 500px;
 	margin-top: 350px;
 }
-
 div#tel{
 	position: absolute;
 	margin-top: 520px;
@@ -174,7 +156,6 @@ div#tel{
 	width: 200px;
 	color: #8C8C8C;
 }
-
 div#email{
 	position: absolute;
 	margin-top: 520px;
@@ -182,7 +163,6 @@ div#email{
 	width: 300px;
 	color: #8C8C8C;
 }
-
 div#addr{
 	position: absolute;
 	margin-top: 520px;
@@ -190,7 +170,6 @@ div#addr{
 	width: 300px;
 	color: #8C8C8C;
 }
-
 </style>
 </head>
 <div id="outer">
@@ -201,10 +180,10 @@ div#addr{
 			<ul>
 			<li type="none" style="font-weight: bold; font-size: 16px; color: #ffffff;
 			width: 160px; height: 26px; background-color: #22becc;">
-			°í°´¼¾ÅÍ
+			ê³ ê°ì„¼í„°
 			</li>
 			<a href="faq.do" style="text-decoration: none; margin: -10px 0 0 300px" >FAQ</a>
-			<a href="notice.do" style="text-decoration: none; margin: -30px 0 0 460px">°øÁö»çÇ×</a>
+			<a href="notice.do" style="text-decoration: none; margin: -30px 0 0 460px">ê³µì§€ì‚¬í•­</a>
 			<a href="contact.do" style="text-decoration: none; margin: -30px 0 0 620px">CONTACT</a>
 			</ul>		 
 		</ul>
@@ -229,23 +208,23 @@ div#addr{
 		<ul>
 			<li type="none">
 				<div id="tel">
-				<h3 style="font-style: inherit;">°í°´¼¾ÅÍ ÀüÈ­¹øÈ£</h3>
-				<br> ¢Ï : 031-2210-1234
+				<h3 style="font-style: inherit;">ê³ ê°ì„¼í„° ì „í™”ë²ˆí˜¸</h3>
+				<br> â˜ : 031-2210-1234
 				</div>
 			</li>
 		
 			<li type="none">
 				<div id="email">
-				<h3 style="font-style: inherit;">ÀÔ»ç Áö¿ø</h3>
+				<h3 style="font-style: inherit;">ì…ì‚¬ ì§€ì›</h3>
 				<br> e-mail : gildongmu@gildongmu.com
 				</div>
 			</li>
 			
 			<li type="none">
 				<div id="addr">
-				<h3 style="font-style: inherit;">È¸»ç À§Ä¡</h3>
-				<br>°æ±âµµ ¼º³²½Ã ºĞ´ç±¸ »ïÆòµ¿ 
-				<br>À¯½ºÆäÀÌ½º¸ô2 Bµ¿ 8Ãş KOSTA
+				<h3 style="font-style: inherit;">íšŒì‚¬ ìœ„ì¹˜</h3>
+				<br>ê²½ê¸°ë„ ì„±ë‚¨ì‹œ ë¶„ë‹¹êµ¬ ì‚¼í‰ë™ 
+				<br>ìœ ìŠ¤í˜ì´ìŠ¤ëª°2 Bë™ 8ì¸µ KOSTA
 				</div>
 			</li>
 			

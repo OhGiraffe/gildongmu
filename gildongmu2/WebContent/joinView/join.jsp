@@ -1,8 +1,8 @@
 <%@page import="org.apache.catalina.User"%>
 <%@page import="kr.co.gildongmu.model.join.dao.JoinDAO"%>
 <%@page import="kr.co.gildongmu.model.login.bean.UserBean"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <style type="text/css">
 .table_data1 {
 	width: 400px;
@@ -57,13 +57,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 <script type="text/javascript">
 	function checkId() {
 		if (document.joinForm.write_id.value == "") {
-			alert("¾ÆÀÌµğ¸¦ ÀÔ·ÂÇÏ½Ê½Ã¿À");
+			alert("ì•„ì´ë””ë¥¼ ì…ë ¥í•˜ì‹­ì‹œì˜¤");
 		} else {
 			var write_id = document.joinForm.write_id.value;
 			window.open("idcheck?write_id=" + write_id, "get",
@@ -92,7 +92,7 @@
 <div id="main">
 	<div id="menu" style="border-bottom: 2px solid #dedede";>	
 	<font style="border-style: solid; font-size:24pt; color: #22becc; font-weight: bolder; ">Join</font>
-	<font style="font-size:14pt; font-weight: bolder; color: #999; ">È¸¿ø°¡ÀÔ</font>
+	<font style="font-size:14pt; font-weight: bolder; color: #999; ">íšŒì›ê°€ì…</font>
 	</div>
 	<center>
 		<div class="t4">
@@ -103,22 +103,22 @@
 			<table class="table_data1">
 				<tbody>
 					<tr>
-						<th align="left">¾ÆÀÌµğ </th>
+						<th align="left">ì•„ì´ë”” </th>
 						<td><input type="text" name="write_id" id="write_id" maxlength="20"
-							size="20" placeholder="20ÀÚ ÀÌÇÏ ÀÔ·Â" required style="BACKGROUND-COLOR: white"
+							size="20" placeholder="20ì ì´í•˜ ì…ë ¥" required style="BACKGROUND-COLOR: white"
 							onMouseOver="this.style.backgroundColor = '#e6eff7'"
 							onMouseOut="this.style.backgroundColor = 'white'">
-							<input class="myButton1" type="button" value="ID Áßº¹Ã¼Å©" onclick="checkId()"></td>
+							<input class="myButton1" type="button" value="ID ì¤‘ë³µì²´í¬" onclick="checkId()"></td>
 					</tr>
 					<tr>
-						<th align="left">ºñ¹Ğ¹øÈ£ </th>
+						<th align="left">ë¹„ë°€ë²ˆí˜¸ </th>
 						<td><input type="password" name="u_pass1" id="u_pass1"
 							maxlength="20" size="20" style="BACKGROUND-COLOR: white"
 							onMouseOver="this.style.backgroundColor = '#e6eff7'"
 							onMouseOut="this.style.backgroundColor = 'white'" required></td>
 					</tr>
 					<tr>
-						<th align="left">ºñ¹Ğ¹øÈ£(È®ÀÎ) </th>
+						<th align="left">ë¹„ë°€ë²ˆí˜¸(í™•ì¸) </th>
 						<td><input type="password" name="u_pass2" maxlength="20"
 							size="20" style="BACKGROUND-COLOR: white"
 							onMouseOver="this.style.backgroundColor = '#e6eff7'"
@@ -126,41 +126,41 @@
 					</tr>
 
 					<tr>
-						<th align="left">ÀÌ¸§ </th>
+						<th align="left">ì´ë¦„ </th>
 						<td><input type="text" name="u_name" maxlength="10"
 							style="BACKGROUND-COLOR: white"
 							onMouseOver="this.style.backgroundColor = '#e6eff7'"
 							onMouseOut="this.style.backgroundColor = 'white'" required></td>
 					</tr>
 					<tr>
-						<th align="left">³ªÀÌ </th>
+						<th align="left">ë‚˜ì´ </th>
 						<td><input type="number" name="u_age" min="20" max="60"
 							value="20" style="BACKGROUND-COLOR: white"
 							onMouseOver="this.style.backgroundColor = '#e6eff7'"
 							onMouseOut="this.style.backgroundColor = 'white'" required></td>
 					</tr>
 					<tr>
-						<th align="left">¼ºº° </th>
-						<td><input type="radio" name="u_gen" value="³²" checked
-							required>³²ÀÚ <input type="radio" name="u_gen" value="¿©"
-							required>¿©ÀÚ</td>
+						<th align="left">ì„±ë³„ </th>
+						<td><input type="radio" name="u_gen" value="ë‚¨" checked
+							required>ë‚¨ì <input type="radio" name="u_gen" value="ì—¬"
+							required>ì—¬ì</td>
 					</tr>
 					<tr>
-						<th align="left">»çÁø </th>
+						<th align="left">ì‚¬ì§„ </th>
 						<td><input type="file" name="u_image" id="u_image"
 							style="BACKGROUND-COLOR: white"
 							onMouseOver="this.style.backgroundColor = '#e6eff7'"
 							onMouseOut="this.style.backgroundColor = 'white'" required></td>
 					</tr>
 					<tr>
-						<th align="left">¸ŞÀÏ </th>
+						<th align="left">ë©”ì¼ </th>
 						<td><input type="email" name="u_email" size="20"
 							maxlength="30" " style="BACKGROUND-COLOR: white"
 							onMouseOver="this.style.backgroundColor = '#e6eff7'"
 							onMouseOut="this.style.backgroundColor = 'white'" required></td>
 					</tr>
 					<tr>
-						<th align="left">¿ìÆí¹øÈ£ </th>
+						<th align="left">ìš°í¸ë²ˆí˜¸ </th>
 						<td><input type="text" id="u_zipcode1" name="u_zipcode1"
 							maxlength="3" " size="3" style="BACKGROUND-COLOR: white"
 							onMouseOver="this.style.backgroundColor = '#e6eff7'"
@@ -169,22 +169,22 @@
 							maxlength="3" " size="3" style="BACKGROUND-COLOR: white"
 							onMouseOver="this.style.backgroundColor = '#e6eff7'"
 							onMouseOut="this.style.backgroundColor = 'white'" required>
-							<input class="myButton1" type="button" value="¿ìÆí¹øÈ£Ã£±â"
+							<input class="myButton1" type="button" value="ìš°í¸ë²ˆí˜¸ì°¾ê¸°"
 							onclick="javascript:window.open('searchPost','','width=400,height=500,scrollbars=yes')"
 							required></td>
 					</tr>
 					<tr>
-						<th align="left">ÁÖ¼Ò </th>
+						<th align="left">ì£¼ì†Œ </th>
 						<td><input type="text" id="u_addr" name="u_addr"
-							maxlength="50" size="50" placeholder="¿ìÆí¹øÈ£°Ë»ö½Ã ÀÚµ¿ÀÔ·Â"
+							maxlength="50" size="50" placeholder="ìš°í¸ë²ˆí˜¸ê²€ìƒ‰ì‹œ ìë™ì…ë ¥"
 							style="BACKGROUND-COLOR: white"
 							onMouseOver="this.style.backgroundColor = '#e6eff7'"
 							onMouseOut="this.style.backgroundColor = 'white'" required></td>
 					</tr>
 					<tr>
-						<th align="left">ÀüÈ­¹øÈ£ </th>
+						<th align="left">ì „í™”ë²ˆí˜¸ </th>
 						<td><input type="tel" id="u_tel" name="u_tel"
-							placeholder="¼ıÀÚ¸¸ ÀÔ·Â" maxlength="11"
+							placeholder="ìˆ«ìë§Œ ì…ë ¥" maxlength="11"
 							style="BACKGROUND-COLOR: white"
 							onMouseOver="this.style.backgroundColor = '#e6eff7'"
 							onMouseOut="this.style.backgroundColor = 'white'" required></td>
@@ -194,8 +194,8 @@
 				<!-- </div> -->
 				<tfoot>
 					<tr>
-						<td colspan="2"><input type="submit" value="°¡ÀÔ" class="myButton"></input> 
-						<input type="reset" value="Ãë¼Ò" class="myButton"></input></td>
+						<td colspan="2"><input type="submit" value="ê°€ì…" class="myButton"></input> 
+						<input type="reset" value="ì·¨ì†Œ" class="myButton"></input></td>
 					</tr>
 				</tfoot>
 				<!-- </div> -->

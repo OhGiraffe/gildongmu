@@ -1,10 +1,10 @@
 <%@page import="kr.co.gildongmu.model.login.bean.UserBean"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <%
 	UserBean user = (UserBean)request.getAttribute("userinfo");
@@ -23,7 +23,7 @@
 	
 	window.onload = function () {
 		var gen = '<%=user.getU_gen()%>';
-		if(gen=='³²'){
+		if(gen=='ë‚¨'){
 			document.getElementsByName('u_gen')[0].checked=true;
 		}else{
 			document.getElementsByName('u_gen')[1].checked=true;
@@ -94,26 +94,26 @@
 	<div style="margin-right: 200px">
 	
 		<table class="table_data1 topmargin">
-		<legend> È¸¿øÁ¤º¸</legend>
+		<legend> íšŒì›ì •ë³´</legend>
 		<tbody>
 			<tr>
-			<th>»çÁø:</th>
+			<th>ì‚¬ì§„:</th>
 			<td><img src="<%=user.getU_image()%>" width="30" height="30"></td>
 			</tr>
 			<tr>
-				<th>¾ÆÀÌµğ:</th>
+				<th>ì•„ì´ë””:</th>
 				<td><input type="text" size="20" name="u_id" disabled="disabled" value="<%=user.getU_id()%>" style="BACKGROUND-COLOR: white"></td>
 			</tr>
 			<tr>
-				<th>ÆòÁ¡</th>
+				<th>í‰ì </th>
 				<td><input disabled="disabled" type="text" size="20" name="u_tel" 
 				value="<%=rating%>"
 									style="BACKGROUND-COLOR: white"
 							onMouseOver="this.style.backgroundColor = '#e6eff7'"
-							onMouseOut="this.style.backgroundColor = 'white'"> <%=user.getU_npeople() %>¸íÀÌ Æò°¡¸¦ Çß½À´Ï´Ù.</td>
+							onMouseOut="this.style.backgroundColor = 'white'"> <%=user.getU_npeople() %>ëª…ì´ í‰ê°€ë¥¼ í–ˆìŠµë‹ˆë‹¤.</td>
 			</tr>
 			<tr>
-				<th>½ÅÃ»¼ö</th>
+				<th>ì‹ ì²­ìˆ˜</th>
 				<td>
 				<input disabled="disabled" type="text" size="20" name="u_tel" value="<%= user.getU_apply() %>"
 				style="BACKGROUND-COLOR: white"onMouseOver="this.style.backgroundColor = '#e6eff7'"
@@ -121,7 +121,7 @@
 				</td>
 			</tr>
 			<tr>
-				<th>Âü¼®¼ö</th>
+				<th>ì°¸ì„ìˆ˜</th>
 				<td>
 				<input disabled="disabled" type="text" size="20" name="u_tel" value="<%= user.getU_attend() %>"
 				style="BACKGROUND-COLOR: white"onMouseOver="this.style.backgroundColor = '#e6eff7'"
@@ -133,7 +133,7 @@
 			</tfoot>		
 		</table>
 		<br><br>
-		<input type="button" value="´İ±â" class="myButton" style="margin-left: 170px;" onclick="exit()">
+		<input type="button" value="ë‹«ê¸°" class="myButton" style="margin-left: 170px;" onclick="exit()">
 	</div>
 	</form>
 </body>

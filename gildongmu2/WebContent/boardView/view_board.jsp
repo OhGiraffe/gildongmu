@@ -2,13 +2,13 @@
 <%@page import="kr.co.gildongmu.model.application.bean.StatusBean"%>
 <%@page import="kr.co.gildongmu.model.board.bean.BoardBean"%>
 <%@page import="kr.co.gildongmu.model.board.dao.BoardDAO"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>±Ûº¸±â</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ê¸€ë³´ê¸°</title>
 <script type="text/javascript">
 function postpage(posturl, url) {
 	if(url == 'null'){
@@ -35,15 +35,15 @@ function request(num, id){
 	location.href = 'instatus?b_num='+num+'&r_id='+id;
 }
 
-function incruitsuccess(num , size){ //¸ğÁı¿Ï·á
+function incruitsuccess(num , size){ //ëª¨ì§‘ì™„ë£Œ
 	if(size == 0){
-		alert('½ÅÃ»ÇÑ È¸¿øÀÌ ¾ø½À´Ï´Ù.');
+		alert('ì‹ ì²­í•œ íšŒì›ì´ ì—†ìŠµë‹ˆë‹¤.');
 	}
 	else{
 		location.href = 'upstatus?b_num='+num+'&check=incruit';
 	}
 }
-function readysuccess(num){ //ÁØºñ¿Ï·á
+function readysuccess(num){ //ì¤€ë¹„ì™„ë£Œ
 	var check = document.getElementsByName("check");
 	
 	var checkid = "";
@@ -57,10 +57,10 @@ function readysuccess(num){ //ÁØºñ¿Ï·á
 		location.href = 'upstatus?b_num='+num+'&checkid='+checkid+'&check=ready';
 	}
 	else{
-		alert('È¸¿øÀ» ÇÑ ¸í ÀÌ»ó ¼±ÅÃÇÏ¼¼¿ä.');
+		alert('íšŒì›ì„ í•œ ëª… ì´ìƒ ì„ íƒí•˜ì„¸ìš”.');
 	}
 }
-function toursuccess(num){ //¿©Çà¿Ï·á
+function toursuccess(num){ //ì—¬í–‰ì™„ë£Œ
 	var check = document.frm.check;
 	
 	var checkid = "";
@@ -78,10 +78,10 @@ function toursuccess(num){ //¿©Çà¿Ï·á
 	}
 	var flag
 	if(checkid == ""){
-		flag = confirm("¾Æ¹«µµ Âü¼® ÇÏÁö ¾Ê¾Ò½À´Ï±î?");
+		flag = confirm("ì•„ë¬´ë„ ì°¸ì„ í•˜ì§€ ì•Šì•˜ìŠµë‹ˆê¹Œ?");
 	}
 	else{
-		flag = confirm("Âü¼®ÀÚ°¡ "+ checkid + " ¸Â½À´Ï±î?");
+		flag = confirm("ì°¸ì„ìê°€ "+ checkid + " ë§ìŠµë‹ˆê¹Œ?");
 	}
 	
 	if(flag){
@@ -166,7 +166,7 @@ border-top: 3px solid #e2e2e2;
 <div id="main">
 	<div id="menu" style="border-bottom: 2px solid #dedede";>
 	<font style="border-style: solid; font-size:24pt; color: #22becc; font-weight: bolder; ">BoardView</font>
-	<font style="font-size:14pt; font-weight: bolder; color: #999; ">±Ûº¸±â</font>
+	<font style="font-size:14pt; font-weight: bolder; color: #999; ">ê¸€ë³´ê¸°</font>
 	</div>
 	<%
 		String posturl = (String) request.getHeader("referer");
@@ -192,35 +192,35 @@ border-top: 3px solid #e2e2e2;
 	<center>
 		<table class="board topmargin" style="margin-top: 50px;">
 			<tr>
-			<td class="title">±Û¹øÈ£</td>
+			<td class="title">ê¸€ë²ˆí˜¸</td>
 			<td class="content">${bean.b_num}</td>
 			</tr>
 			<tr>
-			<td class="title">Áö¿ª</td>
+			<td class="title">ì§€ì—­</td>
 			<td class="content">${bean.l_name}</td>
 			</tr>
 			<tr>
-			<td class="title">ÀÏÁ¤</td>
+			<td class="title">ì¼ì •</td>
 			<td class="content">${bean.b_sdate} ~ ${bean.b_edate }</td>
 			</tr>
 			<tr>
-			<td class="title">Å×¸¶</td>
+			<td class="title">í…Œë§ˆ</td>
 			<td class="content">${bean.b_thema}</td>
 			</tr>
 			<tr>
-			<td class="title">¸ğÁıÀÎ¿ø</td>
+			<td class="title">ëª¨ì§‘ì¸ì›</td>
 			<td class="content">${bean.b_recruit}</td>
 			</tr>
 			<tr>
-			<td class="title">»óÅÂ</td>
+			<td class="title">ìƒíƒœ</td>
 			<td class="content">${bean.b_status}</td>
 			</tr>
 			<tr>
-			<td class="title">ÀÛ¼ºÀÚ</td>
+			<td class="title">ì‘ì„±ì</td>
 			<td class="content">${bean.u_id}</td>
 			</tr>
 			<tr>
-			<td class="title">Á¦¸ñ</td>
+			<td class="title">ì œëª©</td>
 			<td class="content">${bean.b_title}</td>
 			</tr>
 			<tr class="title">
@@ -231,11 +231,11 @@ border-top: 3px solid #e2e2e2;
 			<tr>
 			<%
 			if(!r_id.equals("admin")){
-				if(writeBean.getB_status().equals("¸ğÁıÁß") || writeBean.getB_status().equals("¸ğÁı¿Ï·á")){%>
-					<td class="title">½ÅÃ»ÇöÈ²</td>
+				if(writeBean.getB_status().equals("ëª¨ì§‘ì¤‘") || writeBean.getB_status().equals("ëª¨ì§‘ì™„ë£Œ")){%>
+					<td class="title">ì‹ ì²­í˜„í™©</td>
 				<%}
-				if(writeBean.getB_status().equals("ÁØºñ¿Ï·á") || writeBean.getB_status().equals("¿©Çà¿Ï·á")){%>
-					<td class="title">¼±ÅÃ°á°ú</td>
+				if(writeBean.getB_status().equals("ì¤€ë¹„ì™„ë£Œ") || writeBean.getB_status().equals("ì—¬í–‰ì™„ë£Œ")){%>
+					<td class="title">ì„ íƒê²°ê³¼</td>
 				<%}
 			}%>
 			</tr>
@@ -244,12 +244,12 @@ border-top: 3px solid #e2e2e2;
 			<tr>
 			<td colspan="3"  class="con_content">
 			
-			<%	if(writeBean.getB_status().equals("¸ğÁıÁß")){%>
+			<%	if(writeBean.getB_status().equals("ëª¨ì§‘ì¤‘")){%>
 					<%for(int i=0; i<statuslist.size(); i++){%>
 						<a style="color:black; text-decoration: none" href="javascript:userInfo('<%=statuslist.get(i).getU_id() %>')"><%=statuslist.get(i).getU_id() %></a>
 					<%}%>
 				<%}
-				if(writeBean.getB_status().equals("¸ğÁı¿Ï·á")){%>
+				if(writeBean.getB_status().equals("ëª¨ì§‘ì™„ë£Œ")){%>
 					<%for(int i=0; i<statuslist.size(); i++){
 						if(writeBean.getU_id().equals(r_id)){%>
 							<input type="checkbox" name="check" value="<%=statuslist.get(i).getU_id()%>">
@@ -261,7 +261,7 @@ border-top: 3px solid #e2e2e2;
 						<%}
 					}%>
 				<%}
-				if(writeBean.getB_status().equals("ÁØºñ¿Ï·á") || writeBean.getB_status().equals("¿©Çà¿Ï·á")){%>
+				if(writeBean.getB_status().equals("ì¤€ë¹„ì™„ë£Œ") || writeBean.getB_status().equals("ì—¬í–‰ì™„ë£Œ")){%>
 					<%for(int i=0; i<statuslist.size(); i++){
 						if(statuslist.get(i).getS_apply().equals("T")){
 							if(writeBean.getU_id().equals(r_id)){%>
@@ -290,14 +290,14 @@ border-top: 3px solid #e2e2e2;
 			</tr>
 			
 			<tr>
-			<%if(writeBean.getB_status().equals("¿©Çà¿Ï·á")){%>
-				<td class="title">Âü¼®ÀÚ</td>
+			<%if(writeBean.getB_status().equals("ì—¬í–‰ì™„ë£Œ")){%>
+				<td class="title">ì°¸ì„ì</td>
 			<%}%>
 			</tr>
 			
 			<tr>
 			<td>
-			<%if(writeBean.getB_status().equals("¿©Çà¿Ï·á")){%>
+			<%if(writeBean.getB_status().equals("ì—¬í–‰ì™„ë£Œ")){%>
 				<%for(int i=0; i<statuslist.size(); i++){
 					if(statuslist.get(i).getS_apply().equals("T")){
 						if(statuslist.get(i).getS_attend().equals("T")){%>
@@ -313,59 +313,59 @@ border-top: 3px solid #e2e2e2;
 			</tr>
 			<%}%>
 		</table>
-			<!-- ¸ğÁıÀÚÀÇ ÀÔÀå! -->	
+			<!-- ëª¨ì§‘ìì˜ ì…ì¥! -->	
 			<%if(!r_id.equals("admin")){
 			if(writeBean.getU_id().equals(r_id)){
-				if(writeBean.getB_status().equals("¸ğÁıÁß")){%>
-					<input type="button" style="margin-top: 20px"class="myButton"value="¸ğÁı¿Ï·á" onclick="incruitsuccess('<%=writeBean.getB_num()%>','<%=statuslist.size()%>')">
+				if(writeBean.getB_status().equals("ëª¨ì§‘ì¤‘")){%>
+					<input type="button" style="margin-top: 20px"class="myButton"value="ëª¨ì§‘ì™„ë£Œ" onclick="incruitsuccess('<%=writeBean.getB_num()%>','<%=statuslist.size()%>')">
 				<%}
-				else if(writeBean.getB_status().equals("¸ğÁı¿Ï·á")){%>
-					<input type="button" style="margin-top: 20px"class="myButton"value="ÁØºñ¿Ï·á" onclick="readysuccess('<%=writeBean.getB_num()%>')">
+				else if(writeBean.getB_status().equals("ëª¨ì§‘ì™„ë£Œ")){%>
+					<input type="button" style="margin-top: 20px"class="myButton"value="ì¤€ë¹„ì™„ë£Œ" onclick="readysuccess('<%=writeBean.getB_num()%>')">
 				<%}
-				else if(writeBean.getB_status().equals("ÁØºñ¿Ï·á")){%>
-					<input type="button" style="margin-top: 20px" class="myButton"value="¿©Çà¿Ï·á" onclick="toursuccess('<%=writeBean.getB_num()%>')">
+				else if(writeBean.getB_status().equals("ì¤€ë¹„ì™„ë£Œ")){%>
+					<input type="button" style="margin-top: 20px" class="myButton"value="ì—¬í–‰ì™„ë£Œ" onclick="toursuccess('<%=writeBean.getB_num()%>')">
 				<%}
 			}
 			}%>
 			
-			<!-- ½ÅÃ»ÀÚÀÇ ÀÔÀå! -->	
+			<!-- ì‹ ì²­ìì˜ ì…ì¥! -->	
 			<%
 			if(!r_id.equals("admin")){
 				
 			if(!writeBean.getU_id().equals(r_id)){ 
-				if(writeBean.getB_status().equals("ÁØºñ¿Ï·á") && statusbean.getS_apply().equals("T")){%>
-				<label style="color: blue; margin-top: 100px">´çÃ·</label>
+				if(writeBean.getB_status().equals("ì¤€ë¹„ì™„ë£Œ") && statusbean.getS_apply().equals("T")){%>
+				<label style="color: blue; margin-top: 100px">ë‹¹ì²¨</label>
 				<% }
-				if(writeBean.getB_status().equals("ÁØºñ¿Ï·á") && statusbean.getS_apply().equals("F")){%>
-				<label style="color: red; margin-top: 20px">Å»¶ô</label>
+				if(writeBean.getB_status().equals("ì¤€ë¹„ì™„ë£Œ") && statusbean.getS_apply().equals("F")){%>
+				<label style="color: red; margin-top: 20px">íƒˆë½</label>
 				<% }
 			}
 			
 			if(statusid == null){
-				if(writeBean.getB_status().equals("¸ğÁıÁß") && !writeBean.getU_id().equals(r_id)){%>
-				<input type="button" style="margin-top: 20px" class="myButton"value="½ÅÃ»ÇÏ±â" onclick="request('<%=writeBean.getB_num()%>','<%=r_id%>')">
+				if(writeBean.getB_status().equals("ëª¨ì§‘ì¤‘") && !writeBean.getU_id().equals(r_id)){%>
+				<input type="button" style="margin-top: 20px" class="myButton"value="ì‹ ì²­í•˜ê¸°" onclick="request('<%=writeBean.getB_num()%>','<%=r_id%>')">
 			<%}
 			}
 			if(statusid != null){
-				if(writeBean.getB_status().equals("¸ğÁıÁß") && statusbean.getS_apply().equals("N")){%>
-					<input type="button" style="margin-top: 20px" class="myButton"value="¼±ÅÃÁß">
+				if(writeBean.getB_status().equals("ëª¨ì§‘ì¤‘") && statusbean.getS_apply().equals("N")){%>
+					<input type="button" style="margin-top: 20px" class="myButton"value="ì„ íƒì¤‘">
 				<%}
-				if(writeBean.getB_status().equals("¿©Çà¿Ï·á") && statusbean.getS_give().equals("F")){%>
-					<input type="button" style="margin-top: 20px" class="myButton" value="Æò°¡ÇÏ±â" onclick="give('<%=writeBean.getB_num()%>','<%=writeBean.getU_id()%>')">
+				if(writeBean.getB_status().equals("ì—¬í–‰ì™„ë£Œ") && statusbean.getS_give().equals("F")){%>
+					<input type="button" style="margin-top: 20px" class="myButton" value="í‰ê°€í•˜ê¸°" onclick="give('<%=writeBean.getB_num()%>','<%=writeBean.getU_id()%>')">
 				<%}
 			}
 			}%>
 
 		
-		<%if( writeBean.getB_status().equals("¸ğÁıÁß") && writeBean.getU_id().equals(r_id) ) {%>
-			<input type="submit" class="myButton" value="¼öÁ¤" style="margin-left: 200px; margin-top: 20px">
-			<input type="button" class="myButton" value="»èÁ¦"  style="margin-top: 21px;" onclick="boarddelete('<%=posturl%>', '<%=url%>', '<%=writeBean.getB_num()%>')">
+		<%if( writeBean.getB_status().equals("ëª¨ì§‘ì¤‘") && writeBean.getU_id().equals(r_id) ) {%>
+			<input type="submit" class="myButton" value="ìˆ˜ì •" style="margin-left: 200px; margin-top: 20px">
+			<input type="button" class="myButton" value="ì‚­ì œ"  style="margin-top: 21px;" onclick="boarddelete('<%=posturl%>', '<%=url%>', '<%=writeBean.getB_num()%>')">
 		<%}%>
 		
 		<%if(r_id.equals("admin")) {%>
-			<input type="button" class="myButton" value="»èÁ¦"  style="margin-top: 21px;" onclick="boarddelete('<%=posturl%>', '<%=url%>', '<%=writeBean.getB_num()%>')">
+			<input type="button" class="myButton" value="ì‚­ì œ"  style="margin-top: 21px;" onclick="boarddelete('<%=posturl%>', '<%=url%>', '<%=writeBean.getB_num()%>')">
 		<%}%>
-		<input type="button" class="myButton" value="ÀÌÀü" 
+		<input type="button" class="myButton" value="ì´ì „" 
 		onclick="postpage('<%=posturl%>','<%=url%>')" style="margin-top: 20px">
 		</center>
 		</form>

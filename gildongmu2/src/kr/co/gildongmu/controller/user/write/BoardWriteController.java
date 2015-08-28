@@ -33,7 +33,7 @@ public class BoardWriteController {
 	public String write_b(HttpServletRequest request) {
 		
 		try {
-			request.setCharacterEncoding("euc-kr");
+			request.setCharacterEncoding("UTF-8");
 		} catch (UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

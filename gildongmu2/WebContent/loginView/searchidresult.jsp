@@ -1,11 +1,11 @@
 <%@page import="kr.co.gildongmu.model.login.bean.UserBean"%>
 <%@page import="org.apache.catalina.User"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 
 <% 
@@ -20,10 +20,10 @@ String u_id = (String)request.getAttribute("u_id");
 <ul>
 			<li type="none" style="font-weight: bold; font-size: 16px; color: #ffffff;
 			width: 160px; height: 26px; background-color: #22becc;">
-			ID/PASSÃ£±â
+			ID/PASSì°¾ê¸°
 			</li>
-			<a href="searchmyid.do" style="text-decoration: none; margin: -10px 0 0 300px" >ID Ã£±â</a>
-			<a href="searchmypass.do" style="text-decoration: none; margin: -30px 0 0 460px">PASSWORD Ã£±â</a>
+			<a href="searchmyid.do" style="text-decoration: none; margin: -10px 0 0 300px" >ID ì°¾ê¸°</a>
+			<a href="searchmypass.do" style="text-decoration: none; margin: -30px 0 0 460px">PASSWORD ì°¾ê¸°</a>
 			<a href="#" style="text-decoration: none; margin: -30px 0 0 620px">Contact</a>
 </ul>		 
 </ul>
@@ -31,7 +31,7 @@ String u_id = (String)request.getAttribute("u_id");
 <div id="myMain">
 	<div id="myMenu">	
 		<font style="border-style: solid;background-color: #f5f5f5;font-size: large; color: #22becc;">Join</font>
-		<font style="font-size: small;">ºñ¹Ğ¹øÈ£Ã£±â</font>
+		<font style="font-size: small;">ë¹„ë°€ë²ˆí˜¸ì°¾ê¸°</font>
 	</div>
 	
 <center>
@@ -41,13 +41,13 @@ String u_id = (String)request.getAttribute("u_id");
 			<p>
 			<%if(u_id != null) {%>
 				<table cellpadding="10">
-				Ã£À¸½Å ¾ÆÀÌµğ´Â<br>
+				ì°¾ìœ¼ì‹  ì•„ì´ë””ëŠ”<br>
 				<td>${u_id }</td>
 				</table>
 				<%}else{%>
 				<table cellpadding="10">
-				Ã£À¸½Å ¾ÆÀÌµğ´Â<br>
-				<td>Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.</td>
+				ì°¾ìœ¼ì‹  ì•„ì´ë””ëŠ”<br>
+				<td>ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.</td>
 				</table>
 				<%} %>
 			</p>

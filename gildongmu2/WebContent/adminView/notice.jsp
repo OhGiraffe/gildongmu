@@ -1,12 +1,12 @@
 <%@page import="java.util.List"%>
 <%@page import="kr.co.gildongmu.model.board.bean.BoardBean"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <script language="javascript">
             function write_movepage(){
@@ -30,10 +30,10 @@
 <ul>
 		<li type="none" style="font-weight: bold; font-size: 16px; color: #ffffff;
 		width: 160px; height: 26px; background-color: #22becc;">
-		°í°´¼¾ÅÍ
+		ê³ ê°ì„¼í„°
 		</li>
 		<a href="faq.do" style="text-decoration: none; margin: -10px 0 0 300px" >FAQ</a>
-		<a href="notice.do" style="text-decoration: none; margin: -30px 0 0 460px">°øÁö»çÇ×</a>
+		<a href="notice.do" style="text-decoration: none; margin: -30px 0 0 460px">ê³µì§€ì‚¬í•­</a>
 		<a href="contact.do" style="text-decoration: none; margin: -30px 0 0 620px">CONTACT</a>
 </ul>		 
 </ul>
@@ -41,7 +41,7 @@
 <div id="myMain">
 <div id="myMenu" style="border-bottom: 2px solid #dedede";>
 	<font style="border-style: solid; font-size:24pt; color: #22becc; font-weight: bolder; ">Notice</font>
-	<font style="font-size:14pt; font-weight: bolder; color: #999; ">°øÁö»çÇ×</font>
+	<font style="font-size:14pt; font-weight: bolder; color: #999; ">ê³µì§€ì‚¬í•­</font>
 </div>
 		<div class="t3" style="margin-top: -30px;">
 			<div class="tblWrap topmargin" style="margin-left: 20px;">
@@ -54,10 +54,10 @@
 					</colgroup>
 					<thead>
 						<tr>
-							<th scope="col">±Û¹øÈ£</th>		
-							<th scope="col">Á¦¸ñ</th>
-							<th scope="col">ÀÛ¼ºÀÚ</th>
-							<th scope="col">Á¶È¸</th>
+							<th scope="col">ê¸€ë²ˆí˜¸</th>		
+							<th scope="col">ì œëª©</th>
+							<th scope="col">ìž‘ì„±ìž</th>
+							<th scope="col">ì¡°íšŒ</th>
 						</tr>
 					</thead>
 					<tbody>
