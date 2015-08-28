@@ -1,5 +1,4 @@
 <%@page import="kr.co.gildongmu.model.board.bean.BoardBean"%>
-<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/plain; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>

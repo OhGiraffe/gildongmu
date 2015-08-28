@@ -10,7 +10,7 @@
 <title>Insert title here</title>
 <script type="text/javascript">
 function move(num){
-	location.href = "bview?b_num="+num+"&view=view";
+	location.href = "view_board?b_num="+num+"&view=view";
 }
 function userInfo(u_id) {
 	window.open("userinfo?u_id="+u_id, "get", "height=450, width=420");
