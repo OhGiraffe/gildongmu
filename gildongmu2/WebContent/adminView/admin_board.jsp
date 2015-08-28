@@ -50,30 +50,27 @@
 	<div id="outer">
 		<div id="first"><%@include file="/mainView/tobmenu.jsp"%></div>
 		<div id="myBar">
-			<ul class="side">
-				<ul>
-					<li type="none"
-						style="font-weight: bold; font-size: 16px; color: #ffffff; width: 160px; height: 26px; background-color: #004080;">
-						관리자</li>
-					<br>
-					<a href="admin_user" style="text-decoration: none">회원 관리</a>
-					</li>
-					<li type="none"><a href="admin_board"
-						style="text-decoration: none">게시판 관리</a></li>
-					<li type="none"><a href="admin_review"
-						style="text-decoration: none">후기 게시판 관리</a></li>
-					<li type="none"><a href="adminnotice"
-						style="text-decoration: none;">기타 공지사항</a></li>
-				</ul>
-			</ul>
-		</div>
-		<div id="myMain">
-			<div id="myMenu">
-				<font
-					style="border-style: solid; background-color: #f5f5f5; font-size: large; color: #3a5795;">AdminBoard</font>
-				<font style="font-size: small;">게시판 관리</font>
-			</div>
-
+<ul class="side" style="margin-top: 24px;">
+<ul>
+		<li type="none" style="font-weight: bold; font-size: 16px; color: #ffffff;
+		width: 160px; height: 26px; background-color: #22becc;">
+		관리자
+		</li>
+		<a href="admin_user" style="text-decoration: none; margin: -10px 0 0 250px" >회원 관리</a>
+		<a href="admin_board" style="text-decoration: none; margin: -30px 0 0 410px">게시판 관리</a>
+		<a href="admin_review" style="text-decoration: none; margin: -30px 0 0 570px">후기 게시판 관리</a>
+		<a href="adminnotice" style="text-decoration: none; margin: -30px 0 0 730px">공지사항</a>
+</ul>		 
+</ul>
+</div>
+<div id="myMain">
+<div id="myMenu" style="border-bottom: 2px solid #dedede";>
+	<font style="border-style: solid; font-size:24pt; color: #22becc; font-weight: bolder; ">AdminBoard</font>
+	<font style="font-size:14pt; font-weight: bolder; color: #999; ">게시판 관리</font>
+</div>
+	<center>
+	<div class="t3" style="margin-right: 150px; margin-top: -30px;">
+			<div class="tblWrap topmargin">
 			<div id="board" class="board">
 				<div class="t3">
 					<div class="tblWrap topmargin" style="margin-left: 50px;">
