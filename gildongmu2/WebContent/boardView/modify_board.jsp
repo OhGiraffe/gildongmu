@@ -204,6 +204,57 @@ nhn.husky.EZCreator.createInIFrame({
 });
 	
 function modifyContents() {
+	var l_cnt = 0;
+	for (i=0; i<document.frm.l_checkbox.length; i++ ) {
+	    if (document.frm.l_checkbox[i].checked==true){
+	    	l_cnt++;
+	    }
+	}
+	var b_sdate = document.frm.b_sdate.value;
+	var b_edate = document.frm.b_edate.value;
+	var t_cnt = 0;
+	for (i=0; i<document.frm.t_checkbox.length; i++ ) {
+	    if (document.frm.t_checkbox[i].checked==true){
+	    	t_cnt++;
+	    }
+	}
+	var b_recruit = document.frm.b_recruit.value;
+	var b_title = document.frm.b_title.value;
+	
+	if(l_cnt == 0) {
+		alert("지역을 선택해주세요.");
+		return;
+	}
+	
+	if(b_sdate == "출발") {
+		alert("출발일을 입력해주세요.");
+		document.frm.b_sdate.focus();
+		return;
+	}
+	
+	if(b_edate == "종료") {
+		alert("도착일을 입력해주세요.");
+		document.frm.b_edate.focus();
+		return;
+	}
+	
+	if(t_cnt == 0) {
+		alert("테마를 선택해주세요.");
+		return;
+	}
+	
+	if(b_recruit.trim() == "") {
+		alert("모집인원을 입력해주세요.");
+		document.frm.b_recruit.focus();
+		return;
+	}
+	
+	if(b_title.trim() == "") {
+		alert("제목을 입력해주세요.");
+		document.frm.b_title.focus();
+		return;
+	}
+	
 	oEditors.getById["ir1"].exec("UPDATE_CONTENTS_FIELD", []);	// 에디터의 내용이 textarea에 적용됩니다.
 	
 	// 에디터의 내용에 대한 값 검증은 이곳에서 document.getElementById("ir1").value를 이용해서 처리하면 됩니다.

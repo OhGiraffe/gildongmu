@@ -64,6 +64,22 @@ nhn.husky.EZCreator.createInIFrame({
 
 //‘저장’ 버튼을 누르는 등 저장을 위한 액션을 했을 때 submitContents가 호출된다고 가정한다.
 function submitContents(elClickedObj) {
+	var title = document.submitForm.title.value;
+	var r_image = document.submitForm.r_image.value;
+	var content = document.submitForm.content.value;
+	
+	
+	if(title.trim() == "") {
+		alert("제목을 입력해주세요.");
+		document.submitForm.title.focus();
+		return;
+	}
+	
+	if(r_image.trim() == "") {
+		alert("사진을 입력해주세요.");
+		document.submitForm.r_image.focus();
+		return;
+	}
     // 에디터의 내용이 textarea에 적용된다.
     oEditors.getById["content"].exec("UPDATE_CONTENTS_FIELD", []);
  
