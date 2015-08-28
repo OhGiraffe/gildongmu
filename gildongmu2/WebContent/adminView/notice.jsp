@@ -34,7 +34,7 @@
 		</li>
 		<a href="faq.do" style="text-decoration: none; margin: -10px 0 0 300px" >FAQ</a>
 		<a href="notice.do" style="text-decoration: none; margin: -30px 0 0 460px">공지사항</a>
-		<a href="#" style="text-decoration: none; margin: -30px 0 0 620px">기타</a>
+		<a href="contact.do" style="text-decoration: none; margin: -30px 0 0 620px">CONTACT</a>
 </ul>		 
 </ul>
 </div>
