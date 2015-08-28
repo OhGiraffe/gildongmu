@@ -48,7 +48,7 @@ public class ReviewDAO {
 		return false;
 	}
 
-	public List<ReviewBean> search(String keyword) {
+	public List<ReviewBean> search(String keyword, int skip, int max) {
 		List<ReviewBean> list = session.selectList("review.search", keyword);
 		return list;
 	}
