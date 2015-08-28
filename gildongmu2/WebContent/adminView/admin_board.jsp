@@ -1,38 +1,38 @@
 <%@page import="java.util.List"%>
 <%@page import="kr.co.gildongmu.model.board.bean.BoardBean"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript">
-	function getXMLHttpRequest() {//XMLHttpRequest°´Ã¼»ı¼º
-		if (window.ActiveXObject) {//IE°æ¿ì
+	function getXMLHttpRequest() {//XMLHttpRequestê°ì²´ìƒì„±
+		if (window.ActiveXObject) {//IEê²½ìš°
 			try {
 				return new ActiveXObject('Msxml2.XMLHTTP');
 			} catch (e) {
 				return new ActiveXObject('Microsoft.XMLHTTP');
 			}
-		} else if (window.XMLHttpRequest) {//ºñIE°æ¿ì
+		} else if (window.XMLHttpRequest) {//ë¹„IEê²½ìš°
 			return new XMLHttpRequest();
 		} else
 			return null;
 	}//getXMLHttpRequest()
 
 	var xhr;
-	function board_load(start, end, block) {//ÆäÀÌÁö¿äÃ»
+	function board_load(start, end, block) {//í˜ì´ì§€ìš”ì²­
 		xhr = getXMLHttpRequest();
-		xhr.onreadystatechange = board_loaded;//Äİ¹éÇÔ¼ö(open,sendÈÄ ½ÇÇàÇÒ ÇÔ¼ö)Á¤ÀÇ
-		xhr.open('POST', 'admin_board_paging', true);//HTTP¿äÃ»¹æ½Ä, ¿äÃ»URL, ºñµ¿±â
+		xhr.onreadystatechange = board_loaded;//ì½œë°±í•¨ìˆ˜(open,sendí›„ ì‹¤í–‰í•  í•¨ìˆ˜)ì •ì˜
+		xhr.open('POST', 'admin_board_paging', true);//HTTPìš”ì²­ë°©ì‹, ìš”ì²­URL, ë¹„ë™ê¸°
 		xhr.setRequestHeader('Content-Type',
 				'application/x-www-form-urlencoded');
-		xhr.send('start=' + start + '&end=' + end + '&block=' + block);//Àü´ŞÆÄ¶ó¹ÌÅÍ
+		xhr.send('start=' + start + '&end=' + end + '&block=' + block);//ì „ë‹¬íŒŒë¼ë¯¸í„°
 	}
 
-	function board_loaded() {//ÀÀ´äµ¥ÀÌÅÍ Ã³¸®
+	function board_loaded() {//ì‘ë‹µë°ì´í„° ì²˜ë¦¬
 		if (xhr.readyState == 4) {
 			if (xhr.status == 200) {
 				var data = xhr.responseText;
@@ -54,26 +54,24 @@
 <ul>
 		<li type="none" style="font-weight: bold; font-size: 16px; color: #ffffff;
 		width: 160px; height: 26px; background-color: #22becc;">
-		°ü¸®ÀÚ
+		ê´€ë¦¬ì
 		</li>
-		<a href="admin_user" style="text-decoration: none; margin: -10px 0 0 250px" >È¸¿ø °ü¸®</a>
-		<a href="admin_board" style="text-decoration: none; margin: -30px 0 0 410px">°Ô½ÃÆÇ °ü¸®</a>
-		<a href="admin_review" style="text-decoration: none; margin: -30px 0 0 570px">ÈÄ±â °Ô½ÃÆÇ °ü¸®</a>
-		<a href="adminnotice" style="text-decoration: none; margin: -30px 0 0 730px">°øÁö»çÇ×</a>
+		<a href="admin_user" style="text-decoration: none; margin: -10px 0 0 250px" >íšŒì› ê´€ë¦¬</a>
+		<a href="admin_board" style="text-decoration: none; margin: -30px 0 0 410px">ê²Œì‹œíŒ ê´€ë¦¬</a>
+		<a href="admin_review" style="text-decoration: none; margin: -30px 0 0 570px">í›„ê¸° ê²Œì‹œíŒ ê´€ë¦¬</a>
+		<a href="adminnotice" style="text-decoration: none; margin: -30px 0 0 730px">ê³µì§€ì‚¬í•­</a>
 </ul>		 
 </ul>
 </div>
 <div id="myMain">
 <div id="myMenu" style="border-bottom: 2px solid #dedede";>
 	<font style="border-style: solid; font-size:24pt; color: #22becc; font-weight: bolder; ">AdminBoard</font>
-	<font style="font-size:14pt; font-weight: bolder; color: #999; ">°Ô½ÃÆÇ °ü¸®</font>
+	<font style="font-size:14pt; font-weight: bolder; color: #999; ">ê²Œì‹œíŒ ê´€ë¦¬</font>
 </div>
 	<center>
 	<div class="t3" style="margin-right: 150px; margin-top: -30px;">
 			<div class="tblWrap topmargin">
 			<div id="board" class="board">
-				<div class="t3">
-					<div class="tblWrap topmargin" style="margin-left: 50px;">
 						<table>
 							<colgroup>
 								<col width="50px">
@@ -88,15 +86,15 @@
 							</colgroup>
 							<thead>
 								<tr>
-									<th scope="col">±Û¹øÈ£</th>
-									<th scope="col">Áö¿ª</th>
-									<th scope="col">ÀÏÁ¤</th>
-									<th scope="col">Å×¸¶</th>
-									<th scope="col">Á¦¸ñ</th>
-									<th scope="col">ÀÛ¼ºÀÚ</th>
-									<th scope="col">¸ğÁıÀÎ¿ø</th>
-									<th scope="col">Á¶È¸</th>
-									<th scope="col">»óÅÂ</th>
+									<th scope="col">ê¸€ë²ˆí˜¸</th>
+									<th scope="col">ì§€ì—­</th>
+									<th scope="col">ì¼ì •</th>
+									<th scope="col">í…Œë§ˆ</th>
+									<th scope="col">ì œëª©</th>
+									<th scope="col">ì‘ì„±ì</th>
+									<th scope="col">ëª¨ì§‘ì¸ì›</th>
+									<th scope="col">ì¡°íšŒ</th>
+									<th scope="col">ìƒíƒœ</th>
 								</tr>
 							</thead>
 							<tbody id="tablearea">
@@ -131,7 +129,7 @@
 												</c:if>
 												<c:if test="${b!=1 }">
 													<a onclick="board_load('${b*50-100}','10','${b-1}')"
-														style="cursor: pointer;">[ÀÌÀü]</a>
+														style="cursor: pointer;">[ì´ì „]</a>
 												</c:if>
 												<c:if test="${totalIdx>5 }">
 													<c:if test="${b*5-totalIdx>=0 }">
@@ -149,7 +147,7 @@
 												</c:if>
 												<c:if test="${b!=totalB}">
 													<a onclick="board_load('${b*50}','10','${b+1}')"
-														style="cursor: pointer;">[´ÙÀ½]</a>
+														style="cursor: pointer;">[ë‹¤ìŒ]</a>
 												</c:if>
 											</center>
 										</td>
