@@ -33,7 +33,7 @@
 	<font style="font-size:14pt; font-weight: bolder; color: #999; ">후기게시판</font>
 </div>
 	<center>
-	<form action="resultreview.do" method="post" name="reviewForm">
+	<form action="reviewsearch" method="post" name="reviewForm">
 		<div class="t4" style="margin-left: 50px;">
 			<div class="tblWrap topmargin">
 				<table>
