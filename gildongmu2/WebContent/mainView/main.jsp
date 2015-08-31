@@ -247,6 +247,7 @@ function userInfo(u_id) {
 						<td>
 							<div class="ih-item square effect6 from_top_and_bottom"><a href="view_review?num=<%= reviewList.get(i).getR_num() %>&cnt=<%=reviewList.get(i).getR_count()%>">
 							<div class="img"><img src="<%= reviewList.get(i).getR_image() %>"></div>
+							<% System.out.print(reviewList.get(i).getR_image()); %>
 							<div class="info">
 								<h3><%= reviewList.get(i).getR_title() %></h3>
 								<p><%= reviewList.get(i).getR_content() %></p>

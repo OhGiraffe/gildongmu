@@ -24,8 +24,9 @@ public class ReviewDeleteController{
 		
 		int num = Integer.parseInt(request.getParameter("num"));
 		
-		reviewDAO.delete(num);
 		reviewReplyDAO.deleteAll(num);
+		reviewDAO.delete(num);
+		
 		
 		return "redirect:review";
 	}

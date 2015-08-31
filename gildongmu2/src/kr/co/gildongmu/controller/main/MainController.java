@@ -28,6 +28,13 @@ public class MainController {
 	public String main(HttpServletRequest request) {
 		List<UserBean> ranklist = searchRankDAO.select();
 		List<ReviewBean> reviewlist = reviewBestDAO.select();
+		
+		for (int i=0; i<reviewlist.size(); i++) {
+			String[] splitpath = reviewlist.get(i).getR_image().split("\\\\");
+			String path = "/"+splitpath[8]+"/"+splitpath[9]+"/"+splitpath[10];
+			reviewlist.get(i).setR_image(path);
+		}
+		
 		request.setAttribute("rankList", ranklist);
 		request.setAttribute("reviewList", reviewlist);
 		return "mainView/main";

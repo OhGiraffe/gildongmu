@@ -1,9 +1,6 @@
 package kr.co.gildongmu.controller.user;
 
-import java.io.UnsupportedEncodingException;
-
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import kr.co.gildongmu.model.login.bean.UserBean;
 import kr.co.gildongmu.model.user.dao.SearchUserInfoDAO;
