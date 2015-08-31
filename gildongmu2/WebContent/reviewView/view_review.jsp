@@ -9,7 +9,6 @@
 <script type="text/javascript" src="./se2/js/HuskyEZCreator.js"
 	charset="UTF-8"></script>
 <%
-	request.setCharacterEncoding("UTF-8");
 	ReviewBean reviewBean = (ReviewBean) request.getAttribute("reviewBean");
 
 	List<ReviewReplyBean> replyList = (List<ReviewReplyBean>) request.getAttribute("replyList");

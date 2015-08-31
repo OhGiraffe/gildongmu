@@ -3,10 +3,7 @@ package kr.co.gildongmu.controller.user.search;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
-import kr.co.gildongmu.model.application.bean.StatusBean;
-import kr.co.gildongmu.model.application.dao.StatusDAO;
 import kr.co.gildongmu.model.board.bean.ReviewBean;
 import kr.co.gildongmu.model.board.dao.ReviewDAO;
 
@@ -41,10 +38,17 @@ public class ReviewController {
 		if (totalRecord % maxRecord != 0) {
 			totalPage = totalPage + 1;
 		}
-		List<Integer> emp = (List<Integer>) reviewDAO.rewriteSelect(r_id);
+		List<Integer> emp = null;
 		List<Integer> list = null;
-		if(emp.size() != 0){
-			list = (List<Integer>) reviewDAO.rewriteSelect(r_id);
+		
+		if(r_id != null){
+			emp = (List<Integer>) reviewDAO.rewriteSelect(r_id);
+		}
+		
+		if(emp != null){
+			if(emp.size() != 0){
+				list = (List<Integer>) reviewDAO.rewriteSelect(r_id);
+			}
 		}
 		
 		request.setAttribute("reviewList", reviewlist);

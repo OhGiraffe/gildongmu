@@ -70,18 +70,16 @@
 				</table>
 			</div>
 			<br>
-		</div>	
-	<% 
-		if(result_id != null) {
-	%>	
+		</div>		
 	</center>
-	<%if(list != null) {%>
-		<input type="button" value="글쓰기" name="write" class="myButton" onclick="write_movepage()" style="margin-left: 1025px">	
-		<br>
+	<% 
+	if(result_id != null) {
+		if(list != null) {%>
+			<input type="button" value="글쓰기" name="write" class="myButton" onclick="write_movepage()" style="margin-left: 1025px">	
+			<br>
 		<%} %>
-	<center>
 	<% } %>
-	
+	<center>
 		<%
 			int totalPage =(Integer)request.getAttribute("totalPage");
 			int p =(Integer)request.getAttribute("page"); 		
