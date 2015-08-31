@@ -1,7 +1,5 @@
 package kr.co.gildongmu.controller.user.write;
 
-import java.io.UnsupportedEncodingException;
-
 import javax.servlet.http.HttpServletRequest;
 
 import kr.co.gildongmu.model.application.dao.StatusDAO;

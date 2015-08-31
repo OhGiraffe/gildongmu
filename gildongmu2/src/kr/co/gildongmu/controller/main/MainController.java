@@ -27,6 +27,35 @@ public class MainController {
 	@RequestMapping("/main")
 	public String main(HttpServletRequest request) {
 		List<UserBean> ranklist = searchRankDAO.select();
+		UserBean temp;
+		int indexMin;
+		
+	    for (int i = 0; i < ranklist.size() - 1; i++) {
+	    	indexMin = i;
+	        for (int j = i + 1; j < ranklist.size(); j++) {
+	        	//Âü¼®·ü
+	        	int BaseArating = (int)((double)ranklist.get(indexMin).getU_attend()/ (double)ranklist.get(indexMin).getU_apply() * 100);
+	        	int Arating = (int)((double)ranklist.get(j).getU_attend()/ (double)ranklist.get(j).getU_apply() * 100);
+	        	
+				//rating = String.format("%.1f", ratingnum);
+	        	//ÆòÁ¡
+				float BaseGrating = (float)ranklist.get(indexMin).getU_grade()/ (float)ranklist.get(indexMin).getU_npeople();
+				float Grating = (float)ranklist.get(j).getU_grade()/ (float)ranklist.get(j).getU_npeople();
+	        	
+	        	if(ranklist.get(indexMin).getU_level() <= ranklist.get(j).getU_level()){
+	        		if ( BaseArating < Arating && BaseGrating < Grating) {
+	        			indexMin = j;
+	        		}
+	        	}
+	        }
+	        
+	        temp = ranklist.get(indexMin);
+	        ranklist.set(indexMin, ranklist.get(i));
+	        ranklist.set(i, temp);
+	        
+	    }
+		
+		
 		List<ReviewBean> reviewlist = reviewBestDAO.select();
 		
 		for (int i=0; i<reviewlist.size(); i++) {
@@ -37,6 +66,7 @@ public class MainController {
 		
 		request.setAttribute("rankList", ranklist);
 		request.setAttribute("reviewList", reviewlist);
+		
 		return "mainView/main";
 	}
 

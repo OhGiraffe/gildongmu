@@ -61,7 +61,7 @@ function readysuccess(num){ //준비완료
 	}
 }
 function toursuccess(num){ //여행완료
-	var check = document.frm.check;
+	var check = document.getElementsByName("check");
 	
 	var checkid = "";
 	var j = 0;
@@ -74,6 +74,7 @@ function toursuccess(num){ //여행완료
 			if(i != j-1){
 				checkid += ", "
 			}
+			
 		}
 	}
 	var flag
@@ -106,7 +107,7 @@ function LockF5(){
 		return false;
 	}	
 }
-document.onkeydown = LockF5;
+/* document.onkeydown = LockF5; */
 </script>
 <style type="text/css">
 

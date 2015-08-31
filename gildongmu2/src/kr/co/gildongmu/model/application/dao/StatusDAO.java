@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 
 import kr.co.gildongmu.model.application.bean.StatusBean;
-import kr.co.gildongmu.model.board.bean.BoardBean;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;

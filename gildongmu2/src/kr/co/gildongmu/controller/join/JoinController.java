@@ -67,7 +67,7 @@ public class JoinController{
 			e.printStackTrace();
 		}
 		
-		UserBean user = new UserBean(id, name, pass, m_fileFullPath, age, gen, zipcode, addr, tel, email, 0, 0, 0, 0);
+		UserBean user = new UserBean(id, name, pass, m_fileFullPath, age, gen, zipcode, addr, tel, email, 0, 0, 0, 0, 1);
 		joinDAO.insert(user);
 		
 		request.setAttribute("u_name", name);

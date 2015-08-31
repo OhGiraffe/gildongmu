@@ -3,8 +3,11 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="searchRank">
 	<select id="select" resultType="kr.co.gildongmu.model.login.bean.UserBean">
+		<!-- select *
+		from (select * from userinfo where u_level &gt;=  1 order by u_level desc)
+		where rownum in (1,2,3,4,5) -->
 		select *
-		from (select * from userinfo where u_grade &gt;=  1 order by u_grade desc)
-		where rownum in (1,2,3,4,5)
+		from (select * from userinfo where u_level &gt;=  2 order by u_level desc)
+		where rownum in (1,2,3,4,5) 
 	</select>
 </mapper>

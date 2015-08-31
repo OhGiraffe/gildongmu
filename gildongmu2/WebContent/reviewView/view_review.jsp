@@ -125,7 +125,7 @@ function back() {
 									<% } %>
 									</tr>
 									<%}%>
-			
+									<% if(result_id != null){ %>
 									<table>
 										<tr style="background-color: #F6F6F6;">
 											<td>내용</td>
@@ -137,6 +137,7 @@ function back() {
 											</td>
 										</tr>
 									</table>
+									<%} %>
 							</table>
 						</tr>
 						<!-- end comment -->

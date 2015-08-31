@@ -1,11 +1,7 @@
 package kr.co.gildongmu.controller.application;
 
-import java.io.UnsupportedEncodingException;
-
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
-import kr.co.gildongmu.model.application.bean.StatusBean;
 import kr.co.gildongmu.model.application.dao.StatusDAO;
 
 import org.springframework.beans.factory.annotation.Autowired;

@@ -22,6 +22,6 @@ public class RatingGiveDAO {
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		map.put("num", num);
 		map.put("id", r_id);
-		session.insert("ratingGive.update", map);
+		session.update("ratingGive.update", map);
 	}// select
 }

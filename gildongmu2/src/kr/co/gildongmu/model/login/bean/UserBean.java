@@ -15,6 +15,7 @@ public class UserBean {
     private int u_attend;
     private int u_apply;
     private int u_npeople;
+    private int u_level;
 	
     
     public UserBean() {
@@ -33,7 +34,7 @@ public class UserBean {
 	public UserBean(String u_id, String u_name, String u_pass, String u_image,
 			int u_age, String u_gen, String u_zipcode, String u_addr,
 			String u_tel, String u_email, int u_grade, int u_attend,
-			int u_apply, int u_npeople) {
+			int u_apply, int u_npeople, int u_level) {
 		this.u_id = u_id;
 		this.u_name = u_name;
 		this.u_pass = u_pass;
@@ -48,6 +49,7 @@ public class UserBean {
 		this.u_attend = u_attend;
 		this.u_apply = u_apply;
 		this.u_npeople = u_npeople;
+		this.u_level = u_level;
 	}
 
 
@@ -188,6 +190,14 @@ public class UserBean {
 
 	public void setU_npeople(int u_npeople) {
 		this.u_npeople = u_npeople;
+	}
+
+	public int getU_level() {
+		return u_level;
+	}
+
+	public void setU_level(int u_level) {
+		this.u_level = u_level;
 	}
 
     

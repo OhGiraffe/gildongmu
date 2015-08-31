@@ -193,7 +193,7 @@ function userInfo(u_id) {
 							</colgroup>
 							<thead>
 								<tr>
-									<th scope="col">순위</th>
+									<th scope="col">레벨</th>
 									<th scope="col">아이디</th>
 									<th scope="col">평점</th>
 									<th scope="col">참석률</th>
@@ -211,7 +211,7 @@ function userInfo(u_id) {
 								rating = "0";
 								}%>
 								<tr>
-									<td style="padding: 5px;"><%=i+1 %></td>
+									<td style="padding: 5px;"><%=rankList.get(i).getU_level()  %></td>
 									<td><a style="text-decoration: none" href="javascript:userInfo('<%=rankList.get(i).getU_id() %>')"><%=rankList.get(i).getU_id() %></a></td>
 									<td class="ty4"><%= rating%></td>
 									<td class="ty2"><%= (int) ((double)rankList.get(i).getU_attend()/ (double)rankList.get(i).getU_apply() * 100) %>%</td>

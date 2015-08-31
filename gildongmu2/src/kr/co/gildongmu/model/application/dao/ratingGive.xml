@@ -7,9 +7,9 @@
 		set u_grade = u_grade + #{num}, u_npeople = u_npeople+1
 		where u_id = #{id}
 	</insert>
-	<insert id="update" parameterType="java.util.Map">
+	<update id="update" parameterType="java.util.Map">
 		update status
 		set s_give = 'T'
 		where b_num = #{num} and u_id = #{id} and s_give ='F'
-	</insert>
+	</update>
 </mapper>

@@ -1,10 +1,10 @@
 package kr.co.gildongmu.controller.application;
 
-import java.io.UnsupportedEncodingException;
-
 import javax.servlet.http.HttpServletRequest;
 
+import kr.co.gildongmu.model.application.dao.LevelUpDAO;
 import kr.co.gildongmu.model.application.dao.RatingGiveDAO;
+import kr.co.gildongmu.model.login.bean.UserBean;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,6 +15,8 @@ public class RatingGiveController{
 	
 	@Autowired
 	private RatingGiveDAO ratingGiveDAO;
+	@Autowired
+	private LevelUpDAO levelUpDAO;
 	
 	@RequestMapping("/view_ratinggive")
 	public String view_ratinggive() {
@@ -31,6 +33,9 @@ public class RatingGiveController{
 		
 		ratingGiveDAO.insert(givenum, u_id);
 		ratingGiveDAO.givechange(num, r_id);
+
+		UserBean userbean= levelUpDAO.select(u_id);
+		levelUpDAO.levelUp(userbean);
 		
 		return "redirect:view_board?b_num="+num;
 	}

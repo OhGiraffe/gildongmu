@@ -28,7 +28,7 @@ create table userinfo(
 			u_id	  varchar2(20) primary key,
             u_name	  varchar2(10) Not null,
 			u_pass	  varchar2(20) Not null,
-			u_image varchar(150) Not null,
+			u_image varchar(300) Not null,
 			u_age	  number    Not null,
 			u_gen	  char(2)      not null check(u_gen in('남','여')),
 			u_zipcode  varchar2(7)  Not null,
@@ -38,8 +38,11 @@ create table userinfo(
 			u_grade	  number,
 			u_attend  number,
 			u_apply number,
-			u_npeople number
+			u_npeople number,
+			u_level number
 );
+
+alter table userinfo add(u_level number);
 
 --게시판 테이블
 create table board(
@@ -64,7 +67,8 @@ create table review(
             r_title	  varchar2(40)   Not null,
 			r_content varchar2(1000) Not null,
 			r_date	  date           Not null,
-			r_count	  number         Not null
+			r_count	  number         Not null,
+			r_image   varchar2(300)  Not null
 );
 
 
@@ -111,4 +115,3 @@ create table zipcode(
 			bunji	  varchar2(20)
 );
 
-alter table review add(r_image varchar2(150));

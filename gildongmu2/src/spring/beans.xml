@@ -33,6 +33,7 @@
      		
      		<value>classpath:kr/co/gildongmu/model/application/dao/status.xml</value>
      		<value>classpath:kr/co/gildongmu/model/application/dao/ratingGive.xml</value>
+     		<value>classpath:kr/co/gildongmu/model/application/dao/levelUp.xml</value>
      		
      		<value>classpath:kr/co/gildongmu/model/board/dao/board.xml</value>
      		<value>classpath:kr/co/gildongmu/model/board/dao/local.xml</value>
@@ -71,6 +72,7 @@
   
   <bean class="kr.co.gildongmu.model.application.dao.StatusDAO"/>
   <bean class="kr.co.gildongmu.model.application.dao.RatingGiveDAO"/>
+  <bean class="kr.co.gildongmu.model.application.dao.LevelUpDAO"/>
 
   <bean class="kr.co.gildongmu.model.board.dao.BoardDAO"/>
   <bean class="kr.co.gildongmu.model.board.dao.LocalDAO"/>
