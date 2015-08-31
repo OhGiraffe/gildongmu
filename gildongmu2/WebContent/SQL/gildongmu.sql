@@ -71,7 +71,9 @@ create table review(
 			r_image   varchar2(300)  Not null
 );
 
-
+alter table review add(b_num number);
+ALTER TABLE review
+ADD FOREIGN KEY (b_num) REFERENCES board(b_num);
 --모집현황
 
 create table status(
@@ -80,9 +82,10 @@ create table status(
 			s_apply	  char(1)       default 'N',
 			s_attend  char(1)       default 'N',
 			s_give char(1) default 'N',
+			s_rewrite char(1)       default 'N',
 			primary key (b_num, u_id)
 );
-
+alter table status add(s_rewrite char(1));
 
 --게시판댓글테이블
 create table boardreply(

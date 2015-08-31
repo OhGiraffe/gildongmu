@@ -51,12 +51,6 @@
 		where b_num = #{num} and s_apply = #{t} and s_attend = #{n}
 	</insert>
 
-	<insert id="attendFUpdateNull" parameterType="java.util.Map">
-		update status
-		set s_attend = #{f}
-		where b_num = #{num} and s_apply = #{t} and s_attend = #{n}
-	</insert>
-
 	<insert id="userApply" parameterType="java.util.Map">
 		update userinfo
 		set u_apply = u_apply + 1
@@ -73,5 +67,11 @@
 		delete
 		from status
 		where b_num = #{num}
+	</delete>
+	
+	<delete id="rewriteTUpdate" parameterType="java.util.Map">
+		update status
+		set s_rewrite='T'
+		where u_id = #{id} and b_num = #{b_num}
 	</delete>
 </mapper>

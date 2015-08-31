@@ -1,3 +1,5 @@
+<%@page import="kr.co.gildongmu.model.board.bean.BoardBean"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -7,6 +9,9 @@
 <title>성민 숙제</title>
 <script type="text/javascript" src="./se2/js/HuskyEZCreator.js" charset="utf-8"></script>
 </head>
+<%
+	List<BoardBean> list = (List<BoardBean>) request.getAttribute("boardlist");
+%>
 <body>
 <div id="outer">
 <div id="first"><%@include file="/mainView/tobmenu.jsp"%></div>
@@ -27,6 +32,14 @@
 						style="width: 630px; height:25px; background-color: #EAEAEA; 
 						margin: 3px; border-style: solid #000000; "
 						></td>
+					</tr>
+					<tr>
+						<select name="select">
+						<%
+							for(int i=0; i<list.size(); i++){%>
+							<option value="<%=list.get(i).getB_num() %>"><%=list.get(i).getB_num() %>번-<%=list.get(i).getB_title() %></option>
+						<% }%>
+						</select>
 					</tr>
 					<tr>
 						<td class="ty2" style="text-align: left;">사진  
@@ -67,6 +80,7 @@ function submitContents(elClickedObj) {
 	var title = document.submitForm.title.value;
 	var r_image = document.submitForm.r_image.value;
 	var content = document.submitForm.content.value;
+	var select = document.submitForm.select.value;
 	
 	
 	if(title.trim() == "") {

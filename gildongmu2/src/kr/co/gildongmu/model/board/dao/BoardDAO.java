@@ -1,5 +1,7 @@
 package kr.co.gildongmu.model.board.dao;
 
+import java.util.List;
+
 import kr.co.gildongmu.model.board.bean.BoardBean;
 
 import org.apache.ibatis.session.SqlSession;
@@ -26,9 +28,7 @@ public class BoardDAO {
 	}// 관리자 공지사항 수정
 
 	public BoardBean select(int num) {
-
 		BoardBean bean = session.selectOne("board.select", num);
-
 		return bean;
 	}// select
 
@@ -48,5 +48,10 @@ public class BoardDAO {
 
 		session.delete("board.delete", num);
 
+	}// select
+	
+	public List<BoardBean> rewriteSelect(List<Integer> list) {
+		List<BoardBean> boardlist = session.selectList("board.rewriteSelect", list);
+		return boardlist;
 	}// select
 }

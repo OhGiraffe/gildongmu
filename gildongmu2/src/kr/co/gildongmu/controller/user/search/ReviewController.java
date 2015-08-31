@@ -3,7 +3,10 @@ package kr.co.gildongmu.controller.user.search;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
+import kr.co.gildongmu.model.application.bean.StatusBean;
+import kr.co.gildongmu.model.application.dao.StatusDAO;
 import kr.co.gildongmu.model.board.bean.ReviewBean;
 import kr.co.gildongmu.model.board.dao.ReviewDAO;
 
@@ -21,6 +24,7 @@ public class ReviewController {
 	@RequestMapping("/review")
 	public String review(HttpServletRequest request) {
 
+		String r_id = (String) request.getSession().getAttribute("result_id");
 		String pageStr = request.getParameter("page");
 		int page = 1; // 기본페이지
 		if (pageStr != null) { // 출력하기를 원하는 페이지에 대한 정보를 얻었을때
@@ -29,7 +33,7 @@ public class ReviewController {
 		int maxRecord = 10; // 한페이지에 보여줄 최대 레코드 수
 		int skip = (page - 1) * maxRecord; //
 
-		List<ReviewBean> list = reviewDAO.selectPage(skip, maxRecord);
+		List<ReviewBean> reviewlist = reviewDAO.selectPage(skip, maxRecord);
 
 		int totalRecord = reviewDAO.selectCnt(); // 전체 데이터개수
 
@@ -37,7 +41,14 @@ public class ReviewController {
 		if (totalRecord % maxRecord != 0) {
 			totalPage = totalPage + 1;
 		}
-		request.setAttribute("reviewList", list);
+		List<Integer> emp = (List<Integer>) reviewDAO.rewriteSelect(r_id);
+		List<Integer> list = null;
+		if(emp.size() != 0){
+			list = (List<Integer>) reviewDAO.rewriteSelect(r_id);
+		}
+		
+		request.setAttribute("reviewList", reviewlist);
+		request.setAttribute("list", list);
 		request.setAttribute("totalPage", totalPage);
 		request.setAttribute("page", page);
 

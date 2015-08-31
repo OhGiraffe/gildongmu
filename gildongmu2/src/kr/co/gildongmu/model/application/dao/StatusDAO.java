@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 
 import kr.co.gildongmu.model.application.bean.StatusBean;
+import kr.co.gildongmu.model.board.bean.BoardBean;
+import kr.co.gildongmu.model.board.bean.ReviewBean;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -90,7 +92,7 @@ public class StatusDAO {
 		map.put("f", "F");
 		map.put("n", "N");
 
-		session.update("status.attendFUpdateNull", map);
+		session.update("status.attendFUpdate", map);
 	}
 
 	public void userApplyAttend(int num) {
@@ -107,4 +109,12 @@ public class StatusDAO {
 	public void delete(int num) {
 		session.delete("status.delete", num);
 	}// select
+	
+	public void rewriteChange(ReviewBean bean) {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("id", bean.getU_id());
+		map.put("b_num", bean.getB_num());
+
+		session.update("status.rewriteTUpdate", map);
+	}
 }

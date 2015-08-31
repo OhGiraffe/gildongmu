@@ -51,4 +51,15 @@
 		set b_count = #{b_count}+1
 		where b_num = #{b_num}
 	</insert>
+	
+	<select id="rewriteSelect" parameterType="java.util.List" resultType="kr.co.gildongmu.model.board.bean.BoardBean">
+		select *
+		from board
+		<where>
+			<foreach collection="list" item="item" open="(b_num like" separator="or b_num like" close=")" >
+				'%'||#{item}||'%'
+			</foreach>
+		</where>
+		order by b_num desc
+	</select>
 </mapper>

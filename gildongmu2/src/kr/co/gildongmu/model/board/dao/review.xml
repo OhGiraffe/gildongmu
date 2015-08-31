@@ -16,8 +16,8 @@
 	</select>
 	
 	<insert id="insert" parameterType="kr.co.gildongmu.model.board.bean.ReviewBean">
-		insert into review
-		values(review_seq.nextval, #{u_id}, #{r_title}, #{r_content}, sysdate, #{r_count}, #{r_image})
+		insert into review(b_num, r_num, u_id, r_title, r_content, r_date, r_count, r_image)
+		values(#{b_num}, review_seq.nextval, #{u_id}, #{r_title}, #{r_content}, sysdate, #{r_count}, #{r_image})
 		<selectKey keyProperty="r_num" resultType="integer" order="AFTER">
        		SELECT review_seq.currval from dual
     	</selectKey>
@@ -63,5 +63,11 @@
 		select *
 		from review 
 		order by r_num desc
+	</select>
+	
+	<select id="rewriteSelect" resultType="Integer">
+		select b_num
+		from status 
+		where u_id = #{id} and s_rewrite = 'F'
 	</select>
 </mapper>

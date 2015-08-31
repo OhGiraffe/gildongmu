@@ -231,7 +231,7 @@ border-top: 3px solid #e2e2e2;
 			</tr>
 			<tr>
 			<%
-			if(!r_id.equals("admin")){
+			if(r_id != null){
 				if(writeBean.getB_status().equals("모집중") || writeBean.getB_status().equals("모집완료")){%>
 					<td class="title">신청현황</td>
 				<%}
@@ -241,7 +241,7 @@ border-top: 3px solid #e2e2e2;
 			}%>
 			</tr>
 			<%
-			if(!r_id.equals("admin")){%>
+			if(r_id != null){%>
 			<tr>
 			<td colspan="3"  class="con_content">
 			

@@ -10,8 +10,11 @@ import java.util.UUID;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import kr.co.gildongmu.model.application.dao.StatusDAO;
+import kr.co.gildongmu.model.board.bean.BoardBean;
 import kr.co.gildongmu.model.board.bean.ReviewBean;
 import kr.co.gildongmu.model.board.bean.ReviewReplyBean;
+import kr.co.gildongmu.model.board.dao.BoardDAO;
 import kr.co.gildongmu.model.board.dao.ReviewDAO;
 import kr.co.gildongmu.model.board.dao.ReviewReplyDAO;
 
@@ -28,9 +31,24 @@ public class ReviewWriteController{
 	private ReviewDAO reviewDAO;
 	@Autowired
 	private ReviewReplyDAO reviewReplyDAO;
+	@Autowired
+	private BoardDAO boardDAO;
+	@Autowired
+	private StatusDAO statusDAO;
 	
 	@RequestMapping("/write_review")
-	public String write_review() {
+	public String write_review(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		String id = (String) session.getAttribute("result_id");
+		
+		List<Integer> list = reviewDAO.rewriteSelect(id);
+		List<BoardBean> boardlist = null;
+		if(list.size() != 0){
+			boardlist = boardDAO.rewriteSelect(list);
+		}
+		
+		request.setAttribute("boardlist", boardlist);
+		
 		return "reviewView/write_review";
 	}
 	
@@ -47,6 +65,7 @@ public class ReviewWriteController{
 		String filename = file.getOriginalFilename();
 		
 		String id = (String) session.getAttribute("result_id");
+		int b_num = Integer.parseInt(multi.getParameter("select"));
 		String title = multi.getParameter("title");
 		String content = multi.getParameter("content");
 		
@@ -68,9 +87,11 @@ public class ReviewWriteController{
 			e.printStackTrace();
 		}
         
-		ReviewBean bean = new ReviewBean(0, id, title, content, null , 0, img_fileFullPath);
+		ReviewBean bean = new ReviewBean(b_num, 0, id, title, content, null , 0, img_fileFullPath);
 		
 		reviewDAO.insert(bean);
+		statusDAO.rewriteChange(bean);
+		
 		ReviewBean reviewbean = reviewDAO.select(bean.getR_num());
 		
 		List<ReviewReplyBean> replyList = reviewReplyDAO.selectAll(bean.getR_num());

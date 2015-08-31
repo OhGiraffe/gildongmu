@@ -53,11 +53,6 @@ public class ReviewDAO {
 		return list;
 	}
 
-	public List<ReviewBean> selectBest() {
-		List<ReviewBean> list = session.selectList("review.selectBest");
-		return list;
-	}
-
 	public int selectCnt() {
 		int result = session.selectOne("review.selectCnt");
 		return result;
@@ -68,5 +63,9 @@ public class ReviewDAO {
 		List<ReviewBean> list = session.selectList("review.selectPage", bounds);
 		return list;
 	}
-
+	
+	public List<Integer> rewriteSelect(String id) {
+		List<Integer> list = session.selectList("review.rewriteSelect", id);
+		return list;
+	}
 }

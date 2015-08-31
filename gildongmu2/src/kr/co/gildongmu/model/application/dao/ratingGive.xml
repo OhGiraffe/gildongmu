@@ -9,7 +9,7 @@
 	</insert>
 	<update id="update" parameterType="java.util.Map">
 		update status
-		set s_give = 'T'
+		set s_give = 'T', s_rewrite = 'F'
 		where b_num = #{num} and u_id = #{id} and s_give ='F'
 	</update>
 </mapper>

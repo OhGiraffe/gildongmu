@@ -3,6 +3,7 @@ package kr.co.gildongmu.model.board.bean;
 import java.sql.Date;
 
 public class ReviewBean {
+	private int b_num;
 	private int r_num;
 	private String u_id;
 	private String r_title;
@@ -17,8 +18,9 @@ public class ReviewBean {
 	
 	
 
-	public ReviewBean(int r_num, String u_id, String r_title, String r_content,
+	public ReviewBean(int b_num, int r_num, String u_id, String r_title, String r_content,
 			Date r_date, int r_count, String r_image) {
+		this.b_num = b_num;
 		this.r_num = r_num;
 		this.u_id = u_id;
 		this.r_title = r_title;
@@ -53,6 +55,14 @@ public class ReviewBean {
 		this.r_count = r_count;
 	}
 
+	public int getB_num() {
+		return b_num;
+	}
+
+	public void setB_num(int b_num) {
+		this.b_num = b_num;
+	}
+	
 	public int getR_num() {
 		return r_num;
 	}
