@@ -1,13 +1,15 @@
 package kr.co.gildongmu.controller.user.write;
 
 
-import java.io.UnsupportedEncodingException;
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.List;
+import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import kr.co.gildongmu.model.board.bean.BoardBean;
 import kr.co.gildongmu.model.board.bean.ReviewBean;
 import kr.co.gildongmu.model.board.bean.ReviewReplyBean;
 import kr.co.gildongmu.model.board.dao.ReviewDAO;
@@ -34,16 +36,8 @@ public class ReviewWriteController{
 	
 	@RequestMapping("/write_r")
 	public String write_r(HttpServletRequest request) {
-		
-		try {
-			request.setCharacterEncoding("UTF-8");
-		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
+
 		HttpSession session = request.getSession();
-		
 		
 		int maxSize = 1024 * 1024 * 5;
 		String savePath = request.getSession().getServletContext().getRealPath("reviewimg");
@@ -55,8 +49,25 @@ public class ReviewWriteController{
 		String id = (String) session.getAttribute("result_id");
 		String title = multi.getParameter("title");
 		String content = multi.getParameter("content");
-		String img_fileFullPath = savePath + "\\" + filename;
 		
+		
+		String realFileNm = "";
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmss");
+        String today = formatter.format(new java.util.Date());
+        realFileNm = today + UUID.randomUUID().toString() + filename.substring(filename.lastIndexOf("."));
+        String img_fileFullPath = savePath + "\\" + realFileNm;
+
+		File inputfile = new File(img_fileFullPath);
+		try {
+			file.transferTo(inputfile);
+		} catch (IllegalStateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
 		ReviewBean bean = new ReviewBean(0, id, title, content, null , 0, img_fileFullPath);
 		
 		reviewDAO.insert(bean);

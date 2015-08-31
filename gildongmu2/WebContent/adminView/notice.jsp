@@ -32,9 +32,9 @@
 		width: 160px; height: 26px; background-color: #22becc;">
 		고객센터
 		</li>
-		<a href="faq.do" style="text-decoration: none; margin: -10px 0 0 300px" >FAQ</a>
-		<a href="notice.do" style="text-decoration: none; margin: -30px 0 0 460px">공지사항</a>
-		<a href="contact.do" style="text-decoration: none; margin: -30px 0 0 620px">CONTACT</a>
+		<a href="faq" style="text-decoration: none; margin: -10px 0 0 300px" >FAQ</a>
+		<a href="notice" style="text-decoration: none; margin: -30px 0 0 460px">공지사항</a>
+		<a href="contact" style="text-decoration: none; margin: -30px 0 0 620px">CONTACT</a>
 </ul>		 
 </ul>
 </div>

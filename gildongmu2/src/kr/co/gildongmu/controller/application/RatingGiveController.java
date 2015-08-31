@@ -23,14 +23,7 @@ public class RatingGiveController{
 	
 	@RequestMapping("/ratinggive")
 	public String ratingGive(HttpServletRequest request) {
-		
-		try {
-			request.setCharacterEncoding("UTF-8");
-		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
+
 		int givenum = Integer.parseInt(request.getParameter("select"));
 		int num = Integer.parseInt(request.getParameter("b_num"));
 		String u_id = request.getParameter("u_id");

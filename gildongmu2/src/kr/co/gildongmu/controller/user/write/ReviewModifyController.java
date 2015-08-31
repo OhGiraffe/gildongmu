@@ -27,13 +27,6 @@ public class ReviewModifyController{
 	@RequestMapping("/modify_r")
 	public String modify_r(HttpServletRequest request) {
 		
-		try {
-			request.setCharacterEncoding("UTF-8");
-		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
 		int r_num = Integer.parseInt(request.getParameter("num"));
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");

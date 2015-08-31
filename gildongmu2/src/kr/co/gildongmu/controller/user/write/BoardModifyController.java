@@ -27,13 +27,6 @@ public class BoardModifyController{
 	@RequestMapping("/modify_b")
 	public String modify_b(HttpServletRequest request) {
 		
-		try {
-			request.setCharacterEncoding("UTF-8");
-		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
 		HttpSession session = request.getSession();
 		
 		int num = Integer.parseInt(request.getParameter("b_num"));

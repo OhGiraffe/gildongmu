@@ -5,12 +5,14 @@
 <mapper namespace="admin">
 	<select id="userCount" parameterType="java.lang.String" resultType="Integer">
 		select count(*) 
-		from userinfo 
+		from userinfo
+		where u_id != 'admin'
 	</select>
 	
 	<select id="boardCount" parameterType="java.lang.String" resultType="Integer">
 		select count(*) 
-		from board 
+		from board
+		where u_id != 'admin'
 	</select>
 	
 	<select id="reviewCount" parameterType="java.lang.String" resultType="Integer">
@@ -25,21 +27,29 @@
 	</select>
 
 	<select id="userSelectAll" resultType="kr.co.gildongmu.model.login.bean.UserBean">
-		select * from userinfo
+		select * 
+		from userinfo
+		where u_id != 'admin'
 	</select>
 	
 	<select id="userSelect" resultType="kr.co.gildongmu.model.login.bean.UserBean">
-		select * from userinfo
+		select * 
+		from userinfo
+		where u_id != 'admin'
 		order by u_id asc
 	</select>
 	
 	<select id="boardSelectAll" resultType="kr.co.gildongmu.model.board.bean.BoardBean">
-		select * from board 
+		select * 
+		from board
+		where u_id != 'admin'
 		order by b_num desc
 	</select>
 	
 	<select id="boardSelect" resultType="kr.co.gildongmu.model.board.bean.BoardBean">
-		select * from board 
+		select * 
+		from board
+		where u_id != 'admin' 
 		order by b_num desc
 	</select>
 	

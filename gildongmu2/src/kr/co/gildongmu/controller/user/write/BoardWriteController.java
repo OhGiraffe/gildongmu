@@ -1,6 +1,5 @@
 package kr.co.gildongmu.controller.user.write;
 
-import java.io.UnsupportedEncodingException;
 import java.sql.Date;
 import java.util.List;
 
@@ -31,14 +30,7 @@ public class BoardWriteController {
 	
 	@RequestMapping("/write_b")
 	public String write_b(HttpServletRequest request) {
-		
-		try {
-			request.setCharacterEncoding("UTF-8");
-		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
+
 		HttpSession session = request.getSession();
 		
 		String[] lcheckbox = request.getParameterValues("l_checkbox");

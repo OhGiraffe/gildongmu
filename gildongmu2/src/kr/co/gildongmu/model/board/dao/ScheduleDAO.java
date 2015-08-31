@@ -16,14 +16,14 @@ public class ScheduleDAO {
 
 	public int count(String sdate, String edate) {
 		HashMap<String, String> map = new HashMap<String, String>();
-
+		
 		if (!sdate.equals("출발일")) {
 			map.put("sdate", sdate);
 		}
-		if (!edate.equals("종료일")) {
+		if (!edate.equals("도착일")) {
 			map.put("edate", edate);
 		}
-
+		
 		int i = session.selectOne("schedule.count", map);
 
 		return i;
@@ -35,10 +35,10 @@ public class ScheduleDAO {
 		if (!sdate.equals("출발일")) {
 			map.put("sdate", sdate);
 		}
-		if (!edate.equals("종료일")) {
+		if (!edate.equals("도착일")) {
 			map.put("edate", edate);
 		}
-		
+
 		RowBounds bounds = new RowBounds(start, end);
 		
 		List<BoardBean> list = session.selectList("schedule.select", map, bounds);

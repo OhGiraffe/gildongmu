@@ -25,26 +25,10 @@ public class LocalBoardController{
 		String url[] = posturl.split("\\/");
 		String url2[]= url[4].split("\\?");
 		
-		if(url2[0].equals("localboard")){
-			try {
-				request.setCharacterEncoding("UTF-8");
-			} catch (UnsupportedEncodingException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		else{
-			try {
-				request.setCharacterEncoding("UTF-8");
-			} catch (UnsupportedEncodingException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		
 		String l_name = request.getParameter("l_name");
 
 		int i = localDAO.count(l_name);
+
 		int block = 1;
 		if (!request.getParameter("block").equals("undefined"))
 			block = Integer.parseInt(request.getParameter("block"));

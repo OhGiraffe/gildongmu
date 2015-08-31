@@ -37,7 +37,7 @@ public class ScheduleController{
 		int totalPage = 0;
 		int block = 1;
 		
-		if(!sdate.equals("출발일") && !edate.equals("종료일")){
+		if(!sdate.equals("출발일") && !edate.equals("도착일")){
 			int i = scheduleDAO.count(sdate, edate);
 
 			if (!request.getParameter("block").equals("undefined"))

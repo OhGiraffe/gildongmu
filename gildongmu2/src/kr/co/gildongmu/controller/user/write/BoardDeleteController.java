@@ -21,13 +21,7 @@ public class BoardDeleteController{
 	
 	@RequestMapping("/delete_b")
 	public String delete_b(HttpServletRequest request) {
-		
-		try {
-			request.setCharacterEncoding("UTF-8");
-		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
 		int num = Integer.parseInt(request.getParameter("b_num"));
 		String posturl = request.getParameter("posturl");	
 		String url[] = posturl.split("\\/");

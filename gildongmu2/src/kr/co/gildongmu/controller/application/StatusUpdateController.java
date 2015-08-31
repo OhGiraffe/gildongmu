@@ -19,13 +19,7 @@ public class StatusUpdateController{
 	
 	@RequestMapping("/upstatus")
 	public String upstatus(HttpServletRequest request) {
-		
-		try {
-			request.setCharacterEncoding("UTF-8");
-		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
 		String check = request.getParameter("check");
 		int num = Integer.parseInt(request.getParameter("b_num"));
 		

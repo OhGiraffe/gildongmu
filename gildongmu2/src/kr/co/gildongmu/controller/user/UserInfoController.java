@@ -29,14 +29,7 @@ public class UserInfoController{
 
 	@RequestMapping("/userinfodetail")
 	public String userinfodetail(HttpServletRequest request, @RequestParam(value="u_id") String u_id) {
-		
-		try {
-			request.setCharacterEncoding("UTF-8");
-		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
+
 		String id = request.getParameter("u_id");
 		
 		UserBean user = new UserBean();

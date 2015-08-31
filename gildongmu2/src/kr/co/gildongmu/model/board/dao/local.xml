@@ -9,13 +9,13 @@
 	<select id="count" parameterType="java.lang.String" resultType="Integer">
 		select count(*) 
 		from board 
-		where l_name like '%'||#{l_item}||'%'
+		where u_id != 'admin' and l_name like '%'||#{l_item}||'%'
 	</select>
 
 	<select id="selectBoard" parameterType="java.lang.String" resultType="kr.co.gildongmu.model.board.bean.BoardBean">
 		select *
 		from board
-		where l_name like '%'||#{l_item}||'%'
+		where u_id != 'admin' and l_name like '%'||#{l_item}||'%'
 		order by b_num desc
 	</select>
 

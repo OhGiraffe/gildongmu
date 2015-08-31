@@ -17,19 +17,19 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title></title>
 <script type="text/javascript">
-	function writeReply(num) {
-		var content = document.getElementById("replycontent").value;
-		location.href = "replywrite?r_num=" + num + "&content=" +content;
+function writeReply(num) {
+	var content = document.getElementById("replycontent").value;
+	location.href = "write_re?r_num=" + num + "&content=" +content;
 
-	}
-	
-	function deleteReply(r_num, rr_num) {
-		location.href = "replydelete?r_num=" + r_num + "&rr_num=" +rr_num;
-	}
-	
-	function back() {
-		location.href = "review";
-	}
+}
+
+function deleteReply(r_num, rr_num) {
+	location.href = "delete_re?r_num=" + r_num + "&rr_num=" +rr_num;
+}
+
+function back() {
+	location.href = "review";
+}
 </script>
 
 </head>
@@ -129,8 +129,8 @@
 									<table>
 										<tr style="background-color: #F6F6F6;">
 											<td>내용</td>
-											<td><textarea name="replycontent" id="replycontent" style="width:560px; height:30px;">
-											</textarea>
+											<td>
+											<textarea name="replycontent" id="replycontent" style="width:560px; height:30px; resize: none;"></textarea>
 											</td>
 											<td>
 											<input class="myButton" type="button" value="입력" onclick="writeReply(<%=reviewBean.getR_num()%>)">

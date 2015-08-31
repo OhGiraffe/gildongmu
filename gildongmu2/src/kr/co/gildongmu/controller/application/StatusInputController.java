@@ -20,13 +20,7 @@ public class StatusInputController{
 	
 	@RequestMapping("/instatus")
 	public String instatus(HttpServletRequest request) {
-		try {
-			request.setCharacterEncoding("UTF-8");
-		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
+
 		int num = Integer.parseInt(request.getParameter("b_num"));
 		String id = request.getParameter("r_id");
 		

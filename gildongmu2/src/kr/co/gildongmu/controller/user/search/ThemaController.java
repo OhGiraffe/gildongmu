@@ -1,6 +1,5 @@
 package kr.co.gildongmu.controller.user.search;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;

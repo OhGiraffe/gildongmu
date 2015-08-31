@@ -1,5 +1,10 @@
 package kr.co.gildongmu.controller.join;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.UUID;
+
 import javax.servlet.http.HttpServletRequest;
 
 import kr.co.gildongmu.model.join.dao.JoinDAO;
@@ -45,7 +50,22 @@ public class JoinController{
 		String addr = multi.getParameter("u_addr");
 		String tel = multi.getParameter("u_tel");
 		
-		String m_fileFullPath = savePath + "\\" + filename;
+		String realFileNm = "";
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmss");
+        String today = formatter.format(new java.util.Date());
+        realFileNm = today + UUID.randomUUID().toString() + filename.substring(filename.lastIndexOf("."));
+        String m_fileFullPath = savePath + "\\" + realFileNm;
+
+		File inputfile = new File(m_fileFullPath);
+		try {
+			file.transferTo(inputfile);
+		} catch (IllegalStateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		UserBean user = new UserBean(id, name, pass, m_fileFullPath, age, gen, zipcode, addr, tel, email, 0, 0, 0, 0);
 		joinDAO.insert(user);
