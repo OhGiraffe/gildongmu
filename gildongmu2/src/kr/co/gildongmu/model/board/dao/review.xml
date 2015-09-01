@@ -31,7 +31,7 @@
 	
 	<update id="modify" parameterType="kr.co.gildongmu.model.board.bean.ReviewBean">
 		update review
-		set r_title = #{r_title}, r_content = #{r_content}
+		set r_title = #{r_title}, r_content = #{r_content}, r_image = #{r_image}
 		where r_num = #{r_num}
 	</update>
 	

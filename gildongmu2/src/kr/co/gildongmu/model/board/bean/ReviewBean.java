@@ -42,10 +42,11 @@ public class ReviewBean {
 		this.r_count = r_count;
 	}
 	
-	public ReviewBean(int r_num, String r_title, String r_content) {
+	public ReviewBean(int r_num, String r_title, String r_content, String r_image) {
 		this.r_num = r_num;
 		this.r_title = r_title;
 		this.r_content = r_content;
+		this.r_image = r_image;
 	}
 	
 	

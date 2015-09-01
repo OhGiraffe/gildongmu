@@ -27,6 +27,11 @@ public class ReviewViewController {
 		int r_num = Integer.parseInt(request.getParameter("num"));
 
 		ReviewBean reviewbean = reviewDAO.select(r_num);
+		
+		String[] splitpath = reviewbean.getR_image().split("\\\\");
+		String path = "/"+splitpath[7]+"/"+splitpath[8]+"/"+splitpath[9];
+		reviewbean.setR_image(path);
+		
 		reviewDAO.count(r_num);
 	
 		List<ReviewReplyBean> replyList = reviewReplyDAO.selectAll(r_num);
@@ -42,6 +47,9 @@ public class ReviewViewController {
 		int r_num = Integer.parseInt(request.getParameter("num"));
 		
 		ReviewBean reivewbean = reviewDAO.select(r_num);
+		
+		
+		
 		request.setAttribute("bean", reivewbean);
 
 		return "reviewView/modify_review";
