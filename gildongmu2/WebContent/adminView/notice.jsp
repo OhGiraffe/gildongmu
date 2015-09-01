@@ -13,7 +13,7 @@
             	location.href = "write_board";
             }
         	function move(num){
-        		location.href = "view_board?b_num="+num;
+        		location.href = "bview?b_num="+num+"&view=view";
         	}
 </script>
 </head>
@@ -22,29 +22,28 @@
 	List<BoardBean> list = (List<BoardBean>)request.getAttribute("noticeList");
 
 %>
-<body>
 <div id="outer">
 <div id="first"><%@include file="/mainView/tobmenu.jsp"%></div>
-<div id="myBar">
-<ul class="side" style="margin-top: 24px;">
-<ul>
-		<li type="none" style="font-weight: bold; font-size: 16px; color: #ffffff;
-		width: 160px; height: 26px; background-color: #22becc;">
-		고객센터
-		</li>
-		<a href="faq" style="text-decoration: none; margin: -10px 0 0 300px" >FAQ</a>
-		<a href="notice" style="text-decoration: none; margin: -30px 0 0 460px">공지사항</a>
-		<a href="contact" style="text-decoration: none; margin: -30px 0 0 620px">CONTACT</a>
-</ul>		 
-</ul>
+<div id="main">
+<body>
+<div id="menu3">
+	<div id="logo">
+	<img src="./image/service.png">
+	</div>
+	
+	<div id="sidetext">
+		<ul class="side" style="margin-top: 24px;">
+		<ul>
+			<a href="faq.do" style="text-decoration: none; margin: -10px 0 0 300px" >FAQ</a>
+			<a href="notice.do" style="text-decoration: none; margin: -30px 0 0 460px">공지사항</a>
+			<a href="contact" style="text-decoration: none; margin: -30px 0 0 620px">CONTACT</a>
+		</ul>		 
+	</ul>
+	</div>
 </div>
 <div id="myMain">
-<div id="myMenu" style="border-bottom: 2px solid #dedede";>
-	<font style="border-style: solid; font-size:24pt; color: #22becc; font-weight: bolder; ">Notice</font>
-	<font style="font-size:14pt; font-weight: bolder; color: #999; ">공지사항</font>
-</div>
-		<div class="t3" style="margin-top: -30px;">
-			<div class="tblWrap topmargin" style="margin-left: 20px;">
+		<div class="t3">
+			<div class="tblWrap topmargin" style="margin-left: 20px; margin-top: -60px;">
 				<table>
 					<colgroup>
 						<col width="50px">
@@ -80,4 +79,5 @@
 	</div>
 </div>
 </body>
+</div>
 </html>
