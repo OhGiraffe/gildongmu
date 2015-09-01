@@ -1,9 +1,18 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="kr.co.gildongmu.model.message.dao.MessageDAO"%>
 <%@page import="kr.co.gildongmu.model.login.bean.UserBean"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<link href="http://ts.daumcdn.net/custom/blog/0/606/skin/images/nanumgothic.css"
+	rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" 
+	type="text/css" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css">
+<link href="./Modal2/jquery.modalBox.css" rel="stylesheet" type="text/css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <%
@@ -19,6 +28,8 @@
 	}
 
 %>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="./Modal2/jquery.modalBox.js"></script>
 <script type="text/javascript">
 	
 	window.onload = function () {
@@ -33,6 +44,12 @@
 	
 	function exit() {
 		window.close();
+	}
+	
+	function message() {
+		var m_receiveID = '<%=user.getU_id()%>';
+		var m_message = document.messageForm.m_message.value;
+		location.href = "message_sendUser?m_receiveID=" + m_receiveID + "&m_message=" +  m_message;
 	}
 </script>
 <style>
@@ -133,9 +150,59 @@
 			</tfoot>		
 		</table>
 		<br><br>
-		<input type="button" value="닫기" class="myButton" style="margin-left: 170px;" onclick="exit()">
+		<a href="#modal-content" class="modal-box"><input type="button" value="쪽지" class="myButton" style="margin-left: 100px;"></a>
+		<input type="button" value="닫기" class="myButton" style="margin-left: 220px; margin-top: -28px;" onclick="exit()">
 	</div>
 	</form>
+
+
+<div class="modal-box" id="modal-content">
+	<div class="inner"">
+		<button class="close">&times;</button>
+		<form name="messageForm" method="post" action="">
+		<div style="background-color: #f5f5f5; height: 35px; width: 100%;">
+			<font style="border-style: solid;background-color: #f5f5f5;font-size: large; color: #3a5795;">Message</font>
+			<font style="font-size: small;">쪽지</font>
+		</div>
+		<center>
+		<table>
+		<tr>
+			<td height="30px">
+			</td>	
+		</tr>
+		<tr>
+			<td>
+			받는 사람<input type="text" name="m_receiveID" id="m_receiveID" size="12" border="1" value="<%=user.getU_id() %>" readonly="readonly" 
+						style="font-size: 5px; color: #353535; width: 230px; height: 19px; background-color: #f1f1f1;">
+			</td>
+		</tr>	
+		<tr height="10px;">
+		</tr>
+		<tr>
+			<td>
+			쪽지 내용<br>
+			<textarea rows="6" cols="40" name="m_message" id="m_message" size="12"
+					style="font-size: 5px; color: #353535; width: 300px; height: 50px; background-color: #f1f1f1;"></textarea>
+			</td>	
+			</tr>
+			<tr height="40px;">
+			</tr>
+			<tr>
+			<td rowspan="2" style="text-align: center; vertical-align: top;">
+			<input type="button" value="보내기" class="mybutton5" style="width: 45px; height: 12mm;" onclick="message()">
+			</td>
+			</tr>
+		</table>
+		</form>
+		</center>
+	</div>
+	<script>
+$('a.modal-box').click(function(e){
+    e.preventDefault();
+    $('#modal-content').modalBox("open",{openAnimationEffect:'bounceIn',closeAnimationEffect:'bounceOut'});
+});
+</script>
+
+
 </body>
 </center>
-</html>

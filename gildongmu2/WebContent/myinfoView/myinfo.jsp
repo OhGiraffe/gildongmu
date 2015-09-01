@@ -110,7 +110,7 @@ else{
 		<a href="myinfo.do" style="text-decoration: none; margin: -10px 0 0 250px" >내정보</a>
 		<a href="mylist.do" style="text-decoration: none; margin: -30px 0 0 410px">내가 쓴 글</a>
 		<a href="myapply.do" style="text-decoration: none; margin: -30px 0 0 570px">신청현황</a>
-		<a href="receiveMessage.do" style="text-decoration: none; margin: -30px 0 0 730px">쪽지함</a>
+		<a href="message_receive" style="text-decoration: none; margin: -30px 0 0 730px">쪽지함</a>
 </ul>		 
 </ul>
 </div>

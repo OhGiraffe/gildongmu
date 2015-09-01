@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><!--Converted at: Mon Aug 31 11:16:41 KST 2015-->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="message">
+	<insert id="sendMessage" parameterType="kr.co.gildongmu.model.message.bean.MessageBean">
+		insert into message
+		values(message_seq.nextval, #{m_sendID}, #{m_receiveID}, #{m_message}, #{m_read}, sysdate)
+	</insert>
+	<select id="receiveReceiveMessage" parameterType="String" resultType="kr.co.gildongmu.model.message.bean.MessageBean">
+		select * 
+		from message
+		where m_receiveID = #{id}
+	</select>
+	<select id="receiveSendMessage" parameterType="String" resultType="kr.co.gildongmu.model.message.bean.MessageBean">
+		select * 
+		from message
+		where m_sendID = #{id}
+	</select>
+	<delete id="deleteMessage" parameterType="int">
+		delete
+		from message
+		where m_num = #{m_num}
+	</delete>
+	<update id="readMessage" parameterType="int">
+		update message
+		set m_read = 1
+		where m_num = #{m_num}
+	</update>
+	<select id="select" parameterType="String" resultType="kr.co.gildongmu.model.login.bean.UserBean">
+		select *
+		from userinfo
+		where u_id = #{id}
+	</select>
+	<select id="messageReceiveDetail" parameterType="int" resultType="kr.co.gildongmu.model.message.bean.MessageBean">
+		select *
+		from message
+		where m_num = #{m_num}
+	</select>
+</mapper>

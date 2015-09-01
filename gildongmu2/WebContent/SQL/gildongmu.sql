@@ -118,3 +118,18 @@ create table zipcode(
 			bunji	  varchar2(20)
 );
 
+create table message(
+	m_num number primary key,
+	m_sendID varchar2(20),
+	m_receiveID varchar2(20),
+	m_message varchar2(100),
+	m_read char(1) default 'N',
+	m_date Date
+);
+
+create sequence message_seq 
+start with 1 
+increment by 1 
+nocycle 
+nocache;
+

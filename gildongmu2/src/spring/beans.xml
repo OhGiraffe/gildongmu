@@ -47,6 +47,8 @@
      		
      		<value>classpath:kr/co/gildongmu/model/join/dao/join.xml</value>
      		<value>classpath:kr/co/gildongmu/model/join/dao/searchPost.xml</value>
+     		
+     		<value>classpath:kr/co/gildongmu/model/message/dao/message.xml</value>
      	</list>
      </property>
   </bean>
@@ -86,6 +88,8 @@
   
   <bean class="kr.co.gildongmu.model.join.dao.JoinDAO"/>
   <bean class="kr.co.gildongmu.model.join.dao.SearchPostDAO"/>
+  
+  <bean class="kr.co.gildongmu.model.message.dao.MessageDAO"/>
   
   <!-- beans.xml -->
 </beans>

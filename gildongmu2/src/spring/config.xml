@@ -23,7 +23,7 @@
   <context:component-scan base-package="kr.co.gildongmu.controller.user.write"/>
   <context:component-scan base-package="kr.co.gildongmu.controller.login"/>
   <context:component-scan base-package="kr.co.gildongmu.controller.join"/>
-  
+  <context:component-scan base-package="kr.co.gildongmu.controller.message"/>
 </beans>
 
 
