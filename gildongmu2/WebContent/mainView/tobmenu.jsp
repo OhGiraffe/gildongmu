@@ -46,12 +46,6 @@ function login() {
 	load(id, pass); 
 }
 
-function kill_login() {
-	var id = document.loginForm.id.value;
-	var pass = document.loginForm.pass.value;
-	kill_load(id, pass); 
-}
-
 function getXMLHttpRequest() {//XMLHttpRequest객체생성
 	if (window.ActiveXObject) {//IE경우
 		try {
@@ -73,13 +67,6 @@ function load(id, pass) {//페이지요청
 	xhr.send('id='+ id +'&pass='+ pass);//전달파라미터
 }
 
-function kill_load(id, pass) {//페이지요청
-	xhr = getXMLHttpRequest();
-	xhr.onreadystatechange = loaded;//콜백함수(open,send후 실행할 함수)정의
-	xhr.open('POST', 'kill_login', true);//HTTP요청방식, 요청URL, 비동기
-    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
-	xhr.send('id='+ id +'&pass='+ pass);//전달파라미터
-}
 function loaded() {//응답데이터 처리
 	if (xhr.readyState == 4) {
 		if (xhr.status == 200) {
@@ -90,13 +77,7 @@ function loaded() {//응답데이터 처리
 			var r_check = data[2];
 			
 			if(r_check.indexOf('i') == 1){
-				sessionkill = confirm("이미 접속중입니다. 기존의 접속을 종료하시겠습니까?");
-				if (sessionkill == true){
-					kill_login();
-				}
-				else{
-					alert('로그인 실패!');
-				}
+				alert('로그인되어 있습니다.');
 			}
 			else if(r_check.indexOf('f') == 1){
 				alert('ID/PW를 확인하세요.');
@@ -160,7 +141,7 @@ function logincheck(check, id){
 </head>
 <body onunload="logout()">
 <%
-	String id = (String)session.getAttribute("result_name");	
+	String id = (String)session.getAttribute("result_name");
 %>
 <center>
 <form name="form" >

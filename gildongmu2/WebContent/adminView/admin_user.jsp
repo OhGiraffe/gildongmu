@@ -7,7 +7,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
 <%
 	List<UserBean> list = (List<UserBean>)request.getAttribute("userList");
@@ -50,31 +50,34 @@
 	}
 </script>
 </head>
+<div id="outer">
+<div id="first"><%@include file="/mainView/tobmenu.jsp"%></div>
+<div id="main">
 
 <body>
-	<div id="outer">
-		<div id="first"><%@include file="/mainView/tobmenu.jsp"%></div>
-		<div id="myBar">
-<ul class="side" style="margin-top: 24px;">
-<ul>
-		<li type="none" style="font-weight: bold; font-size: 16px; color: #ffffff;
-		width: 160px; height: 26px; background-color: #22becc;">
-		관리자
-		</li>
-		<a href="admin_user" style="text-decoration: none; margin: -10px 0 0 250px" >회원 관리</a>
-		<a href="admin_board" style="text-decoration: none; margin: -30px 0 0 410px">게시판 관리</a>
-		<a href="admin_review" style="text-decoration: none; margin: -30px 0 0 570px">후기 게시판 관리</a>
-		<a href="adminnotice" style="text-decoration: none; margin: -30px 0 0 730px">공지사항</a>
-</ul>		 
-</ul>
+
+<div id="menu3">
+	<div id="logo">
+	<img src="./image/admin.png">
+	</div>
+	
+	<div id="sidetext">
+		<ul class="side" style="margin-top: 24px;">
+		<ul>
+				<a href="admin_user" style="text-decoration: none; margin: -10px 0 0 250px" >회원 관리</a>
+				<a href="admin_board" style="text-decoration: none; margin: -30px 0 0 410px">게시판 관리</a>
+				<a href="admin_review" style="text-decoration: none; margin: -30px 0 0 570px">후기 게시판 관리</a>
+				<a href="adminnotice" style="text-decoration: none; margin: -30px 0 0 730px">공지사항</a>
+		</ul>		 
+		</ul>
+	</div>
+</div>
+
 </div>
 <div id="myMain">
-<div id="myMenu" style="border-bottom: 2px solid #dedede";>
-	<font style="border-style: solid; font-size:24pt; color: #22becc; font-weight: bolder; ">AdminUser</font>
-	<font style="font-size:14pt; font-weight: bolder; color: #999; ">회원 관리</font>
-</div>
+
 	<center>
-	<div class="t3" style="margin-right: 150px; margin-top: -30px;">
+	<div class="t3" style="margin-right: 150px; margin-top: 50px;">
 			<div class="tblWrap topmargin">
 						<table>
 							<colgroup>

@@ -10,7 +10,7 @@
 <title>Insert title here</title>
 <script type="text/javascript">
 function move(num){
-	location.href = "view_board?b_num="+num+"&view=view";
+	location.href = "bview?b_num="+num+"&view=view";
 }
 function userInfo(u_id) {
 	window.open("userinfo?u_id="+u_id, "get", "height=450, width=420");
@@ -20,28 +20,29 @@ function userInfo(u_id) {
 <%
 	List<BoardBean> list = (List<BoardBean>) request.getAttribute("mylist");
 %>
-<body>
 <div id="outer">
 <div id="first"><%@include file="/mainView/tobmenu.jsp"%></div>
-<div id="myBar">
-<ul class="side" style="margin-top: 24px;">
-<ul>
-		<li type="none" style="font-weight: bold; font-size: 16px; color: #ffffff;
-		width: 160px; height: 26px; background-color: #22becc;">
-		내정보
-		</li>
-		<a href="myinfo.do" style="text-decoration: none; margin: -10px 0 0 250px" >내정보</a>
-		<a href="mylist.do" style="text-decoration: none; margin: -30px 0 0 410px">내가 쓴 글</a>
-		<a href="myapply.do" style="text-decoration: none; margin: -30px 0 0 570px">신청현황</a>
-		<a href="message_receive" style="text-decoration: none; margin: -30px 0 0 730px">쪽지함</a>
-</ul>		 
-</ul>
+<div id="main">
+<body>
+<div id="menu3">
+	<div id="logo">
+	<img src="./image/user.png">
+	</div>
+	
+	<div id="sidetext">
+		<ul class="side" style="margin-top: 24px;">
+		<ul>
+				<a href="myinfo.do" style="text-decoration: none; margin: -10px 0 0 250px" >내정보</a>
+				<a href="mylist.do" style="text-decoration: none; margin: -30px 0 0 410px">내가 쓴 글</a>
+				<a href="myapply.do" style="text-decoration: none; margin: -30px 0 0 570px">신청현황</a>
+				<a href="message_receive" style="text-decoration: none; margin: -30px 0 0 730px">쪽지함</a>
+		</ul>		 
+		</ul>
+	</div>
+</div>
+
 </div>
 <div id="myMain">
-<div id="myMenu" style="border-bottom: 2px solid #dedede";>
-	<font style="border-style: solid; font-size:24pt; color: #22becc; font-weight: bolder; ">MyList</font>
-	<font style="font-size:14pt; font-weight: bolder; color: #999; ">내가 쓴 글</font>
-</div>
 		<center>
 		<div class="t3" style="margin-right: 150px; margin-top: -30px;">
 			<div class="tblWrap topmargin">

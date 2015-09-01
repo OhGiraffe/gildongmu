@@ -4,7 +4,8 @@ body {
 	margin: 0px;
 	top: 0px;
 	left: 0px;
-	right: 0px
+	right: 0px;
+
 }
 
 #tob {
@@ -12,7 +13,7 @@ body {
 	border-bottom-style: solid;
 	border-bottom-color: #323232;
 	border-bottom-width: 3px;
-	
+	height: 69px;
 }
 
 .text {
@@ -53,9 +54,9 @@ body {
 
 .t3 table {
 	width: 80% !important;
-	letter-spacing: -0.05em;
-	border-top: 2px solid #37315d;
-	border-bottom: 2px solid #e2e2e2;
+	letter-spacing: -0.1em;
+	border-top: 2px solid #e2e2e2;
+	border-bottom: 1px solid #e2e2e2;
 	border-spacing: 0;
 	border-collapse: collapse;
 	line-height: 12px;
@@ -120,7 +121,7 @@ tbody td.adminnotice{
 .t4 {
 	position: relative;
 	font-size: 13px;
-	font-family: 'Nanum Gothic'
+	font-family: 'Nanum Gothic';
 }
 
 .t4 h3 {
@@ -130,15 +131,10 @@ tbody td.adminnotice{
 	letter-spacing: -0.05em;
 }
 
-.t4 .tblWrap {
-	width: 100%;
-	overflow: hidden;
-}
-
 .t4 table {
 	width: 60% !important;
 	letter-spacing: -0.05em;
-	border-top: 2px solid #37315d;
+	border-top: 2px solid #e2e2e2;
 	border-bottom: 2px solid #e2e2e2;
 	border-spacing: 0;
 	border-collapse: collapse;
@@ -147,6 +143,7 @@ tbody td.adminnotice{
 
 .t4 thead tr:first-child th {
 	border-top: 0;
+	padding-left: 5px;
 }
 
 .t4 th, .t4 td {
@@ -154,7 +151,7 @@ tbody td.adminnotice{
 	font-weight: 400;
 	text-align: center;
 	border-top: 1px solid #e2e2e2;
-
+	padding-left: 5px;
 }
 
 
@@ -461,6 +458,7 @@ div#outer {
 	position: absolute;
 	margin: 0 auto;
 	background: #369 url(grid.png) top center;
+	background-image  :url("./image/mmg.jpg");
 }
  
 div#first {
@@ -472,21 +470,23 @@ div#first {
 div#third {
 	position: absolute;
 	margin-top: 52px;
-	width: 1366px;
+	width: 1366px; 
 }
 
 div#menu{
 	position: absolute;
 	height: 55px;
 	width: 1016px;
-	margin-top: -40px;
+	margin-top: -20px;
 	margin-left: 200px;
+	background-image  :url("./image/mmg.jpg");
 }
 
 div#main{
 	position: absolute;
 	margin-top: 120px;
 	width: 1366px;
+	
 }
 
 div#myMenu{
@@ -514,24 +514,20 @@ div#myMain{
 
 
 
+
 .topmargin{
-	margin-top: 60px;
+	margin-top: 130px;
 }
 
-
-ul.side ul {
-    margin: 0;
-    padding: 0;
-    width:  1016px;
-    height: 56px;
-    background-color: #f4f4f4;
-    margin: 20px 0 0 0;
-    text-align: center;
+.topmargin{
+	margin-top: 30px;
 }
+
 
 ul.side a:link, ul.side a:visited {
     display: block;
-    color: #999;
+    color: black;
+    font-weight:bold;
     width: 150px;
     padding: 4px;
     text-decoration: none;
@@ -607,3 +603,106 @@ width: 45px;
 	border-left: 1px solid #cbd6e0;
 	border-bottom: 1px solid #cbd6e0;
 }
+
+
+div#menu2_1 #logo{
+	position: absolute;
+	height: 55px;
+	width: 500px;
+	margin-top: 80px;
+	margin-left: 300px;
+}
+
+div#menu2_1 #sidetext{
+	position: absolute;
+	height: 55px;
+	width: 1016px;
+	margin-top: 150px;
+	margin-left: 550px;
+}
+
+div#menu2 #logo{
+	position: absolute;
+	height: 55px;
+	width: 500px;
+	margin-top: -40px;
+	margin-left: 300px;
+}
+
+div#menu2 #sidetext{
+	position: absolute;
+	height: 55px;
+	width: 1016px;
+	margin-top: 25px;
+	margin-left: 540px;
+}
+
+.t4 .topmargin{
+	margin-top: 140px;
+}
+
+div#maptable{
+	margin-top: -80px;
+	border-left: 1px solid #cbd6e0;
+}
+
+div#maptable table{
+	margin-top: -80px;
+	border-top: 2px solid #e2e2e2;
+}
+
+
+.t4 .tblWrap {
+	width: 100%;
+}
+
+ul.side ul {
+    margin: 0;
+    padding: 0;
+    width:  1016px;
+    height: 56px;
+    margin: 20px 0 0 0;
+    text-align: center;
+}
+
+
+div#menu3 #logo{
+	position: absolute;
+	height: 55px;
+	width: 500px;
+	margin-top: -40px;
+	margin-left: 300px;
+}
+
+div#menu3 #sidetext{
+	position: absolute;
+	height: 55px;
+	width: 500px;
+	margin-top: 10px;
+	margin-left: 250px;
+}
+
+ul.side2 ul {
+    margin: 0;
+    padding: 0;
+    width:  1016px;
+    height: 56px;
+    margin: 20px 0 0 0;
+    text-align: center;
+}
+
+.writeWrap {
+    clear: both;
+    padding: 24px 24px 10px 24px;
+    border: 2px solid #F2F2F2;
+    width: 700px;
+    background-color: rgba(250,252,250,0.5);
+}
+
+.t3 th, .t3 td #title{
+	padding: 10px 0;
+	font-weight: 400;
+	text-align: left;
+	border-top: 1px solid #e2e2e2;
+}
+

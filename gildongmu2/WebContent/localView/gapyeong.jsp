@@ -61,12 +61,12 @@
 <div id="first"><%@include file="/mainView/tobmenu.jsp"%></div>
 <div id="main">
 	<div id="menu">
-		<font style="border-style: solid; background-color: #f5f5f5 ;font-size: large; color: #3a5795;">가평</font>
-		<font style="font-size: small;"></font>
+		<img src="./image/map.png" style="margin-left: 65px">
+		<font style="font-size:large ; color: #949391; font-weight: bold; ">가평</font>
 	</div>
 <body onload="local_load('가평')">
 	<center>
-		<div class="t4">
+		<div id="maptable" class="t4">
 		<div class="topmargin">
 		<form action="localboard" >
 		<input type="hidden" name="l_name" value="가평">
@@ -74,6 +74,10 @@
 		<input type="hidden" name="end" value="10">
 		<input type="hidden" name="block" value="undefined">
 			<table width="900" border="0">
+				<tr>
+					<td height="42" align="center" valign="middle">&nbsp;</td>
+					<td align="center"><input class="myButton" style="width: 150px; margin-left: 190px" type="submit" value="지역게시판"></td>
+				</tr>
 				<tr>
 					<td width="500" height="522" align="center" valign="middle">
 					<img src="./ltimage/가평.png" height="500"usemap="#map" border="0" align="middle">
@@ -89,10 +93,6 @@
 					<td width="475" height="522"  align="center">
 							<img id="sideimg" width="350" height="403" border="0">
 					</td>
-				</tr>
-				<tr>
-					<td height="42" align="center" valign="middle">&nbsp;</td>
-					<td align="center"><input class="myButton" style="width: 100px; margin-left: 230px" type="submit" value="게시판으로"></td>
 				</tr>
 			</table>
 		</form>

@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>글쓰기</title>
-<script type="text/javascript" src="./se2/js/HuskyEZCreator.js" charset="utf-8"></script>
+<script type="text/javascript" src="./se2/js/HuskyEZCreator.js" charset="UTF-8"></script>
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
@@ -31,7 +31,7 @@ $(document).ready(function() {
 table.boardtbl{
 border-spacing: 0;
 margin-left: 0px;
-height: 300px;
+height: 350px;
 width: 600px;
 margin-top: 10px;
 }
@@ -46,7 +46,7 @@ font-weight: 400;
 border-top: 1px solid #e2e2e2;
 border-spacing: 0;
 border-right: 1px solid #e2e2e2;
-background: #f4f4f4;
+padding-left: 5px;
 }
 table.boardtbl td.content{
 position: relative;
@@ -57,6 +57,8 @@ font-family: 'Nanum Gothic';
 font-weight: 400;
 border-top: 1px solid #e2e2e2;
 border-spacing: 0;
+padding-left: 5px;
+
 }
 
 </style>
@@ -66,9 +68,9 @@ border-spacing: 0;
 	String url =  request.getHeader("referer");
 %>
 	<center>
-		<h3>글쓰기</h3>
-
-		<form action="write_b" method="post" name="frm">
+		<br>
+		<div class="writeWrap">
+		<form action="writing" method="post" name="frm">
 		<input type="hidden" name="url" value="<%=url%>">
 			<table class="boardtbl">
 				<tr>
@@ -139,6 +141,7 @@ border-spacing: 0;
 				</tr>
 			</table>	
 		</form>
+		</div>
 	</center>
 <script type="text/javascript"> 
 var oEditors = [];

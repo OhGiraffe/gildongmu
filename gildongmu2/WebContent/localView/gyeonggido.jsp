@@ -11,15 +11,24 @@
 <div id="outer">
 <div id="first"><%@include file="/mainView/tobmenu.jsp"%></div>
 <div id="main">
-	<div id="menu" style="border-bottom: 2px solid #dedede;">	
-		<font style="border-style: solid; font-size:24pt; color: #22becc; font-weight: bolder; ">Local</font>
-	<font style="font-size:14pt; font-weight: bolder; color: #999; ">지역선택</font>
+	<div id="menu2">
+	<div id="logo">
+	<img src="./image/local.png">
 	</div>
+	
+	<div id="sidetext">
+	<h4><font style="font-size:14pt; font-weight: bolder;">
+	Are you still looking for ideas?
+	Choose your destination!</font></h4>
+	</div>
+	</div>	
 	<center>
-	<table>
+	
+	<table >
+		<div style="margin-top: 120px; margin-left: 80px">
 		<tr>
 		<td>
-		<img src="./ltimage/gyeongido.jpg" width="400" height="460" border="0" alt="경기도 지역 지도" usemap="#ggt_area_map">
+		<img src="./ltimage/gyeongido1.jpg" width="400" height="460" border="0" alt="경기도 지역 지도" usemap="#ggt_area_map">
 			<map name="ggt_area_map">
 					<area shape="rect" alt="안성" coords="207,392,250,421" href="anseong">
                     <area shape="rect" alt="가평" coords="240,146,283,175" href="gapyeong">
@@ -38,6 +47,7 @@
 				<img src="./ltimage/경기도.png" width="350" height="450" border="0">
 			</td>
 			</tr>
+			</div>
 	</table>
 	</center>
 </div>

@@ -106,47 +106,45 @@ function getXMLHttpRequest() {//XMLHttpRequest객체생성
 </script>
 </head>
 <body onload="javascript:check()">
-<div id="myBar">
-<ul class="side">
-<ul>
-				<li type="none" style="font-weight: bold; font-size: 16px; color: #ffffff;
-				width: 160px; height: 26px; background-color: #22becc;">
-				테마
-				</li>
-				<form name="check_form" style="color: #8C8C8C; font-size: 13px">
-				<font style="font-size:12pt; font-weight: bolder; color: #3a5795; ">레저</font>
-				<input type="checkbox" name="c1" id="c1"  onclick="check()" value="레저" style="margin-left: 10px; font-size: large;">&nbsp;&nbsp;
-				<font style="font-size:12pt; font-weight: bolder; color: #3a5795; ">먹방</font>
-				<input type="checkbox" name="c2" id="c2" onclick="check()" value="먹방" style="margin-left: 10px">&nbsp;&nbsp;
-				<font style="font-size:12pt; font-weight: bolder; color: #3a5795; ">힐링</font>
-				<input type="checkbox" name="c3" id="c3" onclick="check()" value="힐링" style="margin-left: 10px">&nbsp;&nbsp;
-				<font style="font-size:12pt; font-weight: bolder; color: #3a5795; ">무전</font>
-				<input type="checkbox" name="c4" id="c4" onclick="check()" value="무전" style="margin-left: 10px">&nbsp;&nbsp;
-				<font style="font-size:12pt; font-weight: bolder; color: #3a5795; ">관광</font>
-				<input type="checkbox" name="c5" id="c5" onclick="check()" value="관광" style="margin-left: 10px">&nbsp;&nbsp;
-				</form>
-	</ul>
-	</ul>
+<div id="menu2_1">
+	<div id="logo">
+	<img src="./image/thema.png">
+	</div>
+	
+	<div id="sidetext">
+	<ul>
+				<ul>
+							<form name="check_form" font-size: 13px">
+							<font style="font-size:12pt; font-weight: bolder; ">Leisure</font>
+							<input type="checkbox" name="c1" id="c1"  onclick="check()" value="레저" style="margin-left: 10px; font-size: large;">&nbsp;&nbsp;
+							<font style="font-size:12pt; font-weight: bolder; ">Eating</font>
+							<input type="checkbox" name="c2" id="c2" onclick="check()" value="먹방" style="margin-left: 10px">&nbsp;&nbsp;
+							<font style="font-size:12pt; font-weight: bolder; ">Healing</font>
+							<input type="checkbox" name="c3" id="c3" onclick="check()" value="힐링" style="margin-left: 10px">&nbsp;&nbsp;
+							<font style="font-size:12pt; font-weight: bolder; ">Traking</font>
+							<input type="checkbox" name="c4" id="c4" onclick="check()" value="무전" style="margin-left: 10px">&nbsp;&nbsp;
+							<font style="font-size:12pt; font-weight: bolder; ">Sightseeing</font>
+							<input type="checkbox" name="c5" id="c5" onclick="check()" value="관광" style="margin-left: 10px">&nbsp;&nbsp;
+							</form>
+				</ul>
+		</ul>
+	</div>
 </div>
 <div id="myMain">
-<div id="myMenu" style="border-bottom: 2px solid #dedede";>
-	<font style="border-style: solid; font-size:24pt; color: #22becc; font-weight: bolder; ">Thema</font>
-	<font style="font-size:14pt; font-weight: bolder; color: #999; ">테마</font>
-</div>
 	<center>
-		<div class="t3" style="margin-right: 170px;margin-top: -50px;">
-			<div class="tblWrap topmargin">
+		<div class="t3">
+			<div class="tblWrap topmargin" style="width: 950px">
 				<table>
 					<colgroup>
-						<col width="50px">
-						<col width="70px">
-						<col width="120px">
-						<col width="80px">
+						<col width="30px">
+						<col width="40px">
+						<col width="60px">
+						<col width="30px">
 						<col width="200px">
 						<col width="50px">
-						<col width="70px">
-						<col width="50px">
-						<col width="80px">
+						<col width="30px">
+						<col width="30px">
+						<col width="40px">
 					</colgroup>
 					<thead>
 						<tr>

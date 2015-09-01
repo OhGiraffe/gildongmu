@@ -53,7 +53,7 @@ $(document).ready(function() {
 		function load(sdate, edate,start, end, block) {//페이지요청
 			xhr = getXMLHttpRequest();
 			xhr.onreadystatechange = loaded;//콜백함수(open,send후 실행할 함수)정의
-			xhr.open('POST', 'schedulesearch', true);//HTTP요청방식, 요청URL, 비동기
+			xhr.open('POST', 'schedule/search.do', true);//HTTP요청방식, 요청URL, 비동기
 	        xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
 			xhr.send('sdate='+ sdate +"&edate="+edate+'&start='+start+'&end='+end+'&block='+block);//전달파라미터
 		}
@@ -65,54 +65,55 @@ $(document).ready(function() {
 				}
 			}
 		}
-		
-		function userInfo(u_id) {
-			window.open("loginView/userinfo?u_id="+u_id, "get", "height=450, width=420");
-		}
-		
 		function move(num){
-			location.href = "view_board?b_num="+num;
+			location.href = "bview.do?b_num="+num+"&view=view";
 		}
 		
 		function write_movepage(){
-	    	location.href = "write_board";
+	    	location.href = "write_board.do";
 	    }
+		function userInfo(u_id) {
+			window.open("loginView/user_userinfo.jsp?u_id="+u_id, "get", "height=450, width=420");
+		}
 </script>
 </head>
-<div id="myBar">
-<ul class="side">
+
+<div id="menu2_1">
+	<div id="logo">
+	<img src="./image/schedule.png">
+	</div>
+	
+	<div id="sidetext">
+	
+	<div>
+		<ul>
 			<ul>
-				<li type="none" style="font-weight: bold; font-size: 16px; color: #ffffff;
-				width: 160px; height: 26px; background-color: #22becc;">
-				일정
-				</li>
 				<form id="check">
-				<li type="none" style="margin-top: -16px; font-size: large;"><img src="./image/cal.jpg" style="width: 25px ; height: 25px">
+				<li type="none" style="font-size: large;">
+					<img src="./image/cal.jpg" style="width: 25px ; height: 25px">
 				<input type="text" name="sdate" id="b_sdate" 
 				size="8" maxlength="8" value="출발일" onchange="print()"
 				style="background-color: #EAEAEA; text-align: center;
-				width: 90px ; height: 30px;">
-				  ~
-				<img src="./image/cal.jpg" style="width: 25px ; height: 25px">
+				width: 120px ; height: 30px;">
+				
+				<img src="./image/cal.jpg" style="width: 25px ; height: 25px; margin-left: 50px;">
 				<input type="text" name="edate" id="b_edate" 
 				size="8" maxlength="8" value="도착일" onchange="print()"
 				style="background-color: #EAEAEA; text-align: center;
-				width: 90px ; height: 30px"
+				width: 120px ; height: 30px"
 				></li><br>
 				</form>
 
 			</ul>
-	</ul>
+		</ul>
+	</div>
 </div>
-<div id="myMain">
-<div id="myMenu" style="border-bottom: 2px solid #dedede";>
-	<font style="border-style: solid; font-size:24pt; color: #22becc; font-weight: bolder; ">Schedule</font>
-	<font style="font-size:14pt; font-weight: bolder; color: #999; ">일정</font>
-</div>
+
 <body onload="javascript:print()">
+<div id="myMain">
 	<center>
-		<div class="t3" style="margin-right: 170px;margin-top: -50px;">
-			<div class="tblWrap topmargin">
+		<div class="t3">
+			<div class="tblWrap topmargin" style="width: 950px">
 				<table>
 					<colgroup>
 						<col width="50px">
@@ -149,7 +150,7 @@ $(document).ready(function() {
 			<br>
 		</div>
 		<input type="button" value="글쓰기" name="write" class="myButton" 
-		style="position: relative; left: 365px"
+		style="position: relative; left: 320px"
 		onclick="write_movepage()">
 	</center>
 </div>

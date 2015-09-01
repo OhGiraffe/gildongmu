@@ -61,7 +61,7 @@ function readysuccess(num){ //준비완료
 	}
 }
 function toursuccess(num){ //여행완료
-	var check = document.getElementsByName("check");
+	var check = document.frm.check;
 	
 	var checkid = "";
 	var j = 0;
@@ -74,7 +74,6 @@ function toursuccess(num){ //여행완료
 			if(i != j-1){
 				checkid += ", "
 			}
-			
 		}
 	}
 	var flag
@@ -107,15 +106,15 @@ function LockF5(){
 		return false;
 	}	
 }
-/* document.onkeydown = LockF5; */
+document.onkeydown = LockF5;
 </script>
 <style type="text/css">
 
 table.board{
 border-spacing: 0;
 margin-left: 0px;
-height: 300px;
-width: 500px;
+height: 200px;
+width: 550px;
 margin-top: 10px;
 }
 
@@ -128,36 +127,50 @@ font-weight: 400;
 
 table.board td.title{
 position: relative;
-width: 70px;
+width: 80px;
 font-size: 13px;
 font-family: 'Nanum Gothic';
-font-weight: 400;
 border-top: 1px solid #e2e2e2;
 border-spacing: 0;
-border-right: 1px solid #e2e2e2;
-background: #f4f4f4;
-text-align: center;
+border-right:1px solid #e2e2e2; 
+text-align: left;
+padding-left: 3px;
+font-weight: bold;
 }
 
 table.board td.content{
 position: relative;
 font-size: 13px;
 font-family: 'Nanum Gothic';
-font-weight: 400;
 border-top: 1px solid #e2e2e2;
 border-spacing: 0;
+padding-left: 5px;
 }
 
 table.board td.con_content{
 position: relative;
 font-size: 13px;
 font-family: 'Nanum Gothic';
-font-weight: 400;
 border-spacing: 0;
-border-bottom: 1px solid #e2e2e2;
-border-top: 3px solid #e2e2e2;
+border-bottom: 2px solid #e2e2e2;
+border-top: 1px solid #e2e2e2;
+padding-left: 3px;
 }
 
+state{
+margin-left: 
+}
+
+div#boxtbl{
+position: absolute;
+background-position:center;
+width:600px;
+height: 400px;
+border: 1.5px dashed #e2e2e2;
+margin-left: 400px;
+margin-top: 100px;
+
+}
 </style>
 </head>
 <body>
@@ -165,7 +178,7 @@ border-top: 3px solid #e2e2e2;
 <div id="outer">
 <div id="first"><%@include file="/mainView/tobmenu.jsp"%></div>
 <div id="main">
-	<div id="menu" style="border-bottom: 2px solid #dedede";>
+	<div id="menu" style="border-bottom: 2px solid #dedede;">
 	<font style="border-style: solid; font-size:24pt; color: #22becc; font-weight: bolder; ">BoardView</font>
 	<font style="font-size:14pt; font-weight: bolder; color: #999; ">글보기</font>
 	</div>
@@ -190,40 +203,46 @@ border-top: 3px solid #e2e2e2;
 	<form action="modify_board" method="post" name="frm">
 	<input type="hidden" name="b_num" value="<%= writeBean.getB_num() %>">
 	<input type="hidden" name="posturl" value="<%= posturl %>">
+	<div id="boxtbl">
 	<center>
-		<table class="board topmargin" style="margin-top: 50px;">
+		<table class="board topmargin" style="margin-top: 70px;">
 			<tr>
-			<td class="title">글번호</td>
-			<td class="content">${bean.b_num}</td>
+			<td class="title">제목</td>
+			<td class="content" id="onlytitle">${bean.b_title}</td>
+			<td class="content"></td>
 			</tr>
+			
 			<tr>
-			<td class="title">지역</td>
-			<td class="content">${bean.l_name}</td>
+			<td class="title">지역 및 일정</td>
+			<td class="content">${bean.l_name} / ${bean.b_sdate} ~ ${bean.b_edate }</td>
+			
+			<td class="content"></td>
 			</tr>
-			<tr>
-			<td class="title">일정</td>
-			<td class="content">${bean.b_sdate} ~ ${bean.b_edate }</td>
-			</tr>
+
 			<tr>
 			<td class="title">테마</td>
 			<td class="content">${bean.b_thema}</td>
+			<td class="content"></td>
 			</tr>
+			
 			<tr>
 			<td class="title">모집인원</td>
-			<td class="content">${bean.b_recruit}</td>
+			<td class="content">( ${bean.b_recruit} ) 명
+			<td class="content">				
+				<state> <font style="font-weight: bold;"> [상태]  :  </font>
+				<font color="red"> ${bean.b_status}</font>
+				</state>
+			</td>
+			</td>
 			</tr>
-			<tr>
-			<td class="title">상태</td>
-			<td class="content">${bean.b_status}</td>
-			</tr>
+			
+		
 			<tr>
 			<td class="title">작성자</td>
 			<td class="content">${bean.u_id}</td>
+			<td class="content"></td>
 			</tr>
-			<tr>
-			<td class="title">제목</td>
-			<td class="content">${bean.b_title}</td>
-			</tr>
+
 			<tr class="title">
 			<td colspan="3"  class="con_content">
 				${bean.b_content }
@@ -231,7 +250,7 @@ border-top: 3px solid #e2e2e2;
 			</tr>
 			<tr>
 			<%
-			if(r_id != null){
+			if(!r_id.equals("admin")){
 				if(writeBean.getB_status().equals("모집중") || writeBean.getB_status().equals("모집완료")){%>
 					<td class="title">신청현황</td>
 				<%}
@@ -241,7 +260,7 @@ border-top: 3px solid #e2e2e2;
 			}%>
 			</tr>
 			<%
-			if(r_id != null){%>
+			if(!r_id.equals("admin")){%>
 			<tr>
 			<td colspan="3"  class="con_content">
 			
@@ -369,6 +388,7 @@ border-top: 3px solid #e2e2e2;
 		<input type="button" class="myButton" value="이전" 
 		onclick="postpage('<%=posturl%>','<%=url%>')" style="margin-top: 20px">
 		</center>
+		</div>
 		</form>
 </div>
 </div>
