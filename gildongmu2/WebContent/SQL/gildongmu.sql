@@ -7,6 +7,7 @@ drop table status;
 drop table board;
 drop table local;
 drop table userinfo;
+drop table message;
 
 --지역테이블
 create table local(
@@ -117,6 +118,8 @@ create table zipcode(
 			ri	      varchar2(80),
 			bunji	  varchar2(20)
 );
+
+-- 쪽지 테이블
 
 create table message(
 	m_num number primary key,
