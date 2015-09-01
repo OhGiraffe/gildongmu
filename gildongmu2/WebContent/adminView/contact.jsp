@@ -171,6 +171,81 @@ div#addr{
 	color: #8C8C8C;
 }
 </style>
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+  <!-- GoogoleMap Asynchronously Loading the API ********************************************* -->
+<script type="text/javascript">
+	
+	var x = '37.40284506572648';
+	var y = '127.10582435131073';
+	var title = '허허허';
+	var content = '가자고';
+	var image = '/image/rank1.png';
+
+      function initialize() {
+        var mapLocation = new google.maps.LatLng('37.40284506572648', '127.10582435131073'); // 지도에서 가운데로 위치할 위도와 경도
+        var markLocation = new google.maps.LatLng(x, y); // 마커가 위치할 위도와 경도
+        var markLocation2 = new google.maps.LatLng('37.40284506572648', '127.10782435131073'); // 마커가 위치할 위도와 경도
+        var mapOptions = {
+          center: mapLocation, // 지도에서 가운데로 위치할 위도와 경도(변수)
+          zoom: 16, // 지도 zoom단계
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("map-canvas"), // id: map-canvas, body에 있는 div태그의 id와 같아야 함
+            mapOptions);
+         
+        var size_x = 60; // 마커로 사용할 이미지의 가로 크기
+        var size_y = 60; // 마커로 사용할 이미지의 세로 크기
+         
+        // 마커로 사용할 이미지 주소
+        var image = new google.maps.MarkerImage( 'http://www.larva.re.kr/home/img/boximage3.png',
+                            new google.maps.Size(size_x, size_y),
+                            '',
+                            '',
+                            new google.maps.Size(size_x, size_y));
+         
+        var marker;
+        marker = new google.maps.Marker({
+               position: markLocation, // 마커가 위치할 위도와 경도(변수)
+               map: map,
+               icon: 'image/rank1.png', // 마커로 사용할 이미지(변수)
+//             info: '말풍선 안에 들어갈 내용',
+               title: title // 마커에 마우스 포인트를 갖다댔을 때 뜨는 타이틀
+        });
+    
+       	 	
+       	
+        
+       	var marker2;   
+        marker2 = new google.maps.Marker({
+            position: markLocation2, // 마커가 위치할 위도와 경도(변수)
+            map: map,
+            icon: image, // 마커로 사용할 이미지(변수)
+          	info: 'KOSTA 길동무',
+            title: 'KOSTA 길동무' // 마커에 마우스 포인트를 갖다댔을 때 뜨는 타이틀
+     });
+         
+        var content2 = "KOSTA 길동무"; // 말풍선 안에 들어갈 내용
+        
+        
+     	// 마커를 클릭했을 때의 이벤트. 말풍선 뿅~
+        var infowindow = new google.maps.InfoWindow({ content: content});
+ 
+        google.maps.event.addListener(marker, "click", function() {
+            infowindow.open(map,marker);
+        });
+        
+     // 마커를 클릭했을 때의 이벤트. 말풍선 뿅~
+        var infowindow2 = new google.maps.InfoWindow({ content: content2});
+        
+        google.maps.event.addListener(marker2, "click", function() {
+            infowindow2.open(map,marker2);
+        });
+         
+ 
+         
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+</script>
 </head>
 <div id="outer">
 <div id="first"><%@include file="/mainView/tobmenu.jsp"%></div>
@@ -195,7 +270,6 @@ div#addr{
 			<font style="font-size:14pt; font-weight: bolder; color: #17838C; ">Contact us</font>
 		</div>
 	</div>
-	
 	<div id="sermain">
 		<img src="./image/hello.png">
 	</div>
@@ -203,7 +277,7 @@ div#addr{
 	<div id="sertitle">
 		<h1>Trips feel free to Contact Us on</h1>
 	</div>
-	
+	<div id="map-canvas" style="width: 600px; height: 400px; margin: 650px 0 0 400px; position: absolute;"></div>
 	<div id="info">
 		<ul>
 			<li type="none">
@@ -226,11 +300,11 @@ div#addr{
 				<br>경기도 성남시 분당구 삼평동 
 				<br>유스페이스몰2 B동 8층 KOSTA
 				</div>
-			</li>
-			
+			</li>		
 		</ul>
+		
 	</div>
-
 </body>
 </div>	
+
 </html>
