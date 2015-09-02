@@ -33,7 +33,6 @@ body {
 }
 
 
-
 .t3 {
 	position: relative;
 	font-size: 13px;
@@ -699,10 +698,5 @@ ul.side2 ul {
     background-color: rgba(250,252,250,0.5);
 }
 
-.t3 th, .t3 td #title{
-	padding: 10px 0;
-	font-weight: 400;
-	text-align: left;
-	border-top: 1px solid #e2e2e2;
-}
+
 
