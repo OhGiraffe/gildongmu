@@ -12,28 +12,26 @@
 </style>
 
 </head>
-<body>
 <div id="outer">
 <div id="first"><%@include file="/mainView/tobmenu.jsp"%></div>
-<div id="myBar">
-<ul class="side" style="margin-top: 24px;">
-<ul>
-			<li type="none" style="font-weight: bold; font-size: 16px; color: #ffffff;
-			width: 160px; height: 26px; background-color: #22becc;">
-			ID/PASS찾기
-			</li>
+<div id="main">
+
+<body>
+<div id="menu3">
+	<div id="logo">
+	<img src="./image/pass.png">
+	</div>
+	
+	<div id="sidetext">
+	<ul class="side" style="margin-top: 24px;">
+		<ul>
 			<a href="searchmyid.do" style="text-decoration: none; margin: -10px 0 0 300px" >ID 찾기</a>
 			<a href="searchmypass.do" style="text-decoration: none; margin: -30px 0 0 460px">PASSWORD 찾기</a>
 			<a href="#" style="text-decoration: none; margin: -30px 0 0 620px">기타</a>
-</ul>		 
-</ul>
+		</ul>		 
+	</ul>
+	</div>
 </div>
-<div id="myMain">
-<div id="myMenu" style="border-bottom: 2px solid #dedede";>
-	<font style="border-style: solid; font-size:24pt; color: #22becc; font-weight: bolder; ">Search Pass</font>
-	<font style="font-size:14pt; font-weight: bolder; color: #999; ">비밀번호 찾기</font>
-</div>
-	
 <center>
 		<div class="t4">
 		<div class="topmargin" style="margin-right: 50px">

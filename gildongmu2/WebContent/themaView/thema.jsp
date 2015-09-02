@@ -132,7 +132,7 @@ function getXMLHttpRequest() {//XMLHttpRequest객체생성
 </div>
 <div id="myMain">
 	<center>
-		<div class="t3">
+		<div id="t3border" class="t3">
 			<div class="tblWrap topmargin" style="width: 950px">
 				<table>
 					<colgroup>

@@ -90,10 +90,15 @@
 <div id="outer">
 <div id="first"><%@include file="/mainView/tobmenu.jsp"%></div>
 <div id="main">
-	<div id="menu" style="border-bottom: 2px solid #dedede";>	
-	<font style="border-style: solid; font-size:24pt; color: #22becc; font-weight: bolder; ">Join</font>
-	<font style="font-size:14pt; font-weight: bolder; color: #999; ">회원가입</font>
+<div id="menu2">
+	<div id="logo">
+	<img src="./image/join.png">
 	</div>
+	
+	<div id="sidetext">
+	<h5><font style="font-size:12pt; ">길동무 회원가입 페이지 입니다.<br> 정보를 입력해주세요.</font></h5>
+	</div>
+</div>
 	<center>
 		<div class="t4">
 		<div class="topmargin">
