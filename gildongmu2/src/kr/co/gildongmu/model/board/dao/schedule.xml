@@ -8,7 +8,7 @@
 		from board
 		where u_id != 'admin'
 			<if test="sdate != null">
-				and b_sdate &gt; #{sdate}
+				and b_sdate &gt;= #{sdate}
 			</if>
 			<if test="edate != null">
 				and b_edate &lt;= #{edate}
@@ -21,7 +21,7 @@
 		from board
 		where u_id != 'admin'
 			<if test="sdate != null">
-				and b_sdate &gt; #{sdate}
+				and b_sdate &gt;= #{sdate}
 			</if>
 			<if test="edate != null">
 				and b_edate &lt;= #{edate}

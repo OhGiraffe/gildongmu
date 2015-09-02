@@ -70,7 +70,7 @@ padding-left: 5px;
 	<center>
 		<br>
 		<div class="writeWrap">
-		<form action="writing" method="post" name="frm">
+		<form action="write_b" method="post" name="frm">
 		<input type="hidden" name="url" value="<%=url%>">
 			<table class="boardtbl">
 				<tr>
